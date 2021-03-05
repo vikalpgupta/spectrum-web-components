@@ -10,24 +10,4 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 
-/* THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
-:host([dir='ltr']) {
-    padding-right: var(
-        --spectrum-table-regular-cell-checkbox-padding-right
-    ); /* [dir=ltr] .spectrum-Table-checkboxCell */
-}
-:host([dir='rtl']) {
-    padding-left: var(
-        --spectrum-table-regular-cell-checkbox-padding-right
-    ); /* [dir=rtl] .spectrum-Table-checkboxCell */
-}
-:host {
-    padding-bottom: 0;
-    padding-top: 0; /* .spectrum-Table-checkboxCell */
-    vertical-align: var(
-        --spectrum-table-regular-cell-checkbox-vertical-alignment
-    );
-}
-.checkbox {
-    vertical-align: super; /* .spectrum-Table-checkbox */
-}
+/* THIS FILE IS MACHINE GENERATED. DO NOT EDIT */:host(:dir(ltr)){padding-right:var(--spectrum-table-regular-cell-checkbox-padding-right)/* [dir=ltr] .spectrum-Table-checkboxCell */}:host([dir=ltr]){padding-right:var(--spectrum-table-regular-cell-checkbox-padding-right)/* [dir=ltr] .spectrum-Table-checkboxCell */}:host(:dir(rtl)){padding-left:var(--spectrum-table-regular-cell-checkbox-padding-right)/* [dir=rtl] .spectrum-Table-checkboxCell */}:host([dir=rtl]){padding-left:var(--spectrum-table-regular-cell-checkbox-padding-right)/* [dir=rtl] .spectrum-Table-checkboxCell */}:host{padding-bottom:0;padding-top:0;/* .spectrum-Table-checkboxCell */vertical-align:var(--spectrum-table-regular-cell-checkbox-vertical-alignment)}.checkbox{vertical-align:super/* .spectrum-Table-checkbox */}

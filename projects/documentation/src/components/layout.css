@@ -139,8 +139,25 @@ header svg {
     height: 100%;
 }
 
+<<<<<<< HEAD
+=======
+.manage-theme {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+:host(:dir(ltr)) .theme-control {
+    margin-left: var(--spectrum-global-dimension-size-400);
+}
+
+>>>>>>> 825b3a3b9 (feat: allow native :dir(...) selector usage where available)
 :host([dir='ltr']) .theme-control {
     margin-left: var(--spectrum-global-dimension-size-400);
+}
+
+:host(:dir(rtl)) .theme-control {
+    margin-right: var(--spectrum-global-dimension-size-400);
 }
 
 :host([dir='rtl']) .theme-control {

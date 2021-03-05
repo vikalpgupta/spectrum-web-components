@@ -122,6 +122,7 @@ export class Overlay {
             scale: undefined,
             lang: undefined,
             theme: undefined,
+            dir: undefined,
         };
         const queryThemeEvent = new CustomEvent<ThemeData>('sp-query-theme', {
             bubbles: true,
