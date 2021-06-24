@@ -34,6 +34,14 @@ sp-field-button {
     visibility: hidden;
 }
 
+:host(:not([focused]):not([disabled])) {
+    cursor: ew-resize;
+}
+
+:host(:not([focused]):not([disabled])) input {
+    cursor: ew-resize;
+}
+
 :host([hide-stepper]:not([quiet])) .input {
     border-radius: var(
         --spectrum-alias-border-radius-regular,

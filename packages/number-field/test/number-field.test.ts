@@ -424,6 +424,12 @@ describe('NumberField', () => {
                 clientX: stepUpRect.x + 1,
                 clientY: stepUpRect.y + 1,
             };
+            el.setPointerCapture = () => {
+                return;
+            };
+            el.releasePointerCapture = () => {
+                return;
+            };
             (
                 el as unknown as {
                     buttons: HTMLDivElement;
