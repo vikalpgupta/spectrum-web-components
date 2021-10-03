@@ -1,5 +1,5 @@
 /*
-Copyright 2022 Adobe. All rights reserved.
+Copyright 2020 Adobe. All rights reserved.
 This file is licensed to you under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License. You may obtain a copy
 of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -9,21 +9,13 @@ the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTA
 OF ANY KIND, either express or implied. See the License for the specific language
 governing permissions and limitations under the License.
 */
-import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
 
-import '../sp-picker-button.js';
-import { PickerButton } from '..';
+import { ComboboxItem } from './src/ComboboxItem.js';
 
-describe('PickerButton', () => {
-    it('loads default picker-button accessibly', async () => {
-        const el = await fixture<PickerButton>(
-            html`
-                <sp-picker-button aria-label="Picker Button"></sp-picker-button>
-            `
-        );
+customElements.define('sp-combobox-item', ComboboxItem);
 
-        await elementUpdated(el);
-
-        await expect(el).to.be.accessible();
-    });
-});
+declare global {
+    interface HTMLElementTagNameMap {
+        'sp-combobox-item': ComboboxItem;
+    }
+}

@@ -34,7 +34,7 @@ export class PickerButton extends SizedMixin(ButtonBase) {
 
     protected override render(): TemplateResult {
         return html`
-            <div class="root textuiicon">
+            <div class="root uiicononly">
                 <div class="spectrum-PickerButton-fill">
                     <span class="spectrum-PickerButton-label is-placeholder">
                         All
