@@ -202,13 +202,8 @@ export class HandleController implements Controller {
         }
         handle.addEventListener(
             'sp-slider-handle-ready',
-            () => {
-                this.extractModelFromLightDom();
-            },
-            {
-                once: true,
-                passive: true,
-            }
+            () => this.extractModelFromLightDom(),
+            { once: true, passive: true }
         );
         return true;
     }
