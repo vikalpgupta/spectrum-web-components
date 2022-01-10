@@ -197,20 +197,20 @@ export class HandleController implements Controller {
     }
 
     private waitForUpgrade(handle: HTMLElement): boolean {
-        if (!(handle instanceof SliderHandle)) {
-            handle.addEventListener(
-                'sp-slider-handle-ready',
-                () => {
-                    this.extractModelFromLightDom();
-                },
-                {
-                    once: true,
-                    passive: true,
-                }
-            );
-            return true;
+        if (handle instanceof SliderHandle) {
+            return false;
         }
-        return false;
+        handle.addEventListener(
+            'sp-slider-handle-ready',
+            () => {
+                this.extractModelFromLightDom();
+            },
+            {
+                once: true,
+                passive: true,
+            }
+        );
+        return true;
     }
 
     private extractModelFromLightDom = (): void => {
