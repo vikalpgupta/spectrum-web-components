@@ -162,9 +162,6 @@ export class HandleController implements Controller {
         if (!this.observer) {
             this.observer = new MutationObserver(this.extractModelFromLightDom);
         }
-        window.customElements.whenDefined('sp-slider-handle').then(() => {
-            this.extractModelFromLightDom();
-        });
         this.observer.observe(this.host, { subtree: true, childList: true });
         this.extractModelFromLightDom();
         if ('orientation' in screen) {
@@ -199,16 +196,35 @@ export class HandleController implements Controller {
         this.updateModel();
     }
 
-    private extractModelFromLightDom = (): void => {
-        // this method depends on slotted handles already having been upgraded
-        if (window.customElements.get('sp-slider-handle') == null) {
-            return;
+    private waitForUpgrade(handle: HTMLElement): boolean {
+        if (!(handle instanceof SliderHandle)) {
+            handle.addEventListener(
+                'sp-slider-handle-ready',
+                () => {
+                    this.extractModelFromLightDom();
+                },
+                {
+                    once: true,
+                    passive: true,
+                }
+            );
+            return true;
         }
+        return false;
+    }
+
+    private extractModelFromLightDom = (): void => {
         let handles = [
             ...this.host.querySelectorAll('[slot="handle"]'),
         ] as SliderHandle[];
         if (handles.length === 0) {
             handles = [this.host as SliderHandle];
+        }
+        // extractModelFromLightDom depends on slotted handles already having been upgraded
+        for (const handle of handles) {
+            if (this.waitForUpgrade(handle)) {
+                return;
+            }
         }
         this.handles = new Map();
         this.handleOrder = [];
