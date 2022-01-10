@@ -952,7 +952,7 @@ describe('Slider', () => {
         await elementUpdated(el);
         expect(el.values).to.deep.equal({ a: 10, b: 10, c: 10 });
     });
-    it.only('builds both handles from a <template>', async () => {
+    it('builds both handles from a <template>', async () => {
         const template = document.createElement('template');
         template.innerHTML = `
             <sp-slider variant="range" step="1" id="price" name="price" label="Max Price" min="35425" max="86610">
@@ -965,7 +965,8 @@ describe('Slider', () => {
                 <div></div>
             `
         );
-        el.appendChild(template.content.cloneNode(true)); // This is how MDN recommends using templates
+        el.appendChild(template.content.cloneNode(true));
+        // Sliders take several frames to fully upgrade
         do {
             await nextFrame();
         } while (el.querySelector('sp-slider')?.shadowRoot == null);
