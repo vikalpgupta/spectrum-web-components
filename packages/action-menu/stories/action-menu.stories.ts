@@ -77,6 +77,33 @@ const Template = (args: StoryArgs = {}): TemplateResult =>
 
 export const Default = (args: StoryArgs = {}): TemplateResult => Template(args);
 
+export const labelOnly = ({
+    changeHandler = (() => undefined) as (event: Event) => void,
+    disabled = false,
+    open = false,
+    size = 'm' as 'm' | 's' | 'l' | 'xl' | 'xxl',
+    selects = '' as 'single',
+    selected = false,
+} = {}) => html`
+    <sp-action-menu
+        ?disabled=${disabled}
+        ?open=${open}
+        size=${size}
+        @change="${changeHandler}"
+        .selects=${selects ? selects : undefined}
+        value=${selected ? 'Select Inverse' : ''}
+    >
+        <span slot="label-only">Label Only</span>
+        <sp-menu-item>Deselect</sp-menu-item>
+        <sp-menu-item ?selected=${selected}>Select Inverse</sp-menu-item>
+        <sp-menu-item>Feather...</sp-menu-item>
+        <sp-menu-item>Select and Mask...</sp-menu-item>
+        <sp-menu-divider></sp-menu-divider>
+        <sp-menu-item>Save Selection</sp-menu-item>
+        <sp-menu-item disabled>Make Work Path</sp-menu-item>
+    </sp-action-menu>
+`;
+
 export const selects = (args: StoryArgs = {}): TemplateResult =>
     Template({
         ...args,
