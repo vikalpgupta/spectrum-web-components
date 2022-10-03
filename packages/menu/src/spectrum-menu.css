@@ -11,145 +11,366 @@ governing permissions and limitations under the License.
 */
 
 /* THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
-:host {
-    --spectrum-menu-margin-x: var(
-        --spectrum-global-dimension-size-40
-    ); /* .spectrum-Menu */
-    --spectrum-listitem-texticon-heading-text-size: var(
-        --spectrum-global-dimension-font-size-50
+.spectrum-Menu--sizeS {
+    --spectrum-menu-item-min-height: var(
+        --spectrum-component-height-75
+    ); /* .spectrum-Menu--sizeS */
+    --spectrum-menu-item-icon-height: var(--spectrum-workflow-icon-size-75);
+    --spectrum-menu-item-icon-width: var(--spectrum-workflow-icon-size-75);
+    --spectrum-menu-item-label-font-size: var(--spectrum-font-size-75);
+    --spectrum-menu-item-label-text-to-visual: var(
+        --spectrum-text-to-visual-75
     );
-    --spectrum-listitem-texticon-heading-text-font-weight: 400;
-    --spectrum-listitem-texticon-heading-text-transform: uppercase;
-    --spectrum-listitem-texticon-heading-letter-spacing: 0.06em;
-    --spectrum-listitem-texticon-heading-margin: var(
-            --spectrum-global-dimension-size-75
-        )
-        0 0 0;
-    --spectrum-listitem-texticon-heading-padding: 0
-        var(--spectrum-global-dimension-size-450) 0
-        var(--spectrum-global-dimension-size-150);
-    --spectrum-listitem-texticon-padding-y: var(
-        --spectrum-global-dimension-size-85
+    --spectrum-menu-item-label-inline-edge-to-content: var(
+        --spectrum-component-edge-to-text-75
     );
-    --spectrum-listitem-texticon-selectable-padding-right: calc(
-        var(--spectrum-listitem-texticon-ui-icon-width) +
-            var(--spectrum-listitem-texticon-ui-icon-gap) +
-            var(--spectrum-listitem-texticon-padding-right) -
-            var(
-                --spectrum-popover-border-size,
-                var(--spectrum-alias-border-size-thin)
-            )
+    --spectrum-menu-item-top-edge-to-text: var(
+        --spectrum-component-top-to-text-75
     );
-    --spectrum-listitem-texticon-label-line-height: 1.3;
-    --spectrum-listitem-texticon-heading-line-height: var(
-        --spectrum-alias-body-text-line-height,
-        var(--spectrum-global-font-line-height-medium)
+    --spectrum-menu-item-bottom-edge-to-text: var(
+        --spectrum-component-bottom-to-text-75
     );
+    --spectrum-menu-item-text-to-control: var(--spectrum-text-to-control-75);
+    --spectrum-menu-item-description-font-size: var(--spectrum-font-size-50);
+    --spectrum-menu-section-header-font-size: var(--spectrum-font-size-75);
+    --spectrum-menu-section-header-min-width: var(
+        --spectrum-component-height-75
+    );
+    --spectrum-menu-item-selectable-edge-to-text-not-selected: 28px;
+    --spectrum-menu-item-checkmark-height: 10px;
+    --spectrum-menu-item-checkmark-width: 10px;
+}
+.spectrum-Menu--sizeM {
+    --spectrum-menu-item-min-height: var(
+        --spectrum-component-height-100
+    ); /* .spectrum-Menu--sizeM */
+    --spectrum-menu-item-icon-height: var(--spectrum-workflow-icon-size-100);
+    --spectrum-menu-item-icon-width: var(--spectrum-workflow-icon-size-100);
+    --spectrum-menu-item-label-font-size: var(--spectrum-font-size-100);
+    --spectrum-menu-item-label-text-to-visual: var(
+        --spectrum-text-to-visual-100
+    );
+    --spectrum-menu-item-label-inline-edge-to-content: var(
+        --spectrum-component-edge-to-text-100
+    );
+    --spectrum-menu-item-top-edge-to-text: var(
+        --spectrum-component-top-to-text-100
+    );
+    --spectrum-menu-item-bottom-edge-to-text: var(
+        --spectrum-component-bottom-to-text-100
+    );
+    --spectrum-menu-item-text-to-control: var(--spectrum-text-to-control-100);
+    --spectrum-menu-item-description-font-size: var(--spectrum-font-size-75);
+    --spectrum-menu-section-header-font-size: var(--spectrum-font-size-100);
+    --spectrum-menu-section-header-min-width: var(
+        --spectrum-component-height-100
+    );
+    --spectrum-menu-item-selectable-edge-to-text-not-selected: 32px;
+    --spectrum-menu-item-checkmark-height: 10px;
+    --spectrum-menu-item-checkmark-width: 10px;
+}
+.spectrum-Menu--sizeL {
+    --spectrum-menu-item-min-height: var(
+        --spectrum-component-height-200
+    ); /* .spectrum-Menu--sizeL */
+    --spectrum-menu-item-icon-height: var(--spectrum-workflow-icon-size-200);
+    --spectrum-menu-item-icon-width: var(--spectrum-workflow-icon-size-200);
+    --spectrum-menu-item-label-font-size: var(--spectrum-font-size-200);
+    --spectrum-menu-item-label-text-to-visual: var(
+        --spectrum-text-to-visual-200
+    );
+    --spectrum-menu-item-label-inline-edge-to-content: var(
+        --spectrum-component-edge-to-text-200
+    );
+    --spectrum-menu-item-top-edge-to-text: var(
+        --spectrum-component-top-to-text-200
+    );
+    --spectrum-menu-item-bottom-edge-to-text: var(
+        --spectrum-component-bottom-to-text-200
+    );
+    --spectrum-menu-item-text-to-control: var(--spectrum-text-to-control-200);
+    --spectrum-menu-item-description-font-size: var(--spectrum-font-size-100);
+    --spectrum-menu-section-header-font-size: var(--spectrum-font-size-200);
+    --spectrum-menu-section-header-min-width: var(
+        --spectrum-component-height-200
+    );
+    --spectrum-menu-item-selectable-edge-to-text-not-selected: 38px;
+    --spectrum-menu-item-checkmark-height: 12px;
+    --spectrum-menu-item-checkmark-width: 12px;
+}
+.spectrum-Menu--sizeXL {
+    --spectrum-menu-item-min-height: var(
+        --spectrum-component-height-300
+    ); /* .spectrum-Menu--sizeXL */
+    --spectrum-menu-item-icon-height: var(--spectrum-workflow-icon-size-300);
+    --spectrum-menu-item-icon-width: var(--spectrum-workflow-icon-size-300);
+    --spectrum-menu-item-label-font-size: var(--spectrum-font-size-300);
+    --spectrum-menu-item-label-text-to-visual: var(
+        --spectrum-text-to-visual-300
+    );
+    --spectrum-menu-item-label-inline-edge-to-content: var(
+        --spectrum-component-edge-to-text-300
+    );
+    --spectrum-menu-item-top-edge-to-text: var(
+        --spectrum-component-top-to-text-300
+    );
+    --spectrum-menu-item-bottom-edge-to-text: var(
+        --spectrum-component-bottom-to-text-300
+    );
+    --spectrum-menu-item-text-to-control: var(--spectrum-text-to-control-300);
+    --spectrum-menu-item-description-font-size: var(--spectrum-font-size-200);
+    --spectrum-menu-section-header-font-size: var(--spectrum-font-size-300);
+    --spectrum-menu-section-header-min-width: var(
+        --spectrum-component-height-300
+    );
+    --spectrum-menu-item-selectable-edge-to-text-not-selected: 45px;
+    --spectrum-menu-item-checkmark-height: 14px;
+    --spectrum-menu-item-checkmark-width: 14px;
 }
 :host {
-    --spectrum-listitem-texticon-padding-left: var(
-        --spectrum-listitem-m-texticon-padding-left
+    --spectrum-menu-item-label-line-height: var(
+        --spectrum-line-height-100
     ); /* .spectrum-Menu */
-    --spectrum-listitem-textthumbnail-padding-left: var(
-        --spectrum-listitem-m-textthumbnail-padding-left
+    --spectrum-menu-item-label-cjk-line-height: var(
+        --spectrum-cjk-line-height-100
     );
-    --spectrum-listitem-texticon-text-size: var(
-        --spectrum-listitem-m-texticon-text-size,
-        var(--spectrum-global-dimension-font-size-100)
+    --spectrum-menu-item-label-to-description-spacing: var(
+        --spectrum-menu-item-label-to-description
     );
-    --spectrum-listitem-texticon-text-font-weight: var(
-        --spectrum-listitem-m-texticon-text-font-weight,
-        var(--spectrum-alias-body-text-font-weight)
+    --spectrum-menu-item-focus-indicator-width: var(
+        --spectrum-border-width-200
     );
-    --spectrum-listitem-texticon-icon-gap: var(
-        --spectrum-listitem-m-texticon-icon-gap,
-        var(--spectrum-global-dimension-size-100)
+    --spectrum-menu-item-focus-indicator-color: var(--spectrum-blue-800);
+    --spectrum-menu-item-label-to-value-area-min-spacing: var(
+        --spectrum-spacing-100
     );
-    --spectrum-listitem-texticon-divider-padding: var(
-        --spectrum-listitem-m-texticon-divider-padding,
-        var(--spectrum-global-dimension-static-size-40)
+    --spectrum-menu-item-label-content-color-default: var(
+        --spectrum-neutral-content-color-default
     );
-    --spectrum-listitem-texticon-ui-icon-margin-top: var(
-        --spectrum-listitem-m-texticon-ui-icon-margin-top,
-        var(--spectrum-global-dimension-size-125)
+    --spectrum-menu-item-label-content-color-hover: var(
+        --spectrum-neutral-content-color-hover
     );
-    --spectrum-listitem-texticon-ui-icon-width: var(
-        --spectrum-listitem-m-texticon-ui-icon-width,
-        var(--spectrum-alias-ui-icon-checkmark-size-100)
+    --spectrum-menu-item-label-content-color-down: var(
+        --spectrum-neutral-content-color-down
     );
-    --spectrum-listitem-texticon-ui-icon-gap: var(
-        --spectrum-listitem-m-texticon-ui-icon-gap,
-        var(--spectrum-global-dimension-size-100)
+    --spectrum-menu-item-label-content-color-focus: var(
+        --spectrum-neutral-content-color-key-focus
     );
-    --spectrum-listitem-texticon-padding-right: var(
-        --spectrum-listitem-m-texticon-padding-right,
-        var(--spectrum-global-dimension-size-150)
+    --spectrum-menu-item-label-icon-color-default: var(
+        --spectrum-neutral-content-color-default
     );
-    --spectrum-listitem-texticon-focus-indicator-size: var(
-        --spectrum-listitem-m-texticon-focus-indicator-size,
-        var(--spectrum-alias-border-size-thick)
+    --spectrum-menu-item-label-icon-color-hover: var(
+        --spectrum-neutral-content-color-hover
     );
-    --spectrum-listitem-texticon-height: var(
-        --spectrum-listitem-m-texticon-height,
-        var(--spectrum-global-dimension-size-400)
+    --spectrum-menu-item-label-icon-color-down: var(
+        --spectrum-neutral-content-color-down
     );
+    --spectrum-menu-item-label-icon-color-focus: var(
+        --spectrum-neutral-content-color-key-focus
+    );
+    --spectrum-menu-item-label-content-color-disabled: var(
+        --spectrum-disabled-content-color
+    );
+    --spectrum-menu-item-label-icon-color-disabled: var(
+        --spectrum-disabled-content-color
+    );
+    --spectrum-menu-item-description-line-height: var(
+        --spectrum-line-height-100
+    );
+    --spectrum-menu-item-description-cjk-line-height: var(
+        --spectrum-cjk-line-height-100
+    );
+    --spectrum-menu-item-description-color-default: var(
+        --spectrum-neutral-subdued-content-color-default
+    );
+    --spectrum-menu-item-description-color-hover: var(
+        --spectrum-neutral-subdued-content-color-hover
+    );
+    --spectrum-menu-item-description-color-down: var(
+        --spectrum-neutral-subdued-content-color-down
+    );
+    --spectrum-menu-item-description-color-focus: var(
+        --spectrum-neutral-subdued-content-color-key-focus
+    );
+    --spectrum-menu-item-description-color-disabled: var(
+        --spectrum-disabled-content-color
+    );
+    --spectrum-menu-section-header-line-height: var(--spectrum-line-height-100);
+    --spectrum-menu-section-header-cjk-line-height: var(
+        --spectrum-cjk-line-height-100
+    );
+    --spectrum-menu-section-header-font-weight: var(
+        --spectrum-font-weight-bold
+    );
+    --spectrum-menu-section-header-color: var(--spectrum-gray-900);
+    --spectrum-menu-collapsible-icon-color: var(--spectrum-gray-900);
+    --spectrum-menu-checkmark-icon-color-default: var(
+        --spectrum-accent-color-900
+    );
+    --spectrum-menu-checkmark-icon-color-hover: var(
+        --spectrum-accent-color-1000
+    );
+    --spectrum-menu-checkmark-icon-color-down: var(
+        --spectrum-accent-color-1100
+    );
+    --spectrum-menu-checkmark-icon-color-focus: var(
+        --spectrum-accent-color-1000
+    );
+    --spectrum-menu-drillin-icon-color-default: var(
+        --spectrum-neutral-subdued-content-color-default
+    );
+    --spectrum-menu-drillin-icon-color-hover: var(
+        --spectrum-neutral-subdued-content-color-hover
+    );
+    --spectrum-menu-drillin-icon-color-down: var(
+        --spectrum-neutral-subdued-content-color-down
+    );
+    --spectrum-menu-drillin-icon-color-focus: var(
+        --spectrum-neutral-subdued-content-color-key-focus
+    );
+    --spectrum-menu-item-value-color-default: var(
+        --spectrum-neutral-subdued-content-color-default
+    );
+    --spectrum-menu-item-value-color-hover: var(
+        --spectrum-neutral-subdued-content-color-hover
+    );
+    --spectrum-menu-item-value-color-down: var(
+        --spectrum-neutral-subdued-content-color-down
+    );
+    --spectrum-menu-item-value-color-focus: var(
+        --spectrum-neutral-subdued-content-color-key-focus
+    );
+    --spectrum-menu-item-collapsible-has-icon-submenu-item-padding-x-start: calc(
+        var(--spectrum-menu-item-label-inline-edge-to-content) +
+            var(--spectrum-menu-item-checkmark-width) +
+            var(--spectrum-menu-item-text-to-control) +
+            var(--spectrum-menu-item-icon-width) +
+            var(--spectrum-menu-item-label-text-to-visual) +
+            var(--spectrum-menu-item-focus-indicator-width)
+    );
+    --spectrum-menu-item-collapsible-no-icon-submenu-item-padding-x-start: calc(
+        var(--spectrum-menu-item-label-inline-edge-to-content) +
+            var(--spectrum-menu-item-checkmark-width) +
+            var(--spectrum-menu-item-label-text-to-visual) +
+            var(--spectrum-menu-item-focus-indicator-width)
+    );
+}
+@media (forced-colors: active) {
+    .spectrum-Menu-item--collapsible,
+    .spectrum-Menu-item--drillIn,
+    ::slotted(sp-menu-item) {
+        --highcontrast-menu-item-label-content-color-default: ButtonText;
+        --highcontrast-menu-item-description-color-default: ButtonText;
+        --highcontrast-menu-section-header-color: ButtonText;
+        --highcontrast-menu-item-value-color-default: ButtonText;
+        border-color: HighlightText;
+        forced-color-adjust: none;
+    }
+    .spectrum-Menu-item--collapsible:active,
+    .spectrum-Menu-item--collapsible:hover,
+    .spectrum-Menu-item--drillIn:active,
+    .spectrum-Menu-item--drillIn:hover,
+    ::slotted(sp-menu-item):active,
+    ::slotted(sp-menu-item):hover {
+        --highcontrast-menu-item-label-content-color-hover: HighlightText;
+        --highcontrast-menu-item-label-content-color-down: HighlightText;
+        --highcontrast-menu-item-label-icon-color-hover: HighlightText;
+        --highcontrast-menu-item-label-icon-color-down: HighlightText;
+        --highcontrast-menu-item-description-color-hover: HighlightText;
+        --highcontrast-menu-item-description-color-down: HighlightText;
+        --highcontrast-menu-section-header-color: HighlightText;
+        --highcontrast-menu-collapsible-icon-color: HighlightText;
+        --highcontrast-menu-checkmark-icon-color-hover: HighlightText;
+        --highcontrast-menu-checkmark-icon-color-down: HighlightText;
+        --highcontrast-menu-drillin-icon-color-hover: HighlightText;
+        --highcontrast-menu-drillin-icon-color-down: HighlightText;
+        --highcontrast-menu-item-background-color-hover: Highlight;
+        --highcontrast-menu-item-background-color-down: Highlight;
+        --highcontrast-menu-item-background-color-key-focus: Highlight;
+        --highcontrast-menu-item-value-color-hover: HighlightText;
+        --highcontrast-menu-item-value-color-down: HighlightText;
+        --highcontrast-menu-item-value-color-focus: HighlightText;
+    }
+    .spectrum-Menu-item--collapsible.focus-visible,
+    .spectrum-Menu-item--collapsible.is-focused,
+    .spectrum-Menu-item--collapsible:focus,
+    .spectrum-Menu-item--drillIn.focus-visible,
+    .spectrum-Menu-item--drillIn.is-focused,
+    .spectrum-Menu-item--drillIn:focus,
+    ::slotted(sp-menu-item).focus-visible,
+    ::slotted(sp-menu-item):focus {
+        --highcontrast-menu-item-focus-indicator-color: Highlight;
+        --highcontrast-menu-item-label-content-color-focus: ButtonText;
+        --highcontrast-menu-item-description-color-focus: ButtonText;
+        --highcontrast-menu-section-header-color: ButtonText;
+        --highcontrast-menu-item-value-color-focus: ButtonText;
+    }
+    .spectrum-Menu-item--collapsible.is-focused,
+    .spectrum-Menu-item--collapsible:focus,
+    .spectrum-Menu-item--collapsible:focus-visible,
+    .spectrum-Menu-item--drillIn.is-focused,
+    .spectrum-Menu-item--drillIn:focus,
+    .spectrum-Menu-item--drillIn:focus-visible,
+    ::slotted(sp-menu-item):focus,
+    ::slotted(sp-menu-item):focus-visible {
+        --highcontrast-menu-item-focus-indicator-color: Highlight;
+        --highcontrast-menu-item-label-content-color-focus: ButtonText;
+        --highcontrast-menu-item-description-color-focus: ButtonText;
+        --highcontrast-menu-section-header-color: ButtonText;
+        --highcontrast-menu-item-value-color-focus: ButtonText;
+    }
+    .spectrum-Menu-item--collapsible.is-disabled,
+    .spectrum-Menu-item--drillIn.is-disabled {
+        --highcontrast-menu-item-label-content-color-disabled: GrayText;
+        --highcontrast-menu-item-label-icon-color-disabled: GrayText;
+        --highcontrast-menu-item-description-color-disabled: GrayText;
+    }
+    .spectrum-Menu-item--collapsible.is-open.is-focused,
+    .spectrum-Menu-item--collapsible.is-open:active,
+    .spectrum-Menu-item--collapsible.is-open:focus,
+    .spectrum-Menu-item--collapsible.is-open:hover,
+    .spectrum-Menu-item--drillIn.is-open.is-focused,
+    .spectrum-Menu-item--drillIn.is-open:active,
+    .spectrum-Menu-item--drillIn.is-open:focus,
+    .spectrum-Menu-item--drillIn.is-open:hover {
+        --highcontrast-menu-item-background-color-default: transparent;
+    }
+    .spectrum-Menu-item--collapsible ::slotted(sp-menu-item),
+    .spectrum-Menu-item--drillIn ::slotted(sp-menu-item) {
+        --highcontrast-menu-item-background-color-default: Highlight;
+    }
 }
 :host {
     box-sizing: border-box;
     display: inline-block; /* .spectrum-Menu */
     list-style-type: none;
-    margin-bottom: var(
-        --spectrum-popover-padding-y,
-        var(--spectrum-global-dimension-size-50)
-    );
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: var(
-        --spectrum-popover-padding-y,
-        var(--spectrum-global-dimension-size-50)
-    );
+    margin-inline: 0;
     overflow: auto;
     padding: 0;
 }
-:host([dir='ltr'][selects]) ::slotted(sp-menu-item) {
-    padding-right: var(
-        --spectrum-listitem-texticon-selectable-padding-right
-    ); /* [dir=ltr] .spectrum-Menu.is-selectable .spectrum-Menu-item */
+:host(:lang(ja)) ::slotted(sp-menu-item),
+:host(:lang(ko)) ::slotted(sp-menu-item),
+:host(:lang(zh)) ::slotted(sp-menu-item) {
+    line-height: var(
+        --mod-menu-item-label-cjk-line-height,
+        var(--spectrum-menu-item-label-cjk-line-height)
+    ); /* .spectrum-Menu:lang(ja) .spectrum-Menu-item,
+   * .spectrum-Menu:lang(zh) .spectrum-Menu-item,
+   * .spectrum-Menu:lang(ko) .spectrum-Menu-item */
 }
-:host([dir='rtl'][selects]) ::slotted(sp-menu-item) {
-    padding-left: var(
-        --spectrum-listitem-texticon-selectable-padding-right
-    ); /* [dir=rtl] .spectrum-Menu.is-selectable .spectrum-Menu-item */
+:host(:lang(ja)) .spectrum-Menu-itemDescription,
+:host(:lang(ko)) .spectrum-Menu-itemDescription,
+:host(:lang(zh)) .spectrum-Menu-itemDescription {
+    line-height: var(
+        --mod-menu-item-description-cjk-line-height,
+        var(--spectrum-menu-item-description-cjk-line-height)
+    ); /* .spectrum-Menu:lang(ja) .spectrum-Menu-itemDescription,
+   * .spectrum-Menu:lang(zh) .spectrum-Menu-itemDescription,
+   * .spectrum-Menu:lang(ko) .spectrum-Menu-itemDescription */
 }
-:host([dir='ltr'][selects]) ::slotted(sp-menu-item[selected]) {
-    padding-right: calc(
-        var(--spectrum-listitem-texticon-padding-right) -
-            var(
-                --spectrum-popover-border-size,
-                var(--spectrum-alias-border-size-thin)
-            )
-    ); /* [dir=ltr] .spectrum-Menu.is-selectable .spectrum-Menu-item.is-selected */
-}
-:host([dir='rtl'][selects]) ::slotted(sp-menu-item[selected]) {
-    padding-left: calc(
-        var(--spectrum-listitem-texticon-padding-right) -
-            var(
-                --spectrum-popover-border-size,
-                var(--spectrum-alias-border-size-thin)
-            )
-    ); /* [dir=rtl] .spectrum-Menu.is-selectable .spectrum-Menu-item.is-selected */
-}
-::slotted(sp-menu) {
-    display: block; /* .spectrum-Menu .spectrum-Menu */
-}
-:host {
-    --spectrum-listheading-text-color: var(
-        --spectrum-global-color-gray-700
-    ); /* .spectrum-Menu */
-}
-:host {
-    background-color: var(
-        --spectrum-listitem-m-texticon-background-color,
-        var(--spectrum-alias-background-color-transparent)
-    ); /* .spectrum-Menu */
+:host([selects]) ::slotted(sp-menu-item) {
+    padding-inline-start: var(
+        --mod-menu-item-selectable-edge-to-text-not-selected,
+        var(--spectrum-menu-item-selectable-edge-to-text-not-selected)
+    ); /* .spectrum-Menu.is-selectable .spectrum-Menu-item */
 }

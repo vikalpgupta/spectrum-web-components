@@ -11,304 +11,732 @@ governing permissions and limitations under the License.
 */
 
 /* THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
-:host([dir='ltr']) {
-    border-left: var(--spectrum-listitem-texticon-focus-indicator-size) solid
-        transparent; /* [dir=ltr] .spectrum-Menu-item */
-}
-:host([dir='rtl']) {
-    border-right: var(--spectrum-listitem-texticon-focus-indicator-size) solid
-        transparent; /* [dir=rtl] .spectrum-Menu-item */
+.icon {
+    fill: var(
+        --highcontrast-menu-item-label-icon-color-default,
+        var(
+            --mod-menu-item-label-icon-color-default,
+            var(--spectrum-menu-item-label-icon-color-default)
+        )
+    ); /* .spectrum-Menu-itemIcon */
 }
 :host {
     align-items: center;
+    background-color: var(
+        --mod-menu-item-background-color-default,
+        var(--spectrum-menu-item-background-color-default)
+    );
     box-sizing: border-box;
-    cursor: pointer; /* .spectrum-Menu-item */
-    display: flex;
-    font-size: var(--spectrum-listitem-texticon-text-size);
-    font-style: normal;
-    font-weight: var(--spectrum-listitem-texticon-text-font-weight);
+    cursor: pointer; /* .spectrum-Menu-item,
+   * .spectrum-Menu li:not(.spectrum-Menu-item, .spectrum-Menu-divider) */
+    line-height: var(
+        --mod-menu-item-label-line-height,
+        var(--spectrum-menu-item-label-line-height)
+    );
     margin: 0;
-    min-height: var(--spectrum-listitem-texticon-height);
-    padding: var(--spectrum-listitem-texticon-padding-y)
-        var(--spectrum-listitem-texticon-padding-right)
-        var(--spectrum-listitem-texticon-padding-y)
-        var(--spectrum-listitem-texticon-padding-left);
+    min-block-size: var(
+        --mod-menu-item-min-height,
+        var(--spectrum-menu-item-min-height)
+    );
+    padding-block-end: var(
+        --mod-menu-item-bottom-edge-to-text,
+        var(--spectrum-menu-item-bottom-edge-to-text)
+    );
+    padding-block-start: var(
+        --mod-menu-item-top-edge-to-text,
+        var(--spectrum-menu-item-top-edge-to-text)
+    );
+    padding-inline: var(
+        --mod-menu-item-label-inline-edge-to-content,
+        var(--spectrum-menu-item-label-inline-edge-to-content)
+    );
     position: relative;
     text-decoration: none;
 }
-:host(:focus) {
-    outline: none; /* .spectrum-Menu-item:focus */
+:host {
+    grid-template-areas: '.            chevronAreaCollapsible .             iconArea sectionHeadingArea  .         .           .                 ' 'selectedArea chevronAreaCollapsible checkmarkArea iconArea labelArea        valueArea actionsArea chevronAreaDrillIn' '.            .                      .             .        descriptionArea  .         .           .                 ' '.            .                      .             .        submenuArea      .         .           .                 '; /* .spectrum-Menu-item,
+   * .spectrum-Menu li:not(.spectrum-Menu-item, .spectrum-Menu-divider) */
+    grid-template-columns: auto auto auto auto 1fr auto auto auto;
 }
-:host([dir='ltr'][selected]) {
-    padding-right: calc(
-        var(--spectrum-listitem-texticon-padding-right) -
+:host {
+    display: grid; /* .spectrum-Menu-item .spectrum-Menu-item */
+    grid-template-areas: 'submenuItemLabelArea submenuItemValueArea';
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr auto;
+}
+:host #label {
+    grid-area: submenuItemLabelArea; /* .spectrum-Menu-item .spectrum-Menu-item .spectrum-Menu-itemLabel */
+}
+:host .spectrum-Menu-itemValue {
+    grid-area: submenuItemValueArea; /* .spectrum-Menu-item .spectrum-Menu-item .spectrum-Menu-itemValue */
+}
+:host(.focus-visible),
+:host(:focus),
+:host([focused]) {
+    background-color: var(
+        --highcontrast-menu-item-background-color-key-focus,
+        var(
+            --mod-menu-item-background-color-key-focus,
+            var(--spectrum-menu-item-background-color-key-focus)
+        )
+    ); /* .spectrum-Menu-item:focus,
+   * .spectrum-Menu-item:focus-visible,
+   * .spectrum-Menu-item.is-focused */
+    box-shadow: inset
+        var(
+            --mod-menu-item-focus-indicator-width,
+            var(--spectrum-menu-item-focus-indicator-width)
+        )
+        0 0 0
+        var(
+            --highcontrast-menu-item-focus-indicator-color,
             var(
-                --spectrum-popover-border-size,
-                var(--spectrum-alias-border-size-thin)
+                --mod-menu-item-focus-indicator-color,
+                var(--spectrum-menu-item-focus-indicator-color)
             )
-    ); /* [dir=ltr] .spectrum-Menu-item.is-selected */
+        );
+    outline: none;
 }
-:host([dir='rtl'][selected]) {
-    padding-left: calc(
-        var(--spectrum-listitem-texticon-padding-right) -
+:host(:focus),
+:host(:focus-visible),
+:host([focused]) {
+    background-color: var(
+        --highcontrast-menu-item-background-color-key-focus,
+        var(
+            --mod-menu-item-background-color-key-focus,
+            var(--spectrum-menu-item-background-color-key-focus)
+        )
+    ); /* .spectrum-Menu-item:focus,
+   * .spectrum-Menu-item:focus-visible,
+   * .spectrum-Menu-item.is-focused */
+    box-shadow: inset
+        var(
+            --mod-menu-item-focus-indicator-width,
+            var(--spectrum-menu-item-focus-indicator-width)
+        )
+        0 0 0
+        var(
+            --highcontrast-menu-item-focus-indicator-color,
             var(
-                --spectrum-popover-border-size,
-                var(--spectrum-alias-border-size-thin)
+                --mod-menu-item-focus-indicator-color,
+                var(--spectrum-menu-item-focus-indicator-color)
             )
-    ); /* [dir=rtl] .spectrum-Menu-item.is-selected */
+        );
+    outline: none;
 }
-:host([selected]) .checkmark {
-    display: block; /* .spectrum-Menu-item.is-selected .spectrum-Menu-checkmark */
+:host(.focus-visible) #label,
+:host(:focus) #label,
+:host([focused]) #label {
+    color: var(
+        --highcontrast-menu-item-label-content-color-focus,
+        var(
+            --mod-menu-item-label-content-color-focus,
+            var(--spectrum-menu-item-label-content-color-focus)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-itemLabel,
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-itemLabel,
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-itemLabel */
 }
-.icon,
-::slotted([slot='icon']) {
-    align-self: flex-start;
-    flex-shrink: 0; /* .spectrum-Menu-item .spectrum-Icon,
-   * .spectrum-Menu-item .spectrum-Menu-itemIcon */
+:host(:focus) #label,
+:host(:focus-visible) #label,
+:host([focused]) #label {
+    color: var(
+        --highcontrast-menu-item-label-content-color-focus,
+        var(
+            --mod-menu-item-label-content-color-focus,
+            var(--spectrum-menu-item-label-content-color-focus)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-itemLabel,
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-itemLabel,
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-itemLabel */
 }
-:host([dir='ltr']) .icon + #label,
-:host([dir='ltr']) slot[name='icon'] + #label {
-    margin-left: var(
-        --spectrum-listitem-texticon-icon-gap
-    ); /* [dir=ltr] .spectrum-Menu-item .spectrum-Icon+.spectrum-Menu-itemLabel,
-   * [dir=ltr] 
-  .spectrum-Menu-item .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel */
+:host(.focus-visible) .spectrum-Menu-itemDescription,
+:host(:focus) .spectrum-Menu-itemDescription,
+:host([focused]) .spectrum-Menu-itemDescription {
+    color: var(
+        --highcontrast-menu-item-description-color-focus,
+        var(
+            --mod-menu-item-description-color-focus,
+            var(--spectrum-menu-item-description-color-focus)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-itemDescription,
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-itemDescription,
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-itemDescription */
 }
-:host([dir='rtl']) .icon + #label,
-:host([dir='rtl']) slot[name='icon'] + #label {
-    margin-right: var(
-        --spectrum-listitem-texticon-icon-gap
-    ); /* [dir=rtl] .spectrum-Menu-item .spectrum-Icon+.spectrum-Menu-itemLabel,
-   * [dir=rtl] 
-  .spectrum-Menu-item .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel */
+:host(:focus) .spectrum-Menu-itemDescription,
+:host(:focus-visible) .spectrum-Menu-itemDescription,
+:host([focused]) .spectrum-Menu-itemDescription {
+    color: var(
+        --highcontrast-menu-item-description-color-focus,
+        var(
+            --mod-menu-item-description-color-focus,
+            var(--spectrum-menu-item-description-color-focus)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-itemDescription,
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-itemDescription,
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-itemDescription */
 }
-.icon + #label,
-slot[name='icon'] + #label {
-    width: calc(
-        100% - var(--spectrum-listitem-texticon-ui-icon-width) -
-            var(--spectrum-listitem-texticon-icon-gap) -
-            var(--spectrum-listitem-textthumbnail-padding-left) -
+:host(.focus-visible) .spectrum-Menu-itemValue,
+:host(:focus) .spectrum-Menu-itemValue,
+:host([focused]) .spectrum-Menu-itemValue {
+    color: var(
+        --highcontrast-menu-item-value-color-focus,
+        var(
+            --mod-menu-item-value-color-focus,
+            var(--spectrum-menu-item-value-color-focus)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-itemValue,
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-itemValue,
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-itemValue */
+}
+:host(:focus) .spectrum-Menu-itemValue,
+:host(:focus-visible) .spectrum-Menu-itemValue,
+:host([focused]) .spectrum-Menu-itemValue {
+    color: var(
+        --highcontrast-menu-item-value-color-focus,
+        var(
+            --mod-menu-item-value-color-focus,
+            var(--spectrum-menu-item-value-color-focus)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-itemValue,
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-itemValue,
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-itemValue */
+}
+:host(.focus-visible) .icon:not(.chevron, .checkmark),
+:host(:focus) .icon:not(.chevron, .checkmark),
+:host([focused]) .icon:not(.chevron, .checkmark) {
+    fill: var(
+        --highcontrast-menu-item-label-icon-color-focus,
+        var(
+            --mod-menu-item-label-icon-color-focus,
+            var(--spectrum-menu-item-label-icon-color-focus)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark),
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark),
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark) */
+}
+:host(:focus) .icon:not(.chevron, .checkmark),
+:host(:focus-visible) .icon:not(.chevron, .checkmark),
+:host([focused]) .icon:not(.chevron, .checkmark) {
+    fill: var(
+        --highcontrast-menu-item-label-icon-color-focus,
+        var(
+            --mod-menu-item-label-icon-color-focus,
+            var(--spectrum-menu-item-label-icon-color-focus)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark),
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark),
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark) */
+}
+:host(.focus-visible) .chevron,
+:host(:focus) .chevron,
+:host([focused]) .chevron {
+    fill: var(
+        --highcontrast-menu-collapsible-icon-color,
+        var(
+            --mod-menu-collapsible-icon-color,
+            var(--spectrum-menu-collapsible-icon-color)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-chevron,
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-chevron,
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-chevron */
+}
+:host(:focus) .chevron,
+:host(:focus-visible) .chevron,
+:host([focused]) .chevron {
+    fill: var(
+        --highcontrast-menu-collapsible-icon-color,
+        var(
+            --mod-menu-collapsible-icon-color,
+            var(--spectrum-menu-collapsible-icon-color)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-chevron,
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-chevron,
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-chevron */
+}
+:host(.focus-visible) .checkmark,
+:host(:focus) .checkmark,
+:host([focused]) .checkmark {
+    fill: var(
+        --highcontrast-menu-checkmark-icon-color-focus,
+        var(
+            --mod-menu-checkmark-icon-color-focus,
+            var(--spectrum-menu-checkmark-icon-color-focus)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-checkmark,
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-checkmark,
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-checkmark */
+}
+:host(:focus) .checkmark,
+:host(:focus-visible) .checkmark,
+:host([focused]) .checkmark {
+    fill: var(
+        --highcontrast-menu-checkmark-icon-color-focus,
+        var(
+            --mod-menu-checkmark-icon-color-focus,
+            var(--spectrum-menu-checkmark-icon-color-focus)
+        )
+    ); /* .spectrum-Menu-item:focus .spectrum-Menu-checkmark,
+   * .spectrum-Menu-item:focus-visible .spectrum-Menu-checkmark,
+   * .spectrum-Menu-item.is-focused .spectrum-Menu-checkmark */
+}
+:host([dir='rtl'].focus-visible),
+:host([dir='rtl']:focus),
+:host([dir='rtl'][focused]) {
+    box-shadow: inset
+        calc(
             var(
-                --spectrum-alias-workflow-icon-size-m,
-                var(--spectrum-global-dimension-size-225)
+                    --mod-menu-item-focus-indicator-width,
+                    var(--spectrum-menu-item-focus-indicator-width)
+                ) * -1
+        )
+        0 0
+        var(
+            --highcontrast-menu-item-focus-indicator-color,
+            var(
+                --mod-menu-item-focus-indicator-color,
+                var(--spectrum-menu-item-focus-indicator-color)
             )
-    ); /* .spectrum-Menu-item .spectrum-Icon+.spectrum-Menu-itemLabel,
-   * .spectrum-Menu-item .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel */
+        ); /* [dir=rtl] .spectrum-Menu-item:focus,
+   * [dir=rtl] .spectrum-Menu-item:focus-visible,
+   * [dir=rtl] .spectrum-Menu-item.is-focused */
+}
+:host([dir='rtl']:focus),
+:host([dir='rtl']:focus-visible),
+:host([dir='rtl'][focused]) {
+    box-shadow: inset
+        calc(
+            var(
+                    --mod-menu-item-focus-indicator-width,
+                    var(--spectrum-menu-item-focus-indicator-width)
+                ) * -1
+        )
+        0 0
+        var(
+            --highcontrast-menu-item-focus-indicator-color,
+            var(
+                --mod-menu-item-focus-indicator-color,
+                var(--spectrum-menu-item-focus-indicator-color)
+            )
+        ); /* [dir=rtl] .spectrum-Menu-item:focus,
+   * [dir=rtl] .spectrum-Menu-item:focus-visible,
+   * [dir=rtl] .spectrum-Menu-item.is-focused */
+}
+:host(:hover) {
+    background-color: var(
+        --highcontrast-menu-item-background-color-hover,
+        var(
+            --mod-menu-item-background-color-hover,
+            var(--spectrum-menu-item-background-color-hover)
+        )
+    ); /* .spectrum-Menu-item:hover */
+}
+:host(:hover) #label {
+    color: var(
+        --highcontrast-menu-item-label-content-color-hover,
+        var(
+            --mod-menu-item-label-content-color-hover,
+            var(--spectrum-menu-item-label-content-color-hover)
+        )
+    ); /* .spectrum-Menu-item:hover .spectrum-Menu-itemLabel */
+}
+:host(:hover) .spectrum-Menu-itemDescription {
+    color: var(
+        --highcontrast-menu-item-description-color-hover,
+        var(
+            --mod-menu-item-description-color-hover,
+            var(--spectrum-menu-item-description-color-hover)
+        )
+    ); /* .spectrum-Menu-item:hover .spectrum-Menu-itemDescription */
+}
+:host(:hover) .spectrum-Menu-itemValue {
+    color: var(
+        --highcontrast-menu-item-value-color-hover,
+        var(
+            --mod-menu-item-value-color-hover,
+            var(--spectrum-menu-item-value-color-hover)
+        )
+    ); /* .spectrum-Menu-item:hover .spectrum-Menu-itemValue */
+}
+:host(:hover) .icon:not(.chevron, .checkmark) {
+    fill: var(
+        --highcontrast-menu-item-label-icon-color-hover,
+        var(
+            --mod-menu-item-label-icon-color-hover,
+            var(--spectrum-menu-item-label-icon-color-hover)
+        )
+    ); /* .spectrum-Menu-item:hover .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark) */
+}
+:host(:hover) .chevron {
+    fill: var(
+        --highcontrast-menu-collapsible-icon-color,
+        var(
+            --mod-menu-collapsible-icon-color,
+            var(--spectrum-menu-collapsible-icon-color)
+        )
+    ); /* .spectrum-Menu-item:hover .spectrum-Menu-chevron */
+}
+:host(:hover) .checkmark {
+    fill: var(
+        --highcontrast-menu-checkmark-icon-color-hover,
+        var(
+            --mod-menu-checkmark-icon-color-hover,
+            var(--spectrum-menu-checkmark-icon-color-hover)
+        )
+    ); /* .spectrum-Menu-item:hover .spectrum-Menu-checkmark */
+}
+:host(:active) {
+    background-color: var(
+        --highcontrast-menu-item-background-color-down,
+        var(
+            --mod-menu-item-background-color-down,
+            var(--spectrum-menu-item-background-color-down)
+        )
+    ); /* .spectrum-Menu-item:active */
+}
+:host(:active) #label {
+    color: var(
+        --highcontrast-menu-item-label-content-color-down,
+        var(
+            --mod-menu-item-label-content-color-down,
+            var(--spectrum-menu-item-label-content-color-down)
+        )
+    ); /* .spectrum-Menu-item:active .spectrum-Menu-itemLabel */
+}
+:host(:active) .spectrum-Menu-itemDescription {
+    color: var(
+        --highcontrast-menu-item-description-color-down,
+        var(
+            --mod-menu-item-description-color-down,
+            var(--spectrum-menu-item-description-color-down)
+        )
+    ); /* .spectrum-Menu-item:active .spectrum-Menu-itemDescription */
+}
+:host(:active) .icon:not(.chevron, .checkmark) {
+    fill: var(
+        --highcontrast-menu-item-label-icon-color-down,
+        var(
+            --mod-menu-item-label-icon-color-down,
+            var(--spectrum-menu-item-label-icon-color-down)
+        )
+    ); /* .spectrum-Menu-item:active .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark) */
+}
+:host(:active) .spectrum-Menu-itemValue {
+    color: var(
+        --highcontrast-menu-item-value-color-down,
+        var(
+            --mod-menu-item-value-color-down,
+            var(--spectrum-menu-item-value-color-down)
+        )
+    ); /* .spectrum-Menu-item:active .spectrum-Menu-itemValue */
+}
+:host(:active) .chevron {
+    fill: var(
+        --highcontrast-menu-collapsible-icon-color,
+        var(
+            --mod-menu-collapsible-icon-color,
+            var(--spectrum-menu-collapsible-icon-color)
+        )
+    ); /* .spectrum-Menu-item:active .spectrum-Menu-chevron */
+}
+:host(:active) .checkmark {
+    fill: var(
+        --highcontrast-menu-checkmark-icon-color-down,
+        var(
+            --mod-menu-checkmark-icon-color-down,
+            var(--spectrum-menu-checkmark-icon-color-down)
+        )
+    ); /* .spectrum-Menu-item:active .spectrum-Menu-checkmark */
+}
+:host([aria-disabled='true']),
+:host([disabled]) {
+    background-color: transparent; /* .spectrum-Menu-item.is-disabled,
+   * .spectrum-Menu-item[aria-disabled="true"] */
+}
+:host([aria-disabled='true']) #label,
+:host([disabled]) #label {
+    color: var(
+        --highcontrast-menu-item-label-content-color-disabled,
+        var(
+            --mod-menu-item-label-content-color-disabled,
+            var(--spectrum-menu-item-label-content-color-disabled)
+        )
+    ); /* .spectrum-Menu-item.is-disabled .spectrum-Menu-itemLabel,
+   * .spectrum-Menu-item.is-disabled .spectrum-Menu-sectionHeading,
+   * .spectrum-Menu-item[aria-disabled="true"] .spectrum-Menu-itemLabel,
+   * .spectrum-Menu-item[aria-disabled="true"] .spectrum-Menu-sectionHeading */
+}
+:host([aria-disabled='true']) .spectrum-Menu-itemDescription,
+:host([disabled]) .spectrum-Menu-itemDescription {
+    color: var(
+        --highcontrast-menu-item-description-color-disabled,
+        var(
+            --mod-menu-item-description-color-disabled,
+            var(--spectrum-menu-item-description-color-disabled)
+        )
+    ); /* .spectrum-Menu-item.is-disabled .spectrum-Menu-itemDescription,
+   * .spectrum-Menu-item[aria-disabled="true"] .spectrum-Menu-itemDescription */
+}
+:host([aria-disabled='true']) .icon,
+:host([disabled]) .icon {
+    fill: var(
+        --highcontrast-menu-item-label-icon-color-disabled,
+        var(
+            --mod-menu-item-label-icon-color-disabled,
+            var(--spectrum-menu-item-label-icon-color-disabled)
+        )
+    ); /* .spectrum-Menu-item.is-disabled .spectrum-Menu-itemIcon,
+   * .spectrum-Menu-item[aria-disabled="true"] .spectrum-Menu-itemIcon */
+}
+:host([aria-disabled='true']:hover),
+:host([disabled]:hover) {
+    cursor: default; /* .spectrum-Menu-item.is-disabled:hover,
+   * .spectrum-Menu-item[aria-disabled="true"]:hover */
+}
+:host([aria-disabled='true']:hover) .icon,
+:host([disabled]:hover) .icon {
+    fill: var(
+        --highcontrast-menu-item-label-icon-color-disabled,
+        var(
+            --mod-menu-item-label-icon-color-disabled,
+            var(--spectrum-menu-item-label-icon-color-disabled)
+        )
+    ); /* .spectrum-Menu-item.is-disabled:hover .spectrum-Menu-itemIcon,
+   * .spectrum-Menu-item[aria-disabled="true"]:hover .spectrum-Menu-itemIcon */
+}
+.icon {
+    align-self: center;
+    grid-area: iconArea; /* .spectrum-Menu-itemIcon */
 }
 #label {
-    flex: 1 1 auto; /* .spectrum-Menu-itemLabel */
+    color: var(
+        --highcontrast-menu-item-label-content-color-default,
+        var(
+            --mod-menu-item-label-content-color-default,
+            var(--spectrum-menu-item-label-content-color-default)
+        )
+    );
+    font-size: var(
+        --mod-menu-item-label-font-size,
+        var(--spectrum-menu-item-label-font-size)
+    );
+    grid-area: labelArea; /* .spectrum-Menu-itemLabel */
+}
+.spectrum-Menu-itemValue {
+    grid-area: valueArea; /* .spectrum-Menu-itemValue */
+}
+.spectrum-Menu-itemActions {
+    grid-area: actionsArea; /* .spectrum-Menu-itemActions */
+}
+.spectrum-Menu-item--collapsible .chevron {
+    grid-area: chevronAreaCollapsible; /* .spectrum-Menu-item--collapsible .spectrum-Menu-chevron */
+}
+.spectrum-Menu-itemDescription {
+    grid-area: descriptionArea; /* .spectrum-Menu-itemDescription */
+}
+.spectrum-Menu-item--drillIn .chevron {
+    grid-area: chevronAreaDrillIn; /* .spectrum-Menu-item--drillIn .spectrum-Menu-chevron */
+}
+.icon:not(.chevron, .checkmark) {
+    block-size: var(
+        --mod-menu-item-icon-height,
+        var(--spectrum-menu-item-icon-height)
+    ); /* .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark) */
+    inline-size: var(
+        --mod-menu-item-icon-width,
+        var(--spectrum-menu-item-icon-width)
+    );
+}
+:host(:not([selected])) .checkmark + #label,
+:host(:not([selected])) .checkmark + #label {
+    margin-inline-start: 0; /* .spectrum-Menu-item:not(.is-selected) .spectrum-Menu-checkmark+.spectrum-Menu-itemLabel,
+   * .spectrum-Menu-item:not(.is-selected) .spectrum-Menu-checkmark+.spectrum-Menu-itemLabel */
+}
+.icon + #label,
+.icon ~ .spectrum-Menu-itemDescription {
+    margin-inline-start: var(
+        --mod-menu-item-label-text-to-visual,
+        var(--spectrum-menu-item-label-text-to-visual)
+    ); /* .spectrum-Icon+.spectrum-Menu-itemLabel,
+   * .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel,
+   * .spectrum-Icon~.spectrum-Menu-itemDescription,
+   * .spectrum-Menu-itemIcon~.spectrum-Menu-itemDescription,
+   * .spectrum-Icon+.spectrum-Menu-sectionHeading,
+   * .spectrum-Menu-itemIcon+.spectrum-Menu-sectionHeading */
+}
+.spectrum-Menu-itemDescription {
+    color: var(
+        --highcontrast-menu-item-description-color-default,
+        var(
+            --mod-menu-item-description-color-default,
+            var(--spectrum-menu-item-description-color-default)
+        )
+    ); /* .spectrum-Menu-itemDescription */
+    font-size: var(
+        --mod-menu-item-description-font-size,
+        var(--spectrum-menu-item-description-font-size)
+    );
+    line-height: var(
+        --mod-menu-item-description-line-height,
+        var(--spectrum-menu-item-description-line-height)
+    );
+    margin-block-start: var(
+        --mod-menu-item-label-to-description-spacing,
+        var(--spectrum-menu-item-label-to-description-spacing)
+    );
+}
+.spectrum-Menu-itemDescription,
+#label {
     -webkit-hyphens: auto;
     hyphens: auto;
-    line-height: var(--spectrum-listitem-texticon-label-line-height);
     overflow-wrap: break-word;
-    width: calc(
-        100% - var(--spectrum-listitem-texticon-ui-icon-width) -
-            var(--spectrum-listitem-texticon-icon-gap)
+}
+#label {
+    /* .spectrum-Menu-itemLabel */
+}
+#label + .spectrum-Menu-itemValue {
+    margin-inline-start: var(
+        --mod-menu-item-label-to-value-area-min-spacing,
+        var(--spectrum-menu-item-label-to-value-area-min-spacing)
+    ); /* .spectrum-Menu-itemLabel+.spectrum-Menu-itemValue */
+}
+.spectrum-Menu-itemValue {
+    color: var(
+        --highcontrast-menu-item-value-color-default,
+        var(
+            --mod-menu-item-value-color-default,
+            var(--spectrum-menu-item-value-color-default)
+        )
+    ); /* .spectrum-Menu-itemValue */
+    font-size: var(
+        --mod-menu-item-label-font-size,
+        var(--spectrum-menu-item-label-font-size)
     );
+    justify-self: end;
 }
 :host([no-wrap]) #label {
     overflow: hidden;
     text-overflow: ellipsis; /* .spectrum-Menu-itemLabel--wrapping */
     white-space: nowrap;
 }
-:host([dir='ltr']) .checkmark,
-:host([dir='ltr']) .chevron {
-    padding-left: var(
-        --spectrum-listitem-texticon-icon-gap
-    ); /* [dir=ltr] .spectrum-Menu-checkmark,
-   * [dir=ltr] 
-.spectrum-Menu-chevron */
+.spectrum-Menu-item--collapsible.is-open {
+    padding-block-end: 0; /* .spectrum-Menu-item--collapsible.is-open */
 }
-:host([dir='rtl']) .checkmark,
+.spectrum-Menu-item--collapsible.is-open .chevron {
+    transform: rotate(
+        90deg
+    ); /* .spectrum-Menu-item--collapsible.is-open .spectrum-Menu-chevron */
+}
+.spectrum-Menu-item--collapsible.is-open:active,
+.spectrum-Menu-item--collapsible.is-open:focus,
+.spectrum-Menu-item--collapsible.is-open:hover,
+:host([focused]) .spectrum-Menu-item--collapsible.is-open {
+    background-color: var(
+        --highcontrast-menu-item-background-color-default,
+        var(
+            --mod-menu-item-background-color-default,
+            var(--spectrum-menu-item-background-color-default)
+        )
+    ); /* .spectrum-Menu-item--collapsible.is-open:hover,
+   * .spectrum-Menu-item--collapsible.is-open:active,
+   * .spectrum-Menu-item--collapsible.is-open:focus,
+   * .spectrum-Menu-item--collapsible.is-open.is-focused */
+}
 :host([dir='rtl']) .chevron {
-    padding-right: var(
-        --spectrum-listitem-texticon-icon-gap
-    ); /* [dir=rtl] .spectrum-Menu-checkmark,
-   * [dir=rtl] 
-.spectrum-Menu-chevron */
+    transform: rotate(-180deg); /* [dir=rtl] .spectrum-Menu-chevron */
 }
-:host([dir='rtl']) .chevron {
-    transform: matrix(-1, 0, 0, 1, 0, 0); /* [dir=rtl] .spectrum-Menu-chevron */
+.spectrum-Menu-item--drillIn .chevron {
+    fill: var(
+        --highcontrast-menu-drillin-icon-color-default,
+        var(
+            --mod-menu-drillin-icon-color-default,
+            var(--spectrum-menu-drillin-icon-color-default)
+        )
+    ); /* .spectrum-Menu-item--drillIn .spectrum-Menu-chevron */
 }
-:host {
+.spectrum-Menu-item--drillIn.is-open {
     background-color: var(
-        --spectrum-listitem-m-texticon-background-color,
-        var(--spectrum-alias-background-color-transparent)
-    ); /* .spectrum-Menu-item */
-    color: var(
-        --spectrum-listitem-m-texticon-text-color,
-        var(--spectrum-alias-component-text-color-default)
-    );
+        --highcontrast-menu-item-background-color-hover,
+        var(
+            --mod-menu-item-background-color-hover,
+            var(--spectrum-menu-item-background-color-hover)
+        )
+    ); /* .spectrum-Menu-item--drillIn.is-open */
 }
-:host([dir='ltr'].focus-visible),
-:host([dir='ltr'][focused]) {
-    border-left-color: var(
-        --spectrum-listitem-m-texticon-focus-indicator-color,
-        var(--spectrum-alias-border-color-key-focus)
-    ); /* [dir=ltr] .spectrum-Menu-item.focus-ring,
-   * [dir=ltr] 
-  .spectrum-Menu-item.is-focused */
+.spectrum-Menu-item--drillIn.is-open .icon:not(.chevron, .checkmark) {
+    fill: var(
+        --highcontrast-menu-item-label-icon-color-hover,
+        var(
+            --mod-menu-item-label-icon-color-hover,
+            var(--spectrum-menu-item-label-icon-color-hover)
+        )
+    ); /* .spectrum-Menu-item--drillIn.is-open .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark) */
 }
-:host([dir='ltr']:focus-visible),
-:host([dir='ltr'][focused]) {
-    border-left-color: var(
-        --spectrum-listitem-m-texticon-focus-indicator-color,
-        var(--spectrum-alias-border-color-key-focus)
-    ); /* [dir=ltr] .spectrum-Menu-item.focus-ring,
-   * [dir=ltr] 
-  .spectrum-Menu-item.is-focused */
+.spectrum-Menu-item--drillIn.is-open .chevron {
+    fill: var(
+        --highcontrast-menu-drillin-icon-color-hover,
+        var(
+            --mod-menu-drillin-icon-color-hover,
+            var(--spectrum-menu-drillin-icon-color-hover)
+        )
+    ); /* .spectrum-Menu-item--drillIn.is-open .spectrum-Menu-chevron */
 }
-:host([dir='rtl'].focus-visible),
-:host([dir='rtl'][focused]) {
-    border-right-color: var(
-        --spectrum-listitem-m-texticon-focus-indicator-color,
-        var(--spectrum-alias-border-color-key-focus)
-    ); /* [dir=rtl] .spectrum-Menu-item.focus-ring,
-   * [dir=rtl] 
-  .spectrum-Menu-item.is-focused */
+.spectrum-Menu-item--drillIn.is-open .checkmark {
+    fill: var(
+        --highcontrast-menu-checkmark-icon-color-hover,
+        var(
+            --mod-menu-checkmark-icon-color-hover,
+            var(--spectrum-menu-checkmark-icon-color-hover)
+        )
+    ); /* .spectrum-Menu-item--drillIn.is-open .spectrum-Menu-checkmark */
 }
-:host([dir='rtl']:focus-visible),
-:host([dir='rtl'][focused]) {
-    border-right-color: var(
-        --spectrum-listitem-m-texticon-focus-indicator-color,
-        var(--spectrum-alias-border-color-key-focus)
-    ); /* [dir=rtl] .spectrum-Menu-item.focus-ring,
-   * [dir=rtl] 
-  .spectrum-Menu-item.is-focused */
+.spectrum-Menu-item--drillIn #label + .chevron {
+    margin-inline-start: var(
+        --mod-menu-item-label-to-value-area-min-spacing,
+        var(--spectrum-menu-item-label-to-value-area-min-spacing)
+    ); /* .spectrum-Menu-item--drillIn .spectrum-Menu-itemLabel+.spectrum-Menu-chevron */
 }
-:host(.focus-visible),
-:host([focused]) {
-    background-color: var(
-        --spectrum-listitem-m-texticon-background-color-key-focus,
-        var(--spectrum-alias-background-color-hover-overlay)
-    ); /* .spectrum-Menu-item.focus-ring,
-   * .spectrum-Menu-item.is-focused */
-    color: var(
-        --spectrum-listitem-m-texticon-text-color-key-focus,
-        var(--spectrum-alias-component-text-color-key-focus)
-    );
+.spectrum-Menu-item--drillIn:hover .chevron {
+    fill: var(
+        --highcontrast-menu-drillin-icon-color-hover,
+        var(
+            --mod-menu-drillin-icon-color-hover,
+            var(--spectrum-menu-drillin-icon-color-hover)
+        )
+    ); /* .spectrum-Menu-item--drillIn:hover .spectrum-Menu-chevron */
 }
-:host(:focus-visible),
-:host([focused]) {
-    background-color: var(
-        --spectrum-listitem-m-texticon-background-color-key-focus,
-        var(--spectrum-alias-background-color-hover-overlay)
-    ); /* .spectrum-Menu-item.focus-ring,
-   * .spectrum-Menu-item.is-focused */
-    color: var(
-        --spectrum-listitem-m-texticon-text-color-key-focus,
-        var(--spectrum-alias-component-text-color-key-focus)
-    );
+.spectrum-Menu-item--drillIn.focus-visible .chevron,
+.spectrum-Menu-item--drillIn:focus .chevron,
+:host([focused]) .spectrum-Menu-item--drillIn .chevron {
+    fill: var(
+        --highcontrast-menu-drillin-icon-color-focus,
+        var(
+            --mod-menu-drillin-icon-color-focus,
+            var(--spectrum-menu-drillin-icon-color-focus)
+        )
+    ); /* .spectrum-Menu-item--drillIn:focus .spectrum-Menu-chevron,
+   * .spectrum-Menu-item--drillIn:focus-visible .spectrum-Menu-chevron,
+   * .spectrum-Menu-item--drillIn.is-focused .spectrum-Menu-chevron */
 }
-:host(.is-highlighted),
-:host(.is-open),
-:host(:focus),
-:host(:hover) {
-    background-color: var(
-        --spectrum-listitem-m-texticon-background-color-hover,
-        var(--spectrum-alias-background-color-hover-overlay)
-    ); /* .spectrum-Menu-item:hover,
-   * .spectrum-Menu-item:focus,
-   * .spectrum-Menu-item.is-highlighted,
-   * .spectrum-Menu-item.is-open */
-    color: var(
-        --spectrum-listitem-m-texticon-text-color-hover,
-        var(--spectrum-alias-component-text-color-hover)
-    );
+.spectrum-Menu-item--drillIn:focus .chevron,
+.spectrum-Menu-item--drillIn:focus-visible .chevron,
+:host([focused]) .spectrum-Menu-item--drillIn .chevron {
+    fill: var(
+        --highcontrast-menu-drillin-icon-color-focus,
+        var(
+            --mod-menu-drillin-icon-color-focus,
+            var(--spectrum-menu-drillin-icon-color-focus)
+        )
+    ); /* .spectrum-Menu-item--drillIn:focus .spectrum-Menu-chevron,
+   * .spectrum-Menu-item--drillIn:focus-visible .spectrum-Menu-chevron,
+   * .spectrum-Menu-item--drillIn.is-focused .spectrum-Menu-chevron */
 }
-:host([selected]) {
-    color: var(
-        --spectrum-listitem-m-texticon-text-color-selected,
-        var(--spectrum-alias-component-text-color-default)
-    ); /* .spectrum-Menu-item.is-selected */
-}
-:host([selected]) .checkmark {
-    color: var(
-        --spectrum-listitem-m-texticon-ui-icon-color-selected,
-        var(--spectrum-alias-icon-color-selected)
-    ); /* .spectrum-Menu-item.is-selected .spectrum-Menu-checkmark */
-}
-:host(:active),
-:host([active]) {
-    background-color: var(
-        --spectrum-listitem-m-texticon-background-color-down,
-        var(--spectrum-alias-background-color-hover-overlay)
-    ); /* .spectrum-Menu-item .is-active,
-   * .spectrum-Menu-item:active */
-}
-:host([disabled]) {
-    background-color: var(
-        --spectrum-listitem-m-texticon-background-color-disabled,
-        var(--spectrum-alias-background-color-transparent)
-    ); /* .spectrum-Menu-item.is-disabled */
-    background-image: none;
-    color: var(
-        --spectrum-listitem-m-texticon-text-color-disabled,
-        var(--spectrum-alias-component-text-color-disabled)
-    );
-    cursor: default;
-}
-@media (forced-colors: active) {
-    :host {
-        --spectrum-listheading-text-color: ButtonText;
-        --spectrum-listitem-m-texticon-background-color: ButtonFace;
-        --spectrum-listitem-m-texticon-background-color-disabled: ButtonFace;
-        --spectrum-listitem-m-texticon-background-color-down: ButtonFace;
-        --spectrum-listitem-m-texticon-background-color-hover: Highlight;
-        --spectrum-listitem-m-texticon-background-color-key-focus: Highlight;
-        --spectrum-listitem-m-texticon-focus-indicator-color: Highlight;
-        --spectrum-listitem-m-texticon-text-color: ButtonText;
-        --spectrum-listitem-m-texticon-text-color-disabled: GrayText;
-        --spectrum-listitem-m-texticon-text-color-hover: HighlightText;
-        --spectrum-listitem-m-texticon-text-color-key-focus: HighlightText;
-        --spectrum-listitem-m-texticon-text-color-selected: ButtonText;
-        --spectrum-listitem-m-texticon-ui-icon-color-selected: Highlight;
-        forced-color-adjust: none;
-    }
-    :host(:not([disabled]).focus-visible),
-    :host(:not([disabled]).is-highlighted),
-    :host(:not([disabled]).is-open),
-    :host(:not([disabled]):focus),
-    :host(:not([disabled]):hover),
-    :host(:not([disabled])[focused]) {
-        background-color: var(
-            --spectrum-listitem-m-texticon-background-color-key-focus,
-            var(--spectrum-alias-background-color-hover-overlay)
-        );
-        color: var(
-            --spectrum-listitem-m-texticon-text-color-key-focus,
-            var(--spectrum-alias-component-text-color-key-focus)
-        );
-    }
-    :host(:not([disabled]).is-highlighted),
-    :host(:not([disabled]).is-open),
-    :host(:not([disabled]):focus),
-    :host(:not([disabled]):focus-visible),
-    :host(:not([disabled]):hover),
-    :host(:not([disabled])[focused]) {
-        background-color: var(
-            --spectrum-listitem-m-texticon-background-color-key-focus,
-            var(--spectrum-alias-background-color-hover-overlay)
-        );
-        color: var(
-            --spectrum-listitem-m-texticon-text-color-key-focus,
-            var(--spectrum-alias-component-text-color-key-focus)
-        );
-    }
-    :host(:not([disabled]).focus-visible[selected]) .checkmark,
-    :host(:not([disabled]).is-highlighted[selected]) .checkmark,
-    :host(:not([disabled]).is-open[selected]) .checkmark,
-    :host(:not([disabled]):focus[selected]) .checkmark,
-    :host(:not([disabled]):hover[selected]) .checkmark,
-    :host(:not([disabled])[focused][selected]) .checkmark {
-        color: HighlightText;
-    }
-    :host(:not([disabled]).is-highlighted[selected]) .checkmark,
-    :host(:not([disabled]).is-open[selected]) .checkmark,
-    :host(:not([disabled]):focus-visible[selected]) .checkmark,
-    :host(:not([disabled]):focus[selected]) .checkmark,
-    :host(:not([disabled]):hover[selected]) .checkmark,
-    :host(:not([disabled])[focused][selected]) .checkmark {
-        color: HighlightText;
-    }
+.spectrum-Menu-item--drillIn:active .chevron {
+    fill: var(
+        --highcontrast-menu-drillin-icon-color-down,
+        var(
+            --mod-menu-drillin-icon-color-down,
+            var(--spectrum-menu-drillin-icon-color-down)
+        )
+    ); /* .spectrum-Menu-item--drillIn:active .spectrum-Menu-chevron */
 }
