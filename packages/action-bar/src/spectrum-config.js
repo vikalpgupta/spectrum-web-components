@@ -30,6 +30,11 @@ const config = {
                     selector: '.spectrum-ActionBar--flexible',
                 },
                 {
+                    type: 'boolean',
+                    name: 'emphasized',
+                    selector: '.spectrum-ActionBar--emphasized',
+                },
+                {
                     type: 'enum',
                     name: 'variant',
                     values: [
@@ -38,12 +43,28 @@ const config = {
                     ],
                 },
             ],
+            classes: [
+                {
+                    selector: '.spectrum-CloseButton',
+                    name: 'close-button',
+                }
+            ],
             ids: [
                 {
                     selector: '.spectrum-ActionBar-popover',
                     name: 'popover',
                 },
             ],
+            slots: [
+                {
+                    selector: '.spectrum-ActionGroup',
+                    contents: 'sp-action-group',
+                },
+                {
+                    selector: '.spectrum-FieldLabel',
+                    contents: 'sp-field-label',
+                }
+            ]
         },
     ],
 };

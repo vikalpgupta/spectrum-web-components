@@ -13,7 +13,7 @@ governing permissions and limitations under the License.
 import { html, TemplateResult } from '@spectrum-web-components/base';
 
 import '@spectrum-web-components/action-bar/sp-action-bar.js';
-import '@spectrum-web-components/checkbox/sp-checkbox.js';
+import '@spectrum-web-components/field-label/sp-field-label.js';
 import '@spectrum-web-components/action-button/sp-action-button.js';
 import '@spectrum-web-components/action-group/sp-action-group.js';
 import '@spectrum-web-components/icons-workflow/icons/sp-icon-edit.js';
@@ -27,7 +27,23 @@ export default {
 export const Default = (): TemplateResult => {
     return html`
         <sp-action-bar open>
-            <sp-checkbox indeterminate>228 Selected</sp-checkbox>
+            <sp-field-label>2 selected</sp-field-label>
+            <sp-action-group quiet>
+                <sp-action-button>
+                    <sp-icon-edit slot="icon" label="Edit"></sp-icon-edit>
+                </sp-action-button>
+                <sp-action-button>
+                    <sp-icon-more slot="icon" label="More"></sp-icon-more>
+                </sp-action-button>
+            </sp-action-group>
+        </sp-action-bar>
+    `;
+};
+
+export const emphasized = (): TemplateResult => {
+    return html`
+        <sp-action-bar open emphasized>
+            <sp-field-label>2 selected</sp-field-label>
             <sp-action-group quiet>
                 <sp-action-button>
                     <sp-icon-edit slot="icon" label="Edit"></sp-icon-edit>

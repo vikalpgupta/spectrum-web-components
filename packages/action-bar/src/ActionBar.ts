@@ -18,6 +18,7 @@ import {
 } from '@spectrum-web-components/base';
 import { property } from '@spectrum-web-components/base/src/decorators.js';
 import '@spectrum-web-components/popover/sp-popover.js';
+import '@spectrum-web-components/button/sp-close-button.js';
 import actionBarStyles from './action-bar.css.js';
 export const actionBarVariants = ['sticky', 'fixed'];
 
@@ -29,6 +30,9 @@ export class ActionBar extends SpectrumElement {
     public static override get styles(): CSSResultArray {
         return [actionBarStyles];
     }
+
+    @property({ type: Boolean, reflect: true })
+    public emphasized = false;
 
     /**
      * When `flexible` the action bar sizes itself to its content
@@ -71,6 +75,7 @@ export class ActionBar extends SpectrumElement {
     public override render(): TemplateResult {
         return html`
             <sp-popover ?open=${this.open} id="popover">
+                <sp-close-button class="close-button"></sp-close-button>
                 <slot></slot>
             </sp-popover>
         `;
