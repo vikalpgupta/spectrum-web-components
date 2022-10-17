@@ -32,6 +32,28 @@ const config = {
                     type: 'boolean',
                     name: 'selects',
                 },
+                {
+                    type: 'enum',
+                    name: 'size',
+                    values: [
+                        {
+                            name: 's',
+                            selector: '.spectrum-Menu--sizeS',
+                        },
+                        {
+                            name: 'm',
+                            selector: '.spectrum-Menu--sizeM',
+                        },
+                        {
+                            name: 'l',
+                            selector: '.spectrum-Menu--sizeL',
+                        },
+                        {
+                            name: 'xl',
+                            selector: '.spectrum-Menu--sizeXL',
+                        },
+                    ],
+                },
             ],
             slots: [
                 {

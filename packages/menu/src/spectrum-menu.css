@@ -11,7 +11,7 @@ governing permissions and limitations under the License.
 */
 
 /* THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
-.spectrum-Menu--sizeS {
+:host([size='s']) {
     --spectrum-menu-item-min-height: var(
         --spectrum-component-height-75
     ); /* .spectrum-Menu--sizeS */
@@ -40,7 +40,7 @@ governing permissions and limitations under the License.
     --spectrum-menu-item-checkmark-height: 10px;
     --spectrum-menu-item-checkmark-width: 10px;
 }
-.spectrum-Menu--sizeM {
+:host([size='m']) {
     --spectrum-menu-item-min-height: var(
         --spectrum-component-height-100
     ); /* .spectrum-Menu--sizeM */
@@ -69,7 +69,7 @@ governing permissions and limitations under the License.
     --spectrum-menu-item-checkmark-height: 10px;
     --spectrum-menu-item-checkmark-width: 10px;
 }
-.spectrum-Menu--sizeL {
+:host([size='l']) {
     --spectrum-menu-item-min-height: var(
         --spectrum-component-height-200
     ); /* .spectrum-Menu--sizeL */
@@ -98,7 +98,7 @@ governing permissions and limitations under the License.
     --spectrum-menu-item-checkmark-height: 12px;
     --spectrum-menu-item-checkmark-width: 12px;
 }
-.spectrum-Menu--sizeXL {
+:host([size='xl']) {
     --spectrum-menu-item-min-height: var(
         --spectrum-component-height-300
     ); /* .spectrum-Menu--sizeXL */
