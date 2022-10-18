@@ -28,18 +28,6 @@ governing permissions and limitations under the License.
     inset: 0;
 }
 
-::slotted([slot='value']) {
-    align-self: start;
-}
-
-:host([dir='ltr']) ::slotted([slot='value']) {
-    margin-left: var(--spectrum-listitem-texticon-icon-gap);
-}
-
-:host([dir='rtl']) ::slotted([slot='value']) {
-    margin-right: var(--spectrum-listitem-texticon-icon-gap);
-}
-
 :host([dir='ltr']) [icon-only]::slotted(:last-of-type) {
     margin-right: auto;
 }

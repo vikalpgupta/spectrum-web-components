@@ -67,7 +67,7 @@ governing permissions and limitations under the License.
 :host #label {
     grid-area: submenuItemLabelArea; /* .spectrum-Menu-item .spectrum-Menu-item .spectrum-Menu-itemLabel */
 }
-:host .spectrum-Menu-itemValue {
+:host ::slotted([slot='value']) {
     grid-area: submenuItemValueArea; /* .spectrum-Menu-item .spectrum-Menu-item .spectrum-Menu-itemValue */
 }
 :host(.focus-visible),
@@ -176,9 +176,9 @@ governing permissions and limitations under the License.
    * .spectrum-Menu-item:focus-visible .spectrum-Menu-itemDescription,
    * .spectrum-Menu-item.is-focused .spectrum-Menu-itemDescription */
 }
-:host(.focus-visible) .spectrum-Menu-itemValue,
-:host(:focus) .spectrum-Menu-itemValue,
-:host([focused]) .spectrum-Menu-itemValue {
+:host(.focus-visible) ::slotted([slot='value']),
+:host(:focus) ::slotted([slot='value']),
+:host([focused]) ::slotted([slot='value']) {
     color: var(
         --highcontrast-menu-item-value-color-focus,
         var(
@@ -189,9 +189,9 @@ governing permissions and limitations under the License.
    * .spectrum-Menu-item:focus-visible .spectrum-Menu-itemValue,
    * .spectrum-Menu-item.is-focused .spectrum-Menu-itemValue */
 }
-:host(:focus) .spectrum-Menu-itemValue,
-:host(:focus-visible) .spectrum-Menu-itemValue,
-:host([focused]) .spectrum-Menu-itemValue {
+:host(:focus) ::slotted([slot='value']),
+:host(:focus-visible) ::slotted([slot='value']),
+:host([focused]) ::slotted([slot='value']) {
     color: var(
         --highcontrast-menu-item-value-color-focus,
         var(
@@ -349,7 +349,7 @@ governing permissions and limitations under the License.
         )
     ); /* .spectrum-Menu-item:hover .spectrum-Menu-itemDescription */
 }
-:host(:hover) .spectrum-Menu-itemValue {
+:host(:hover) ::slotted([slot='value']) {
     color: var(
         --highcontrast-menu-item-value-color-hover,
         var(
@@ -421,7 +421,7 @@ governing permissions and limitations under the License.
         )
     ); /* .spectrum-Menu-item:active .spectrum-Menu-itemIcon:not(.spectrum-Menu-chevron, .spectrum-Menu-checkmark) */
 }
-:host(:active) .spectrum-Menu-itemValue {
+:host(:active) ::slotted([slot='value']) {
     color: var(
         --highcontrast-menu-item-value-color-down,
         var(
@@ -522,7 +522,7 @@ governing permissions and limitations under the License.
     );
     grid-area: labelArea; /* .spectrum-Menu-itemLabel */
 }
-.spectrum-Menu-itemValue {
+::slotted([slot='value']) {
     grid-area: valueArea; /* .spectrum-Menu-itemValue */
 }
 .spectrum-Menu-itemActions {
@@ -594,13 +594,13 @@ governing permissions and limitations under the License.
 #label {
     /* .spectrum-Menu-itemLabel */
 }
-#label + .spectrum-Menu-itemValue {
+#label + ::slotted([slot='value']) {
     margin-inline-start: var(
         --mod-menu-item-label-to-value-area-min-spacing,
         var(--spectrum-menu-item-label-to-value-area-min-spacing)
     ); /* .spectrum-Menu-itemLabel+.spectrum-Menu-itemValue */
 }
-.spectrum-Menu-itemValue {
+::slotted([slot='value']) {
     color: var(
         --highcontrast-menu-item-value-color-default,
         var(

@@ -141,6 +141,10 @@ const config = {
                     name: 'icon',
                     selector: '.spectrum-Icon',
                 },
+                {
+                    name: 'value',
+                    selector: '.spectrum-Menu-itemValue',
+                },
             ],
             exclude: [/\.spectrum-Menu(?!-[item|itemLabel|checkmark|chevron])/],
             complexSelectors: [
