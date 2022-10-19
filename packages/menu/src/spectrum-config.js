@@ -96,6 +96,7 @@ const config = {
             },
             replace: {
                 '.spectrum-Menu-item .spectrum-Menu-item': '#TODO',
+                '.spectrum-Icon + .spectrum-Menu-itemLabel': '.icon ~ #label',
             },
             attributes: [
                 {

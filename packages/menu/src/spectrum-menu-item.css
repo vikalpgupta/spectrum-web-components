@@ -555,6 +555,7 @@ governing permissions and limitations under the License.
    * .spectrum-Menu-item:not(.is-selected) .spectrum-Menu-checkmark+.spectrum-Menu-itemLabel */
 }
 .icon + #label,
+.icon ~ #label,
 .icon ~ .spectrum-Menu-itemDescription {
     margin-inline-start: var(
         --mod-menu-item-label-text-to-visual,
