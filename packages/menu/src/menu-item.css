@@ -69,6 +69,7 @@ governing permissions and limitations under the License.
     display: var(--swc-checkmark-display);
 }
 
+/* workaround for the inability to check state outside of the shadow root */
 :host([selected]) {
-    padding-inline-start: var(--swc-item-padding-inline-start);
+    padding-inline-start: var(--swc-item-padding-inline-start) !important;
 }
