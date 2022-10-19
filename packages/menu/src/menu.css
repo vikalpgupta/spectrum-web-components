@@ -47,3 +47,15 @@ governing permissions and limitations under the License.
 
     --swc-menu-width: 100%;
 }
+
+:host([selects]) {
+    --swc-checkmark-display: none;
+}
+
+:host([selects]) ::slotted([selected]) {
+    --swc-item-padding-inline-start: var(
+        --mod-menu-item-label-inline-edge-to-content,
+        var(--spectrum-menu-item-label-inline-edge-to-content)
+    );
+    --swc-checkmark-display: block;
+}

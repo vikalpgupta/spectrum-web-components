@@ -467,9 +467,21 @@ class SpectrumProcessor {
                 }
             }
         }
+
         if (!skipAll) {
             for (let selector of rule.selectors) {
                 let shouldStartWithHost = true;
+
+                // preprocess simple string replacements
+                Object.entries(this.component.replace ?? {}).forEach(
+                    ([target, replacement]) => {
+                        if (selector.includes(target)) {
+                            selector = selector.replace(target, replacement);
+                            shouldStartWithHost = false;
+                        }
+                    }
+                );
+
                 if (startsWithDir.test(selector)) {
                     const mutateSelector = (dir) => {
                         selector = selector.replace(`[dir="${dir}"] `, '');

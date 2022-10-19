@@ -94,6 +94,9 @@ const config = {
             host: {
                 selector: '.spectrum-Menu-item',
             },
+            replace: {
+                '.spectrum-Menu-item .spectrum-Menu-item': '#TODO',
+            },
             attributes: [
                 {
                     type: 'boolean',

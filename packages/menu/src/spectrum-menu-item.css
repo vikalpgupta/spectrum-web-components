@@ -54,20 +54,22 @@ governing permissions and limitations under the License.
     text-decoration: none;
 }
 :host {
-    grid-template-areas: '.            chevronAreaCollapsible .             iconArea sectionHeadingArea  .         .           .                 ' 'selectedArea chevronAreaCollapsible checkmarkArea iconArea labelArea        valueArea actionsArea chevronAreaDrillIn' '.            .                      .             .        descriptionArea  .         .           .                 ' '.            .                      .             .        submenuArea      .         .           .                 '; /* .spectrum-Menu-item,
+    display: grid; /* .spectrum-Menu-item,
    * .spectrum-Menu li:not(.spectrum-Menu-item, .spectrum-Menu-divider) */
+    grid-template-areas: '.            chevronAreaCollapsible .             iconArea sectionHeadingArea  .         .           .                 ' 'selectedArea chevronAreaCollapsible checkmarkArea iconArea labelArea        valueArea actionsArea chevronAreaDrillIn' '.            .                      .             .        descriptionArea  .         .           .                 ' '.            .                      .             .        submenuArea      .         .           .                 ';
     grid-template-columns: auto auto auto auto 1fr auto auto auto;
+    grid-template-rows: 1fr auto;
 }
-:host {
+#TODO {
     display: grid; /* .spectrum-Menu-item .spectrum-Menu-item */
     grid-template-areas: 'submenuItemLabelArea submenuItemValueArea';
     grid-template-columns: auto auto;
     grid-template-rows: 1fr auto;
 }
-:host #label {
+#TODO #label {
     grid-area: submenuItemLabelArea; /* .spectrum-Menu-item .spectrum-Menu-item .spectrum-Menu-itemLabel */
 }
-:host ::slotted([slot='value']) {
+#TODO ::slotted([slot='value']) {
     grid-area: submenuItemValueArea; /* .spectrum-Menu-item .spectrum-Menu-item .spectrum-Menu-itemValue */
 }
 :host(.focus-visible),

@@ -268,11 +268,6 @@ export class MenuItem extends LikeAnchor(Focusable) {
 
     protected override render(): TemplateResult {
         return html`
-            <slot name="icon"></slot>
-            <div id="label">
-                <slot id="slot"></slot>
-            </div>
-            <slot name="value"></slot>
             ${this.selected
                 ? html`
                       <sp-icon-checkmark100
@@ -281,6 +276,11 @@ export class MenuItem extends LikeAnchor(Focusable) {
                       ></sp-icon-checkmark100>
                   `
                 : html``}
+            <slot name="icon"></slot>
+            <div id="label">
+                <slot id="slot"></slot>
+            </div>
+            <slot name="value"></slot>
             ${this.href && this.href.length > 0
                 ? super.renderAnchor({
                       id: 'button',
