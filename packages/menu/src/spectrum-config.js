@@ -94,6 +94,7 @@ const config = {
             host: {
                 selector: '.spectrum-Menu-item',
             },
+            // TODO: these are hacks that we could ideally get rid of
             replace: {
                 '.spectrum-Menu-item .spectrum-Menu-item': '#TODO',
                 '.spectrum-Icon + .spectrum-Menu-itemLabel': '.icon ~ #label',

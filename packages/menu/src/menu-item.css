@@ -58,10 +58,24 @@ governing permissions and limitations under the License.
 } */
 
 .checkmark {
+    /* workaround for the inability to check state outside of the shadow root */
     display: var(--swc-checkmark-display);
+
+    /*  workaround for order & style.
+    .spectrum-Menu-checkmark is specified after .spectrum-Menu-itemIcon in Spectrum CSS,
+    but that order can't be guaranteed to be preserved here.
+    Spectrum CSS also uses fill (whereas sp-icon uses color).
+    This ensures that checkmarks get the right fill color. */
+    color: var(
+        --highcontrast-menu-checkmark-icon-color-default,
+        var(
+            --mod-menu-checkmark-icon-color-default,
+            var(--spectrum-menu-checkmark-icon-color-default)
+        )
+    ) !important;
 }
 
-/* workaround for the inability to check state outside of the shadow root */
 :host([selected]) {
+    /* workaround for the inability to check state outside of the shadow root */
     padding-inline-start: var(--swc-item-padding-inline-start) !important;
 }
