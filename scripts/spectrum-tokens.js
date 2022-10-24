@@ -60,6 +60,7 @@ const targetHost = (css) => {
         /^.spectrum--light, .spectrum--lightest {/g,
         ':host, :root {'
     );
+    css = css.replaceAll(/.spectrum--light {/g, ':host, :root {');
     css = css.replaceAll(/.spectrum--dark {/g, ':host, :root {');
     css = css.replaceAll(/.spectrum--darkest {/g, ':host, :root {');
     css = css.replaceAll(/.spectrum--darkest {/g, ':host, :root {');
