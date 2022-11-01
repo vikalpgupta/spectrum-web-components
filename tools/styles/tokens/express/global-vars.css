@@ -390,3 +390,8 @@ governing permissions and limitations under the License.
         -1px * var(--spectrum-spacing-50)
     );
 }
+
+:host,
+:root {
+    --system-spectrum-popover-border-width: 0;
+}
