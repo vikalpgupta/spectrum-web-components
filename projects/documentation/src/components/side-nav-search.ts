@@ -26,7 +26,7 @@ import { Search } from '@spectrum-web-components/search';
 import { Popover } from '@spectrum-web-components/popover';
 import type { ResultGroup } from './search-index.js';
 import { Menu } from '@spectrum-web-components/menu';
-import { openOverlay } from '@spectrum-web-components/overlay';
+import '@spectrum-web-components/overlay/sp-overlay.js';
 import '@spectrum-web-components/search/sp-search.js';
 
 const stopPropagation = (event: Event): void => event.stopPropagation();
@@ -37,8 +37,8 @@ export class SearchComponent extends LitElement {
 
     private searchResultsPopover: Popover | null = null;
 
-    @query('sp-popover')
-    private popoverEl?: Popover;
+    @property({ type: Boolean })
+    isSearching = false;
 
     @query('sp-search')
     private searchField!: Search;
@@ -57,10 +57,10 @@ export class SearchComponent extends LitElement {
         this.searchField.focus();
     }
 
-    private handleSearchInput(event: InputEvent) {
+    private async handleSearchInput(event: InputEvent) {
         if (event.target) {
             const { value } = event.target as Search;
-            this.updateSearchResults(value);
+            this.isSearching = await this.updateSearchResults(value);
         }
     }
 
@@ -115,6 +115,7 @@ export class SearchComponent extends LitElement {
         }
     }
 
+<<<<<<< HEAD
     private async openPopover() {
         if (!this.popoverEl) return;
 
@@ -133,6 +134,8 @@ export class SearchComponent extends LitElement {
         await this.searchResultsPopover.updateComplete;
     }
 
+=======
+>>>>>>> fdac7efd3 (feat: new Overlay API draft)
     private closePopover() {
         if (this.closeOverlay) {
             this.closeOverlay();
@@ -166,8 +169,6 @@ export class SearchComponent extends LitElement {
             ({ search }) => search
         );
         this.results = await search(searchParam);
-
-        await this.openPopover();
 
         return this.results.length > 0;
     }
@@ -232,29 +233,35 @@ export class SearchComponent extends LitElement {
                     @submit=${this.handleSubmit}
                     autocomplete="off"
                 ></sp-search>
-                <sp-popover
-                    id="search-results-menu"
-                    open
-                    tabindex="0"
-                    @sp-overlay-closed=${this.handleClosed}
-                    @keydown=${this.handlePopoverKeydown}
+                <sp-overlay
+                    ?open=${this.isSearching}
+                    .type=${'auto'}
+                    .placement=${'bottom-start'}
+                    .triggerElement=${this.searchField}
                 >
-                    <style>
-                        #search-results-menu {
-                            width: 250px;
-                            max-height: calc(100vh - 200px);
-                            display: flex;
-                            flex-direction: column;
-                        }
+                    <sp-popover
+                        id="search-results-menu"
+                        tabindex="0"
+                        @sp-overlay-closed=${this.handleClosed}
+                        @keydown=${this.handlePopoverKeydown}
+                    >
+                        <style>
+                            #search-results-menu {
+                                width: 250px;
+                                max-height: calc(100vh - 200px);
+                                display: flex;
+                                flex-direction: column;
+                            }
 
-                        sp-illustrated-message {
-                            flex: 1 1;
-                            margin-bottom: 2em;
-                            color: var(--spectrum-global-color-gray-800);
-                        }
-                    </style>
-                    ${this.renderResults()}
-                </sp-popover>
+                            sp-illustrated-message {
+                                flex: 1 1;
+                                margin-bottom: 2em;
+                                color: var(--spectrum-global-color-gray-800);
+                            }
+                        </style>
+                        ${this.renderResults()}
+                    </sp-popover>
+                </sp-overlay>
                 <span id="focus-return" tabindex="-1"></span>
             </div>
         `;

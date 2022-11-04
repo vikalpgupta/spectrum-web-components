@@ -1,0 +1,262 @@
+---
+layout: partial.njk
+title: 'Menu: Spectrum Web Components'
+displayName: Menu
+componentName: menu
+componentHeading: sp-menu
+partType: api
+tags:
+- menu
+---
+
+### Attributes and Properties
+
+<div class="table-container">
+<table class="spectrum-Table spectrum-Table--sizeM">
+<thead class="spectrum-Table-head">
+<tr>
+
+<th class="spectrum-Table-headCell">
+Property
+</th>
+
+<th class="spectrum-Table-headCell">
+Attribute
+</th>
+
+<th class="spectrum-Table-headCell">
+Type
+</th>
+
+<th class="spectrum-Table-headCell">
+Default
+</th>
+
+<th class="spectrum-Table-headCell">
+Description
+</th>
+
+</tr>
+</thead>
+<tbody class="spectrum-Table-body">
+
+<tr class="spectrum-Table-row" id="attributes and properties_dir" data-name="Property" data-value="dir">
+
+<td class="spectrum-Table-cell">
+<code>dir</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>dir</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>'ltr' | 'rtl'</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>'ltr'</code>
+</td>
+
+<td class="spectrum-Table-cell">
+
+</td>
+
+</tr>
+
+<tr class="spectrum-Table-row" id="attributes and properties_label" data-name="Property" data-value="label">
+
+<td class="spectrum-Table-cell">
+<code>label</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>label</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>string</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>''</code>
+</td>
+
+<td class="spectrum-Table-cell">
+
+</td>
+
+</tr>
+
+<tr class="spectrum-Table-row" id="attributes and properties_selects" data-name="Property" data-value="selects">
+
+<td class="spectrum-Table-cell">
+<code>selects</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>selects</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>undefined | 'inherit' | 'single' | 'multiple'</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code></code>
+</td>
+
+<td class="spectrum-Table-cell">
+whether the element has a specific selection algorithm that it applies to its item descendants. `single` allows only one descendent to be selected at a time. `multiple` allows many descendants to be selected. `inherit` will be applied dynamically when an ancestor of this element is actively managing the selection of its descendents. When the `selects` attribute is not present a `value` will not be maintained and the Menu Item children of this Menu will not have their `selected` state managed.
+</td>
+
+</tr>
+
+<tr class="spectrum-Table-row" id="attributes and properties_value" data-name="Property" data-value="value">
+
+<td class="spectrum-Table-cell">
+<code>value</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>value</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>string</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>''</code>
+</td>
+
+<td class="spectrum-Table-cell">
+
+</td>
+
+</tr>
+
+<tr class="spectrum-Table-row" id="attributes and properties_value-separator" data-name="Property" data-value="valueSeparator">
+
+<td class="spectrum-Table-cell">
+<code>valueSeparator</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>value-separator</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>string</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>','</code>
+</td>
+
+<td class="spectrum-Table-cell">
+
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+    
+
+### Slots
+
+<div class="table-container">
+<table class="spectrum-Table spectrum-Table--sizeM">
+<thead class="spectrum-Table-head">
+<tr>
+
+<th class="spectrum-Table-headCell">
+Name
+</th>
+
+<th class="spectrum-Table-headCell">
+Description
+</th>
+
+</tr>
+</thead>
+<tbody class="spectrum-Table-body">
+
+<tr class="spectrum-Table-row" id="slots_" data-name="Slot name" data-value="default slot">
+
+<td class="spectrum-Table-cell">
+<code>default slot</code>
+</td>
+
+<td class="spectrum-Table-cell">
+menu items to be listed in the menu
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+    
+
+### Events
+
+<div class="table-container">
+<table class="spectrum-Table spectrum-Table--sizeM">
+<thead class="spectrum-Table-head">
+<tr>
+
+<th class="spectrum-Table-headCell">
+Name
+</th>
+
+<th class="spectrum-Table-headCell">
+Type
+</th>
+
+<th class="spectrum-Table-headCell">
+Description
+</th>
+
+</tr>
+</thead>
+<tbody class="spectrum-Table-body">
+
+<tr class="spectrum-Table-row" id="events_change" data-name="Event name" data-value="change">
+
+<td class="spectrum-Table-cell">
+<code>change</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>Event</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>Announces that the `value` of the element has changed</code>
+</td>
+
+</tr>
+
+<tr class="spectrum-Table-row" id="events_close" data-name="Event name" data-value="close">
+
+<td class="spectrum-Table-cell">
+<code>close</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code>Event</code>
+</td>
+
+<td class="spectrum-Table-cell">
+<code></code>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+    

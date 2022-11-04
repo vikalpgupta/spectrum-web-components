@@ -83,7 +83,7 @@ export const buildPackage = async (paths) => {
                 define: { 'window.__swc.DEBUG': true },
                 outExtension: { '.js': '.dev.js' },
                 plugins: devPlugins,
-            }).catch(() => process.exit(1))
+            })
         );
     }
     const prodConfig = {
@@ -98,7 +98,7 @@ export const buildPackage = async (paths) => {
                 entryPoints: prodPath,
                 minify: true,
                 target: ['es2018'],
-            }).catch(() => process.exit(1))
+            })
         );
     }
     // Do not minify tools files, especially stories as it messes up the exports
@@ -108,9 +108,12 @@ export const buildPackage = async (paths) => {
             build({
                 ...prodConfig,
                 entryPoints: toolPaths,
-            }).catch(() => process.exit(1))
+            })
         );
     }
+    await Promise.all(builds).catch(() => {
+        process.exit(1);
+    })
 };
 
 export const watchFiles = async () => {

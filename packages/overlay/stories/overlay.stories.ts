@@ -178,7 +178,6 @@ const template = ({
                             slot="click-content"
                             placement="bottom"
                             tip
-                            open
                         >
                             <div class="options-popover-content">
                                 Another Popover
@@ -228,12 +227,10 @@ class ScrollForcer extends HTMLElement {
     }
 
     async setup(): Promise<void> {
-        await nextFrame();
-        await nextFrame();
-
-        this.previousElementSibling?.addEventListener(
-            'sp-opened',
+        this.addEventListener(
+            'show',
             () => {
+                console.log('show');
                 this.doScroll();
             },
             { once: true }
@@ -285,8 +282,9 @@ clickContentClosedOnScroll.decorators = [
                 height: auto !important;
             }
         </style>
-        ${story()}
-        <scroll-forcer></scroll-forcer>
+        <scroll-forcer>
+            ${story()}
+        </scroll-forcer>
     `,
 ];
 
@@ -337,7 +335,7 @@ export const inline = (): TemplateResult => {
     return html`
         <overlay-trigger type="inline">
             <sp-button slot="trigger">Open</sp-button>
-            <sp-overlay slot="click-content">
+            <div slot="click-content">
                 <sp-button
                     @click=${(event: Event & { target: HTMLElement }): void => {
                         event.target.dispatchEvent(closeEvent);
@@ -345,7 +343,7 @@ export const inline = (): TemplateResult => {
                 >
                     Close
                 </sp-button>
-            </sp-overlay>
+            </div>
         </overlay-trigger>
         ${extraText}
     `;
@@ -356,7 +354,7 @@ export const replace = (): TemplateResult => {
     return html`
         <overlay-trigger type="replace">
             <sp-button slot="trigger">Open</sp-button>
-            <sp-overlay slot="click-content">
+            <div slot="click-content">
                 <sp-button
                     @click=${(event: Event & { target: HTMLElement }): void => {
                         event.target.dispatchEvent(closeEvent);
@@ -364,7 +362,7 @@ export const replace = (): TemplateResult => {
                 >
                     Close
                 </sp-button>
-            </sp-overlay>
+            </div>
         </overlay-trigger>
         ${extraText}
     `;
@@ -375,7 +373,7 @@ export const deep = (): TemplateResult => html`
         <sp-button variant="primary" slot="trigger">
             Open popover 1 with buttons + selfmanaged Tooltips
         </sp-button>
-        <sp-popover dialog slot="click-content" direction="bottom" tip open>
+        <sp-popover dialog slot="click-content" direction="bottom" tip>
             <sp-action-button>
                 <sp-tooltip self-managed placement="bottom" offset="0">
                     My Tooltip 1
@@ -395,7 +393,7 @@ export const deep = (): TemplateResult => html`
         <sp-button variant="primary" slot="trigger">
             Open popover 2 with buttons without ToolTips
         </sp-button>
-        <sp-popover dialog slot="click-content" direction="bottom" tip open>
+        <sp-popover dialog slot="click-content" direction="bottom" tip>
             <sp-action-button>X</sp-action-button>
             <sp-action-button>Y</sp-action-button>
         </sp-popover>
@@ -408,7 +406,7 @@ deep.swc_vrt = {
 export const modalLoose = (): TemplateResult => {
     const closeEvent = new Event('close', { bubbles: true, composed: true });
     return html`
-        <overlay-trigger type="modal" placement="none">
+        <overlay-trigger type="modal">
             <sp-button slot="trigger">Open</sp-button>
             <sp-dialog
                 size="s"
@@ -440,7 +438,7 @@ export const modalLoose = (): TemplateResult => {
 export const modalManaged = (): TemplateResult => {
     const closeEvent = new Event('close', { bubbles: true, composed: true });
     return html`
-        <overlay-trigger type="modal" placement="none">
+        <overlay-trigger type="modal">
             <sp-button slot="trigger">Open</sp-button>
             <sp-dialog-wrapper
                 underlay
@@ -823,7 +821,7 @@ export const complexModal = (): TemplateResult => {
                 --swc-test-duration: 1ms;
             }
         </style>
-        <overlay-trigger type="modal" placement="none" open="click">
+        <overlay-trigger type="modal" open="click">
             <sp-dialog-wrapper
                 slot="click-content"
                 headline="Dialog title"
@@ -855,7 +853,7 @@ complexModal.decorators = [complexModalDecorator];
 
 export const superComplexModal = (): TemplateResult => {
     return html`
-        <overlay-trigger type="modal" placement="none">
+        <overlay-trigger type="modal">
             <sp-button slot="trigger" variant="accent">Toggle Dialog</sp-button>
             <sp-popover dialog slot="click-content">
                 <overlay-trigger>

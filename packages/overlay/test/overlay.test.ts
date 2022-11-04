@@ -14,9 +14,9 @@ import '@spectrum-web-components/dialog/sp-dialog.js';
 import { Dialog } from '@spectrum-web-components/dialog';
 import '@spectrum-web-components/popover/sp-popover.js';
 import { Popover } from '@spectrum-web-components/popover';
-import { setViewport } from '@web/test-runner-commands';
+// import { setViewport } from '@web/test-runner-commands';
 import {
-    ActiveOverlay,
+    // ActiveOverlay,
     Overlay,
     OverlayTrigger,
     Placement,
@@ -35,7 +35,7 @@ import {
 import { sendKeys } from '@web/test-runner-commands';
 import {
     definedOverlayElement,
-    virtualElement,
+    // virtualElement,
 } from '../stories/overlay.stories';
 import { PopoverContent } from '../stories/overlay-story-components.js';
 import { sendMouse } from '../../../test/plugins/browser.js';
@@ -101,7 +101,7 @@ describe('Overlays', () => {
     });
 
     afterEach(() => {
-        openOverlays.map((close) => close());
+        openOverlays.map((overlay) => overlay());
         openOverlays = [];
     });
 
@@ -446,7 +446,7 @@ describe('Overlays', () => {
         content.textContent = textContent;
 
         const opened = oneEvent(el, 'sp-opened');
-        const closeOverlay = await Overlay.open(el, 'click', content, {
+        const overlay = await Overlay.open(el, 'click', content, {
             placement: 'bottom',
         });
         await opened;
@@ -460,7 +460,7 @@ describe('Overlays', () => {
         }
 
         const closed = oneEvent(el, 'sp-closed');
-        closeOverlay();
+        overlay();
         await closed;
 
         activeOverlay = document.querySelector('active-overlay');
@@ -471,139 +471,139 @@ describe('Overlays', () => {
     });
 });
 describe('Overlay - type="modal"', () => {
-    it('closes on `contextmenu` and passes that to the underlying page', async () => {
-        await fixture<HTMLDivElement>(html`
-            ${virtualElement({
-                ...virtualElement.args,
-                offset: 6,
-            })}
-        `);
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        let opened = oneEvent(document, 'sp-opened');
-        // Right click to open "context menu" overlay.
-        sendMouse({
-            steps: [
-                {
-                    type: 'move',
-                    position: [width / 2 + 50, height / 2],
-                },
-                {
-                    type: 'click',
-                    options: {
-                        button: 'right',
-                    },
-                    position: [width / 2 + 50, height / 2],
-                },
-            ],
-        });
-        await opened;
-        const firstOverlay = document.querySelector(
-            'active-overlay'
-        ) as ActiveOverlay;
-        const firstHeadline = firstOverlay.querySelector(
-            '[slot="header"]'
-        ) as HTMLSpanElement;
-        expect(firstOverlay, 'first overlay').to.not.be.null;
-        expect(firstOverlay.isConnected).to.be.true;
-        expect(firstHeadline.textContent).to.equal('Menu source: end');
-        let closed = oneEvent(document, 'sp-closed');
-        opened = oneEvent(document, 'sp-opened');
-        // Right click to out of the "context menu" overlay to both close
-        // the first overlay and have the event passed to the surfacing page
-        // in order to open a subsequent "context menu" overlay.
-        sendMouse({
-            steps: [
-                {
-                    type: 'move',
-                    position: [width / 4, height / 4],
-                },
-                {
-                    type: 'click',
-                    options: {
-                        button: 'right',
-                    },
-                    position: [width / 4, height / 4],
-                },
-            ],
-        });
-        await closed;
-        await opened;
-        const secondOverlay = document.querySelector(
-            'active-overlay'
-        ) as ActiveOverlay;
-        const secondHeadline = secondOverlay.querySelector(
-            '[slot="header"]'
-        ) as HTMLSpanElement;
-        expect(secondOverlay, 'second overlay').to.not.be.null;
-        expect(secondOverlay).to.not.equal(firstOverlay);
-        expect(firstOverlay.isConnected).to.be.false;
-        expect(secondOverlay.isConnected).to.be.true;
-        expect(secondHeadline.textContent).to.equal('Menu source: start');
-        closed = oneEvent(document, 'sp-closed');
-        sendMouse({
-            steps: [
-                {
-                    type: 'move',
-                    position: [width / 8, height / 8],
-                },
-                {
-                    type: 'click',
-                    position: [width / 8, height / 8],
-                },
-            ],
-        });
-        await closed;
-        await nextFrame();
-    });
+    // it('closes on `contextmenu` and passes that to the underlying page', async () => {
+    //     await fixture<HTMLDivElement>(html`
+    //         ${virtualElement({
+    //             ...virtualElement.args,
+    //             offset: 6,
+    //         })}
+    //     `);
+    //     const width = window.innerWidth;
+    //     const height = window.innerHeight;
+    //     let opened = oneEvent(document, 'sp-opened');
+    //     // Right click to open "context menu" overlay.
+    //     sendMouse({
+    //         steps: [
+    //             {
+    //                 type: 'move',
+    //                 position: [width / 2 + 50, height / 2],
+    //             },
+    //             {
+    //                 type: 'click',
+    //                 options: {
+    //                     button: 'right',
+    //                 },
+    //                 position: [width / 2 + 50, height / 2],
+    //             },
+    //         ],
+    //     });
+    //     await opened;
+    //     const firstOverlay = document.querySelector(
+    //         'active-overlay'
+    //     ) as ActiveOverlay;
+    //     const firstHeadline = firstOverlay.querySelector(
+    //         '[slot="header"]'
+    //     ) as HTMLSpanElement;
+    //     expect(firstOverlay, 'first overlay').to.not.be.null;
+    //     expect(firstOverlay.isConnected).to.be.true;
+    //     expect(firstHeadline.textContent).to.equal('Menu source: end');
+    //     let closed = oneEvent(document, 'sp-closed');
+    //     opened = oneEvent(document, 'sp-opened');
+    //     // Right click to out of the "context menu" overlay to both close
+    //     // the first overlay and have the event passed to the surfacing page
+    //     // in order to open a subsequent "context menu" overlay.
+    //     sendMouse({
+    //         steps: [
+    //             {
+    //                 type: 'move',
+    //                 position: [width / 4, height / 4],
+    //             },
+    //             {
+    //                 type: 'click',
+    //                 options: {
+    //                     button: 'right',
+    //                 },
+    //                 position: [width / 4, height / 4],
+    //             },
+    //         ],
+    //     });
+    //     await closed;
+    //     await opened;
+    //     const secondOverlay = document.querySelector(
+    //         'active-overlay'
+    //     ) as ActiveOverlay;
+    //     const secondHeadline = secondOverlay.querySelector(
+    //         '[slot="header"]'
+    //     ) as HTMLSpanElement;
+    //     expect(secondOverlay, 'second overlay').to.not.be.null;
+    //     expect(secondOverlay).to.not.equal(firstOverlay);
+    //     expect(firstOverlay.isConnected).to.be.false;
+    //     expect(secondOverlay.isConnected).to.be.true;
+    //     expect(secondHeadline.textContent).to.equal('Menu source: start');
+    //     closed = oneEvent(document, 'sp-closed');
+    //     sendMouse({
+    //         steps: [
+    //             {
+    //                 type: 'move',
+    //                 position: [width / 8, height / 8],
+    //             },
+    //             {
+    //                 type: 'click',
+    //                 position: [width / 8, height / 8],
+    //             },
+    //         ],
+    //     });
+    //     await closed;
+    //     await nextFrame();
+    // });
 
-    it('does not open content off of the viewport', async () => {
-        await fixture<HTMLDivElement>(html`
-            ${virtualElement({
-                ...virtualElement.args,
-                offset: 6,
-            })}
-        `);
+    // it('does not open content off of the viewport', async () => {
+    //     await fixture<HTMLDivElement>(html`
+    //         ${virtualElement({
+    //             ...virtualElement.args,
+    //             offset: 6,
+    //         })}
+    //     `);
 
-        await setViewport({ width: 360, height: 640 });
-        // Allow viewport update to propagate.
-        await nextFrame();
+    //     await setViewport({ width: 360, height: 640 });
+    //     // Allow viewport update to propagate.
+    //     await nextFrame();
 
-        const opened = oneEvent(document, 'sp-opened');
-        // Right click to open "context menu" overlay.
-        sendMouse({
-            steps: [
-                {
-                    type: 'move',
-                    position: [270, 10],
-                },
-                {
-                    type: 'click',
-                    options: {
-                        button: 'right',
-                    },
-                    position: [270, 10],
-                },
-            ],
-        });
-        await opened;
+    //     const opened = oneEvent(document, 'sp-opened');
+    //     // Right click to open "context menu" overlay.
+    //     sendMouse({
+    //         steps: [
+    //             {
+    //                 type: 'move',
+    //                 position: [270, 10],
+    //             },
+    //             {
+    //                 type: 'click',
+    //                 options: {
+    //                     button: 'right',
+    //                 },
+    //                 position: [270, 10],
+    //             },
+    //         ],
+    //     });
+    //     await opened;
 
-        const activeOverlay = document.querySelector(
-            'active-overlay'
-        ) as ActiveOverlay;
+    //     const activeOverlay = document.querySelector(
+    //         'active-overlay'
+    //     ) as ActiveOverlay;
 
-        expect(activeOverlay.placement).to.equal('right-start');
-        expect(activeOverlay.getAttribute('actual-placement')).to.equal(
-            'bottom'
-        );
+    //     expect(activeOverlay.placement).to.equal('right-start');
+    //     expect(activeOverlay.getAttribute('actual-placement')).to.equal(
+    //         'bottom'
+    //     );
 
-        const closed = oneEvent(document, 'sp-closed');
-        sendKeys({
-            press: 'Escape',
-        });
-        await closed;
-        await nextFrame();
-    });
+    //     const closed = oneEvent(document, 'sp-closed');
+    //     sendKeys({
+    //         press: 'Escape',
+    //     });
+    //     await closed;
+    //     await nextFrame();
+    // });
 
     it('opens children in the modal stack through shadow roots', async () => {
         const el = await fixture<OverlayTrigger>(definedOverlayElement());

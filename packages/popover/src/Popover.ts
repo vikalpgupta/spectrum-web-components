@@ -17,7 +17,10 @@ import {
     SpectrumElement,
     TemplateResult,
 } from '@spectrum-web-components/base';
-import { property } from '@spectrum-web-components/base/src/decorators.js';
+import {
+    property,
+    query,
+} from '@spectrum-web-components/base/src/decorators.js';
 import type {
     OverlayDisplayQueryDetail,
     Placement,
@@ -48,14 +51,17 @@ export class Popover extends SpectrumElement {
     public open = false;
 
     /**
-     * @type {"auto" | "auto-start" | "auto-end" | "top" | "bottom" | "right" | "left" | "top-start" | "top-end" | "bottom-start" | "bottom-end" | "right-start" | "right-end" | "left-start" | "left-end" | "none"}
+     * @type {"auto" | "auto-start" | "auto-end" | "top" | "bottom" | "right" | "left" | "top-start" | "top-end" | "bottom-start" | "bottom-end" | "right-start" | "right-end" | "left-start" | "left-end"}
      * @attr
      */
     @property({ reflect: true })
-    public placement: Placement = 'none';
+    public placement?: Placement;
 
     @property({ type: Boolean, reflect: true })
     public tip = false;
+
+    @query('#tip')
+    public tipElement!: HTMLSpanElement;
 
     protected renderTip(): TemplateResult {
         return html`

@@ -23,7 +23,7 @@ import {
 } from '@open-wc/testing';
 
 import {
-    ActiveOverlay,
+    // ActiveOverlay,
     OverlayTrigger,
     TriggerInteractions,
 } from '@spectrum-web-components/overlay';
@@ -32,7 +32,7 @@ import { Button } from '@spectrum-web-components/button';
 import '@spectrum-web-components/popover/sp-popover.js';
 import { Popover } from '@spectrum-web-components/popover';
 import '@spectrum-web-components/theme/sp-theme.js';
-import { Theme } from '@spectrum-web-components/theme';
+// import { Theme } from '@spectrum-web-components/theme';
 
 function pressKey(code: string): void {
     const up = new KeyboardEvent('keyup', {
@@ -649,52 +649,52 @@ export const runOverlayTriggerTests = (): void => {
                 });
                 await Promise.all(closes);
             });
-            it('acquires a `color` and `size` from `sp-theme`', async () => {
-                const el = await fixture<Theme>(html`
-                    <sp-theme color="dark">
-                        <sp-theme color="light">
-                            <overlay-trigger id="trigger" placement="top">
-                                <sp-button
-                                    id="outer-button"
-                                    variant="primary"
-                                    slot="trigger"
-                                >
-                                    Show Popover
-                                </sp-button>
-                                <sp-popover
-                                    id="outer-popover"
-                                    dialog
-                                    slot="click-content"
-                                    direction="bottom"
-                                    tip
-                                    open
-                                >
-                                    Popover content!
-                                </sp-popover>
-                            </overlay-trigger>
-                        </sp-theme>
-                    </sp-theme>
-                `);
+            // it('acquires a `color` and `size` from `sp-theme`', async () => {
+            //     const el = await fixture<Theme>(html`
+            //         <sp-theme color="dark">
+            //             <sp-theme color="light">
+            //                 <overlay-trigger id="trigger" placement="top">
+            //                     <sp-button
+            //                         id="outer-button"
+            //                         variant="primary"
+            //                         slot="trigger"
+            //                     >
+            //                         Show Popover
+            //                     </sp-button>
+            //                     <sp-popover
+            //                         id="outer-popover"
+            //                         dialog
+            //                         slot="click-content"
+            //                         direction="bottom"
+            //                         tip
+            //                         open
+            //                     >
+            //                         Popover content!
+            //                     </sp-popover>
+            //                 </overlay-trigger>
+            //             </sp-theme>
+            //         </sp-theme>
+            //     `);
 
-                await elementUpdated(el);
+            //     await elementUpdated(el);
 
-                expect(document.querySelector('active-overlay')).to.be.null;
+            //     expect(document.querySelector('active-overlay')).to.be.null;
 
-                const button = el.querySelector('sp-button') as Button;
-                const opened = oneEvent(button, 'sp-opened');
-                button.click();
-                await opened;
+            //     const button = el.querySelector('sp-button') as Button;
+            //     const opened = oneEvent(button, 'sp-opened');
+            //     button.click();
+            //     await opened;
 
-                await elementUpdated(el);
+            //     await elementUpdated(el);
 
-                const overlay = document.querySelector(
-                    'active-overlay'
-                ) as ActiveOverlay;
+            //     const overlay = document.querySelector(
+            //         'active-overlay'
+            //     ) as ActiveOverlay;
 
-                expect(overlay).to.exist;
-                expect(overlay.theme.color).to.not.equal('dark');
-                expect(overlay.theme.color).to.equal('light');
-            });
+            //     expect(overlay).to.exist;
+            //     expect(overlay.theme.color).to.not.equal('dark');
+            //     expect(overlay.theme.color).to.equal('light');
+            // });
             it('manages multiple layers of `type="modal"', async () => {
                 const el = await fixture(html`
                     <overlay-trigger type="modal" placement="none">

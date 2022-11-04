@@ -623,7 +623,26 @@ export class Menu extends SpectrumElement {
         if (item.menuData.focusRoot !== this) {
             return;
         }
-        item.focused = this.hasVisibleFocusInTree();
+        // when there is a flat tree, you may be able to find visible focus through it
+        let shouldVisuallyFocusItem = this.hasVisibleFocusInTree();
+        if (!shouldVisuallyFocusItem) {
+            // otherwise, see if any selection root is currently focused
+            // this may be needed when the Menu tree is constructed across <slot> elements
+            shouldVisuallyFocusItem = !!this.childItems.find((item) => {
+                const { selectionRoot } = item.menuData;
+                if (!selectionRoot) return false;
+                try {
+                    return (
+                        selectionRoot.matches(':focus-visible') ||
+                        selectionRoot.matches('.focus-visible')
+                    );
+                    /* c8 ignore next 3 */
+                } catch (error) {
+                    return selectionRoot.matches('.focus-visible');
+                }
+            });
+        }
+        item.focused = shouldVisuallyFocusItem;
         this.setAttribute('aria-activedescendant', item.id);
         if (
             item.menuData.selectionRoot &&

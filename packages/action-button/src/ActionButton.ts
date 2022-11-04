@@ -145,6 +145,11 @@ export class ActionButton extends SizedMixin(ButtonBase, {
                     },
                 })
             );
+            this.addEventListener(
+                'click',
+                (event: Event) => event.stopImmediatePropagation(),
+                { once: true }
+            );
         }, LONGPRESS_DURATION);
     }
 

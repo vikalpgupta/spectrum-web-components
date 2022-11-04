@@ -14,32 +14,32 @@ import { html, TemplateResult } from '@spectrum-web-components/base';
 import '@spectrum-web-components/dialog/sp-dialog-base.js';
 import '@spectrum-web-components/dialog/sp-dialog.js';
 import '@spectrum-web-components/button/sp-button.js';
-import '@spectrum-web-components/overlay/overlay-trigger.js';
+import '@spectrum-web-components/overlay/sp-overlay.js';
 import '@spectrum-web-components/checkbox/sp-checkbox.js';
 import { alertDestructive } from './dialog.stories.js';
 import { portrait } from './images.js';
-import { overlayTriggerDecorator } from './index.js';
 
 export default {
     title: 'Dialog Base',
     component: 'sp-dialog-base',
     decorators: [
-        (story: () => TemplateResult): TemplateResult => html`
-            <overlay-trigger type="modal" open="click" placement="none">
-                <sp-button slot="trigger" variant="primary">
+        (story: () => TemplateResult): TemplateResult => {
+            return html`
+                <sp-button variant="primary" id="trigger">
                     Toggle Dialog
                 </sp-button>
-                ${story()}
-            </overlay-trigger>
-        `,
-        overlayTriggerDecorator,
+                <sp-overlay type="modal" trigger="trigger@click" open>
+                    ${story()}
+                </sp-overlay>
+            `;
+        },
+        // overlayTriggerDecorator,
     ],
 };
 
 export const Slotted = (): TemplateResult => html`
     <sp-dialog-base
         underlay
-        slot="click-content"
         @click=${(event: Event) => {
             if ((event.target as HTMLElement).localName === 'sp-button') {
                 (event.target as HTMLElement).dispatchEvent(
@@ -56,7 +56,6 @@ export const disabledButton = (): TemplateResult => {
     return html`
         <sp-dialog-base
             underlay
-            slot="click-content"
             @click=${(event: Event) => {
                 if ((event.target as HTMLElement).localName === 'sp-button') {
                     (event.target as HTMLElement).dispatchEvent(
@@ -105,7 +104,6 @@ export const disabledButton = (): TemplateResult => {
 export const notAgain = (): TemplateResult => html`
     <sp-dialog-base
         underlay
-        slot="click-content"
         @click=${(event: Event) => {
             if ((event.target as HTMLElement).localName === 'sp-button') {
                 (event.target as HTMLElement).dispatchEvent(
@@ -132,7 +130,6 @@ export const notAgain = (): TemplateResult => html`
 export const moreCustom = (): TemplateResult => html`
     <sp-dialog-base
         underlay
-        slot="click-content"
         @click=${(event: Event) => {
             if ((event.target as HTMLElement).localName === 'sp-button') {
                 (event.target as HTMLElement).dispatchEvent(
@@ -179,7 +176,6 @@ export const moreCustom = (): TemplateResult => html`
 export const fullyCustom = (): TemplateResult => html`
     <sp-dialog-base
         underlay
-        slot="click-content"
         @click=${(event: Event) => {
             if ((event.target as HTMLElement).localName === 'button') {
                 (event.target as HTMLElement).dispatchEvent(

@@ -64,7 +64,7 @@ export interface OverlayDisplayQueryDetail {
     overlayContentTipElement?: HTMLElement;
 }
 
-export type Placement = FloatingUIPlacement | 'none';
+export type Placement = FloatingUIPlacement;
 
 export type OverlayOptions = {
     root?: HTMLElement;

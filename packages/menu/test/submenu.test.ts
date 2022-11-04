@@ -32,7 +32,6 @@ import { ActionMenu } from '@spectrum-web-components/action-menu';
 import '@spectrum-web-components/action-menu/sp-action-menu.js';
 import '@spectrum-web-components/menu/sp-menu-group.js';
 import '@spectrum-web-components/icons-workflow/icons/sp-icon-show-menu.js';
-import { ActiveOverlay } from '@spectrum-web-components/overlay';
 
 async function styledFixture<T extends Element>(
     story: TemplateResult,
@@ -960,7 +959,7 @@ describe('Submenu', () => {
 
         const rootItemBoundingRect1 = rootItem1.getBoundingClientRect();
         const rootItemBoundingRect2 = rootItem2.getBoundingClientRect();
-        let activeOverlay!: ActiveOverlay | null;
+        let activeOverlay!: HTMLElement | null;
 
         // Open the first submenu
         await sendMouse({
@@ -1034,15 +1033,11 @@ describe('Submenu', () => {
                 },
             ],
         });
-        activeOverlay = document.querySelector(
-            'active-overlay'
-        ) as ActiveOverlay;
+        activeOverlay = document.querySelector('active-overlay') as HTMLElement;
         expect(activeOverlay).to.not.be.null;
         await closed;
 
-        activeOverlay = document.querySelector(
-            'active-overlay'
-        ) as ActiveOverlay;
+        activeOverlay = document.querySelector('active-overlay') as HTMLElement;
         expect(activeOverlay).to.be.null;
         expect(rootItem1.open, 'finally closed 1').to.be.false;
         expect(rootItem2.open, 'finally closed 2').to.be.false;
