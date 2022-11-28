@@ -11,7 +11,6 @@ governing permissions and limitations under the License.
 import { html, TemplateResult } from '@spectrum-web-components/base';
 import { ifDefined } from '@spectrum-web-components/base/src/directives.js';
 import {
-    openOverlay,
     Overlay,
     OverlayContentTypes,
     OverlayTrigger,
@@ -19,6 +18,7 @@ import {
     TriggerInteractions,
     VirtualTrigger,
 } from '@spectrum-web-components/overlay';
+import { Placement as FloatingUIPlacement } from '@floating-ui/dom';
 import '@spectrum-web-components/action-button/sp-action-button.js';
 import '@spectrum-web-components/action-group/sp-action-group.js';
 import '@spectrum-web-components/button/sp-button.js';
@@ -40,6 +40,7 @@ import '@spectrum-web-components/radio/sp-radio-group.js';
 import '@spectrum-web-components/tooltip/sp-tooltip.js';
 import '@spectrum-web-components/theme/sp-theme.js';
 import '@spectrum-web-components/theme/src/themes.js';
+import '@spectrum-web-components/overlay/sp-overlay.js';
 import '../../../projects/story-decorator/src/types.js';
 
 import './overlay-story-components.js';
@@ -914,6 +915,28 @@ class StartEndContextmenu extends HTMLElement {
 
 customElements.define('start-end-contextmenu', StartEndContextmenu);
 
+const openOverlayV2 = (
+    target: HTMLElement,
+    options: {
+        delayed?: boolean;
+        offset?: number | [number, number];
+        placement?: FloatingUIPlacement;
+        receivesFocus?: 'auto' | 'true' | 'false';
+        trigger?: HTMLElement | VirtualTrigger;
+        type?: 'modal' | 'page' | 'hint' | 'auto' | 'manual';
+    } = {}
+) => {
+    const overlay = document.createElement('sp-overlay');
+    overlay.append(target);
+    overlay.placement = options.placement;
+    overlay.triggerElement = options.trigger || null;
+    overlay.type = options.type || 'hint';
+    overlay.addEventListener('popoverhide', () => {
+        overlay.remove();
+    });
+    return overlay;
+}
+
 export const virtualElement = (args: Properties): TemplateResult => {
     const contextMenuTemplate = (kind = ''): TemplateResult => html`
         <sp-popover
@@ -941,16 +964,22 @@ export const virtualElement = (args: Properties): TemplateResult => {
         event.preventDefault();
         const source = event.composedPath()[0] as HTMLDivElement;
         const { id } = source;
-        const trigger = event.target as HTMLElement;
         const virtualTrigger = new VirtualTrigger(event.clientX, event.clientY);
         const fragment = document.createDocumentFragment();
         render(contextMenuTemplate(id), fragment);
         const popover = fragment.querySelector('sp-popover') as Popover;
-        openOverlay(trigger, 'modal', popover, {
-            placement: args.placement,
-            receivesFocus: 'auto',
-            virtualTrigger,
-        });
+        const overlay = openOverlayV2(
+            popover,
+            {
+                placement: args.placement as unknown as FloatingUIPlacement,
+                trigger: virtualTrigger,
+                type: 'auto'
+            }
+        );
+        event.target?.addEventListener('pointerup', () => {
+            overlay.open = true;
+        }, { once: true });
+        (event.target as HTMLElement).insertAdjacentElement('afterend', overlay);
     };
     return html`
         <style>

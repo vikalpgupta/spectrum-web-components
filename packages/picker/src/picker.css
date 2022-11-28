@@ -49,9 +49,9 @@ governing permissions and limitations under the License.
     user-select: inherit;
 }
 
-sp-popover {
+/* sp-popover {
     display: none;
-}
+} */
 
 .picker,
 .validation-icon {
