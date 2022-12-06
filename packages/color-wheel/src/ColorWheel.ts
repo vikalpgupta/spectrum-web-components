@@ -28,8 +28,7 @@ import type { ColorHandle } from '@spectrum-web-components/color-handle';
 import '@spectrum-web-components/color-handle/sp-color-handle.js';
 import {
     ColorController,
-    ColorValue,
-    HSL,
+    ColorTypes,
 } from '@spectrum-web-components/reactive-controllers/src/Color.js';
 
 import styles from './color-wheel.css.js';
@@ -60,17 +59,7 @@ export class ColorWheel extends Focusable {
     @property({ type: Number })
     public step = 1;
 
-    private colorController = new ColorController(this, {
-        /* c8 ignore next 3 */
-        applyColorToState: () => {
-            return;
-        },
-        extractColorFromState: (controller) => ({
-            ...(controller.getColor('hsl') as HSL),
-            h: this.value,
-        }),
-        maintains: 'saturation',
-    });
+    private colorController = new ColorController(this, { manageAs: 'hsv' });
 
     @property({ type: Number })
     public get value(): number {
@@ -82,11 +71,11 @@ export class ColorWheel extends Focusable {
     }
 
     @property({ type: String })
-    public get color(): ColorValue {
-        return this.colorController.color;
+    public get color(): ColorTypes {
+        return this.colorController.colorValue;
     }
 
-    public set color(color: ColorValue) {
+    public set color(color: ColorTypes) {
         this.colorController.color = color;
     }
 
@@ -134,7 +123,6 @@ export class ColorWheel extends Focusable {
         event.preventDefault();
         this.value = (360 + this.value + delta) % 360;
         this.colorController.savePreviousColor();
-        this.colorController.applyColorFromState();
         this.dispatchEvent(
             new Event('input', {
                 bubbles: true,
@@ -157,7 +145,6 @@ export class ColorWheel extends Focusable {
         const { valueAsNumber } = event.target;
 
         this.value = valueAsNumber;
-        this.colorController.applyColorFromState();
     }
 
     private handleChange(event: Event & { target: HTMLInputElement }): void {
@@ -211,7 +198,6 @@ export class ColorWheel extends Focusable {
 
     private handlePointermove(event: PointerEvent): void {
         this.value = this.calculateHandlePosition(event);
-        this.colorController.applyColorFromState();
 
         this.dispatchEvent(
             new Event('input', {
