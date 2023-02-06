@@ -4392,10 +4392,10 @@
   resolved "https://registry.yarnpkg.com/@spectrum-css/sidenav/-/sidenav-3.0.31.tgz#35ab4fec1c79d9e673c49457ed7b6a3fc35415c9"
   integrity sha512-AndxBoHCUZU/gQ4Wkm0l33J37o0D8xI11QDK3vjCwX7AI8CG0179mrILha7t5EXOmnVyeUJY7bknbooZ+XWHfg==
 
-"@spectrum-css/slider@^3.1.12":
-  version "3.1.17"
-  resolved "https://registry.yarnpkg.com/@spectrum-css/slider/-/slider-3.1.17.tgz#b6a437194339efe799eeb410f50411b18146a63c"
-  integrity sha512-iLngpUW0YRnjWEEkJbwm9FO01m51BsAzoB1FKFrYiqn0WntyVyvMHZlW89CZhpPoQVIrxyJ0JkkHn1af2i5ALA==
+"@spectrum-css/slider@^4.0.0-beta.4":
+  version "4.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@spectrum-css/slider/-/slider-4.0.0-beta.4.tgz#93d29938aff9099b3d3c40a252eda128485c9315"
+  integrity sha512-YlBj4QIrwwYKuBOe9VvxYAr6g+tPaPpBemf8HOSpqnJnfw2pP3U3cz4tmQWupvvDtm/a2lhGsgkxankERpleZg==
 
 "@spectrum-css/splitbutton@^5.0.22":
   version "5.0.22"
