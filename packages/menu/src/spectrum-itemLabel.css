@@ -12,15 +12,21 @@ governing permissions and limitations under the License.
 
 /* THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
 #label {
-    flex: 1 1 auto; /* .spectrum-Menu-itemLabel */
+    color: var(
+        --highcontrast-menu-item-label-content-color-default,
+        var(
+            --mod-menu-item-label-content-color-default,
+            var(--spectrum-menu-item-label-content-color-default)
+        )
+    ); /* .spectrum-Menu-itemLabel */
+    font-size: var(
+        --mod-menu-item-label-font-size,
+        var(--spectrum-menu-item-label-font-size)
+    );
+    grid-area: labelArea; /* .spectrum-Menu-itemLabel */
     -webkit-hyphens: auto;
     hyphens: auto;
-    line-height: var(--spectrum-listitem-texticon-label-line-height);
     overflow-wrap: break-word;
-    width: calc(
-        100% - var(--spectrum-listitem-texticon-ui-icon-width) -
-            var(--spectrum-listitem-texticon-icon-gap)
-    );
 }
 .spectrum-Menu-itemLabel--wrapping {
     overflow: hidden;

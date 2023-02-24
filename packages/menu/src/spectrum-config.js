@@ -32,6 +32,29 @@ const config = {
                     type: 'boolean',
                     name: 'selects',
                 },
+                {
+                    type: 'enum',
+                    name: 'size',
+                    forceOntoHost: true,
+                    values: [
+                        {
+                            name: 's',
+                            selector: '.spectrum-Menu--sizeS',
+                        },
+                        {
+                            name: 'm',
+                            selector: '.spectrum-Menu--sizeM',
+                        },
+                        {
+                            name: 'l',
+                            selector: '.spectrum-Menu--sizeL',
+                        },
+                        {
+                            name: 'xl',
+                            selector: '.spectrum-Menu--sizeXL',
+                        },
+                    ],
+                },
             ],
             slots: [
                 {
@@ -170,6 +193,12 @@ const config = {
                 selector: '.spectrum-Menu-checkmark',
                 shadowSelector: '.checkmark',
             },
+            classes: [
+                {
+                    selector: '.spectrum-Menu-checkmark--withAdjacentText',
+                    name: 'checkmark--withAdjacentText',
+                },
+            ],
             exclude: [/\.spectrum-Menu(?!-checkmark)/, /^\[dir=/],
         },
         {
