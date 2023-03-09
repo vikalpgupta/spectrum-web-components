@@ -150,6 +150,18 @@ export class PickerBase extends SizedMixin(Focusable) {
         this.onKeydown = this.onKeydown.bind(this);
     }
 
+    public override click(): void {
+        if (this.disabled) {
+            return;
+        }
+
+        if (this.closeOverlay) {
+            super.click();
+        } else {
+            this.toggle();
+        }
+    }
+
     public override get focusElement(): HTMLElement {
         if (this.open) {
             return this.optionsMenu;
@@ -169,7 +181,7 @@ export class PickerBase extends SizedMixin(Focusable) {
         );
     }
 
-    protected onButtonClick(): void {
+    protected handleButtonPointerdown(): void {
         this.toggle();
     }
 
@@ -349,6 +361,7 @@ export class PickerBase extends SizedMixin(Focusable) {
         this.closeOverlay = Picker.openOverlay(this, 'modal', this.popoverEl, {
             placement: this.isMobile.matches ? 'none' : this.placement,
             receivesFocus: 'auto',
+            notImmediatelyClosable: true,
         });
         if (window.__swc.DEBUG) {
             window.__swc.ignoreWarningLevels.deprecation = false;
@@ -434,7 +447,7 @@ export class PickerBase extends SizedMixin(Focusable) {
                 id="button"
                 class="button"
                 @blur=${this.onButtonBlur}
-                @click=${this.onButtonClick}
+                @pointerdown=${this.handleButtonPointerdown}
                 @focus=${this.onButtonFocus}
                 ?disabled=${this.disabled}
                 tabindex="-1"

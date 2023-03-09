@@ -247,7 +247,8 @@ export class Menu extends SpectrumElement {
         );
 
         this.addEventListener('sp-menu-item-removed', this.removeChildItem);
-        this.addEventListener('click', this.onClick);
+        this.addEventListener('pointerup', this.handlePointerup);
+        this.addEventListener('click', this.handleClick);
         this.addEventListener('focusin', this.handleFocusin);
     }
 
@@ -274,7 +275,22 @@ export class Menu extends SpectrumElement {
         }
     }
 
-    private onClick(event: Event): void {
+    private selectionEventHandled = false;
+
+    private handleClick(event: Event): void {
+        if (this.selectionEventHandled) {
+            this.selectionEventHandled = false;
+            return;
+        }
+        this.handleSelectionEvent(event);
+    }
+
+    private handlePointerup(event: Event): void {
+        this.selectionEventHandled = true;
+        this.handleSelectionEvent(event);
+    }
+
+    private handleSelectionEvent(event: Event): void {
         if (event.defaultPrevented) {
             return;
         }
