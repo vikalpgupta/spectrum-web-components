@@ -22,7 +22,10 @@ async function main() {
         entryPoints: [
             './src/components.ts',
             './src/getting-started.ts',
-            './src/index.ts',
+            './src/components/layout.ts',
+            './src/components/side-nav.ts',
+            './src/components/settings.ts',
+            './src/components/code-example.ts',
         ],
         format: 'esm',
         target: ['es2020'],
@@ -63,7 +66,19 @@ async function main() {
                 },
             }),
         ],
-        external: ['@spectrum-web-components/*'],
+        external: [
+            '@spectrum-web-components/*',
+            'lit',
+            '@lit/*',
+            'lit-html',
+            'lit-element',
+        ],
+    });
+    await build({
+        entryPoints: ['./src/index.ts'],
+        format: 'esm',
+        target: ['es2020'],
+        outdir: './_site/src/',
     });
     process.exit(0);
 }

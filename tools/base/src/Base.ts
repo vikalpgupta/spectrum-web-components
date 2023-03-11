@@ -42,9 +42,10 @@ const updateRTL = (): void => {
     });
 };
 
-const rtlObserver = new MutationObserver(updateRTL);
+const rtlObserver =
+    globalThis.MutationObserver && new MutationObserver(updateRTL);
 
-rtlObserver.observe(document.documentElement, {
+rtlObserver?.observe(document.documentElement, {
     attributes: true,
     attributeFilter: ['dir'],
 });

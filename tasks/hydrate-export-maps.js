@@ -17,6 +17,8 @@ import fg from 'fast-glob';
 const excludes = [
     // internal config file
     './src/spectrum-config.js',
+    './src/shims.js',
+    './src/shims.node.js',
     // partial only asset the is used to build other exports
     /spectrum-(?![i][c][o][n][-]).+\.css/,
     /\.css$/,
@@ -76,6 +78,8 @@ const hydrateExportMap = async (exportMapPath) => {
                 }
                 exportMapResolved[exportPath] = exportPath;
             }
+        } else if (typeof exportMapSrc[key] === 'object') {
+            exportMapExploded[key] = exportMapSrc[key];
         } else {
             exportMapResolved[key] = exportMapSrc[key];
         }

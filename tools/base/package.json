@@ -25,6 +25,10 @@
             "default": "./src/index.js"
         },
         "./package.json": "./package.json",
+        "./src/shims.js": {
+            "node": "./src/shims.node.js",
+            "default": "./src/shims.js"
+        },
         "./src/Base.js": {
             "development": "./src/Base.dev.js",
             "default": "./src/Base.js"
@@ -96,7 +100,8 @@
         "lit-html"
     ],
     "dependencies": {
-        "lit": "^2.5.0"
+        "@lit-labs/ssr-dom-shim": "^1.0.0",
+        "lit": "^2.6.1"
     },
     "types": "./src/index.d.ts",
     "customElements": "custom-elements.json",

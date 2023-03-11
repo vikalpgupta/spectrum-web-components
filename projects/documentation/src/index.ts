@@ -10,7 +10,31 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 
+import '@spectrum-web-components/theme/sp-theme.js';
+import '@spectrum-web-components/button/sp-button.js';
+import '@spectrum-web-components/action-button/sp-action-button.js';
+import '@spectrum-web-components/menu/sp-menu-item.js';
+import '@spectrum-web-components/link/sp-link.js';
+import '@spectrum-web-components/divider/sp-divider.js';
+import '@spectrum-web-components/toast/sp-toast.js';
+import '@spectrum-web-components/icons-workflow/icons/sp-icon-show-menu.js';
+import '@spectrum-web-components/icons-workflow/icons/sp-icon-settings.js';
 import './components/layout.js';
+import './components/code-example.js';
+
+const isNarrowMediaQuery = globalThis.matchMedia?.(
+    'screen and (max-width: 960px)'
+);
+
+if (!isNarrowMediaQuery.matches) {
+    import('./components/side-nav.js');
+    import('./components/settings.js');
+} else {
+    document.addEventListener('pointerdown', () => {
+        import('./components/side-nav.js');
+        import('./components/settings.js');
+    });
+}
 
 declare global {
     interface Window {

@@ -15,6 +15,7 @@ import {
     CSSResultGroup,
     supportsAdoptingStyleSheets,
 } from '@spectrum-web-components/base';
+import { HTMLElement } from '@spectrum-web-components/base/src/shims.js';
 
 declare global {
     interface Window {

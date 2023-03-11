@@ -21,7 +21,6 @@ import {
     property,
     queryAsync,
 } from '@spectrum-web-components/base/src/decorators.js';
-import '@spectrum-web-components/theme/sp-theme.js';
 import type {
     Color,
     Scale,
@@ -29,19 +28,10 @@ import type {
     ThemeVariant,
 } from '@spectrum-web-components/theme';
 import type { Picker } from '@spectrum-web-components/picker';
-import '@spectrum-web-components/button/sp-button.js';
-import '@spectrum-web-components/action-button/sp-action-button.js';
-import '@spectrum-web-components/menu/sp-menu-item.js';
-import '@spectrum-web-components/link/sp-link.js';
-import '@spectrum-web-components/divider/sp-divider.js';
-import '@spectrum-web-components/toast/sp-toast.js';
-import '@spectrum-web-components/icons-workflow/icons/sp-icon-show-menu.js';
-import '@spectrum-web-components/icons-workflow/icons/sp-icon-settings.js';
 
 import type { SideNav } from './side-nav.js';
 import './adobe-logo.js';
 import type { CodeExample } from './code-example.js';
-import './code-example.js';
 import { copyText } from './copy-to-clipboard.js';
 
 import layoutStyles from './layout.css';
@@ -55,32 +45,38 @@ const SWC_THEME_COLOR_KEY = 'swc-docs:theme:color';
 const SWC_THEME_SCALE_KEY = 'swc-docs:theme:scale';
 const SWC_THEME_THEME_KEY = 'swc-docs:theme:theme';
 const SWC_THEME_DIR_KEY = 'swc-docs:theme:dir';
-const COLOR_FALLBACK = matchMedia(DARK_MODE).matches ? 'dark' : 'light';
-const SCALE_FALLBACK = matchMedia(IS_MOBILE).matches ? 'large' : 'medium';
+const COLOR_FALLBACK = globalThis.matchMedia?.(DARK_MODE).matches
+    ? 'dark'
+    : 'light';
+const SCALE_FALLBACK = globalThis.matchMedia?.(IS_MOBILE).matches
+    ? 'large'
+    : 'medium';
 const THEME_FALLBACK = 'spectrum';
 const DIR_FALLBACK = 'ltr';
 const DEFAULT_COLOR = (
-    window.localStorage
+    globalThis.localStorage
         ? localStorage.getItem(SWC_THEME_COLOR_KEY) || COLOR_FALLBACK
         : COLOR_FALLBACK
 ) as Color;
 const DEFAULT_SCALE = (
-    window.localStorage
+    globalThis.localStorage
         ? localStorage.getItem(SWC_THEME_SCALE_KEY) || SCALE_FALLBACK
         : SCALE_FALLBACK
 ) as Scale;
 const DEFAULT_THEME = (
-    window.localStorage
+    globalThis.localStorage
         ? localStorage.getItem(SWC_THEME_THEME_KEY) || THEME_FALLBACK
         : THEME_FALLBACK
 ) as ThemeVariant;
 const DEFAULT_DIR = (
-    window.localStorage
+    globalThis.localStorage
         ? localStorage.getItem(SWC_THEME_DIR_KEY) || DIR_FALLBACK
         : DIR_FALLBACK
 ) as 'ltr' | 'rtl';
 
-const isNarrowMediaQuery = matchMedia('screen and (max-width: 960px)');
+const isNarrowMediaQuery = globalThis.matchMedia?.(
+    'screen and (max-width: 960px)'
+);
 
 const lazyStyleFragment = (name: Color | Scale, flavor: ThemeVariant): void => {
     var fragmentName = `${name}-${flavor}`;
@@ -168,7 +164,7 @@ export class LayoutElement extends LitElement {
     public settings = false;
 
     @property({ type: Boolean, attribute: false })
-    private isNarrow = isNarrowMediaQuery.matches;
+    private isNarrow = isNarrowMediaQuery?.matches;
 
     @property({ attribute: false })
     public scale: Scale = DEFAULT_SCALE;
@@ -301,7 +297,7 @@ export class LayoutElement extends LitElement {
         `;
         this._sidenavRendered = this._sidenavRendered || displaysNavContent;
         if (this._sidenavRendered) {
-            import('./side-nav.js');
+            // import('./side-nav.js');
         }
         return html`
             <docs-side-nav
@@ -317,7 +313,7 @@ export class LayoutElement extends LitElement {
 
     private get settingsContent(): TemplateResult {
         if (this.settings || !this.isNarrow) {
-            import('./settings.js');
+            // import('./settings.js');
         }
         return html`
             <sp-underlay
@@ -326,7 +322,7 @@ export class LayoutElement extends LitElement {
                 @click=${this.toggleSettings}
                 ?hidden=${!this.isNarrow}
             ></sp-underlay>
-            <aside class=${this.settings ? 'show' : ''}>
+            <aside class=${this.settings ? 'show' : ''} ?inert=${this.settings}>
                 <header>
                     <sp-action-button
                         quiet
@@ -481,7 +477,7 @@ export class LayoutElement extends LitElement {
     override updated(changes: PropertyValues) {
         let loadStyleFragments = false;
         if (changes.has('color')) {
-            if (window.localStorage) {
+            if (globalThis.localStorage) {
                 localStorage.setItem(SWC_THEME_COLOR_KEY, this.color);
             }
             if (changes.get('color')) {
@@ -504,7 +500,7 @@ export class LayoutElement extends LitElement {
                     : 'light';
         }
         if (changes.has('scale')) {
-            if (window.localStorage) {
+            if (globalThis.localStorage) {
                 localStorage.setItem(SWC_THEME_SCALE_KEY, this.scale);
             }
             if (changes.get('scale')) {
@@ -512,14 +508,14 @@ export class LayoutElement extends LitElement {
             }
         }
         if (changes.has('theme')) {
-            if (window.localStorage) {
+            if (globalThis.localStorage) {
                 localStorage.setItem(SWC_THEME_THEME_KEY, this.theme);
             }
             if (changes.get('theme')) {
                 loadStyleFragments = true;
             }
         }
-        if (changes.has('dir') && window.localStorage) {
+        if (changes.has('dir') && globalThis.localStorage) {
             localStorage.setItem(SWC_THEME_DIR_KEY, this.dir);
         }
         if (changes.has('open') && this.open) {
