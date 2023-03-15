@@ -891,7 +891,7 @@ governing permissions and limitations under the License.
 .textfield:after {
     display: none; /* .spectrum-Stepper-textfield:after */
 }
-#textfield:not(.hide-stepper) .input {
+:host(:not([hide-stepper])) #textfield .input {
     border-end-end-radius: 0;
     border-inline-end-width: 0;
     border-start-end-radius: 0;

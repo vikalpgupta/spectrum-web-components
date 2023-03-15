@@ -496,7 +496,7 @@ governing permissions and limitations under the License.
         )
         0; /* .spectrum-Textfield--quiet.is-keyboardFocused:after */
 }
-.icon {
+.icon-workflow {
     bottom: 0;
     color: var(
         --highcontrast-textfield-text-color-default,
@@ -510,10 +510,10 @@ governing permissions and limitations under the License.
     position: absolute;
     top: 0;
 }
-.icon.spectrum-Search-icon {
+.icon-workflow.spectrum-Search-icon {
     right: auto; /* .spectrum-Textfield .spectrum-Textfield-icon.spectrum-Search-icon */
 }
-:host([disabled]) #textfield .spectrum-Textfield .icon {
+:host([disabled]) #textfield .spectrum-Textfield .icon-workflow {
     color: var(
         --highcontrast-textfield-text-color-disabled,
         var(
@@ -522,7 +522,7 @@ governing permissions and limitations under the License.
         )
     ); /* .spectrum-Textfield.is-disabled .spectrum-Textfield .spectrum-Textfield-icon */
 }
-:host([quiet]) .spectrum-Textfield .icon {
+:host([quiet]) .spectrum-Textfield .icon-workflow {
     color: var(
         --highcontrast-textfield-text-color-default,
         var(
@@ -531,7 +531,7 @@ governing permissions and limitations under the License.
         )
     ); /* .spectrum-Textfield--quiet .spectrum-Textfield .spectrum-Textfield-icon */
 }
-:host([quiet][disabled]) #textfield .spectrum-Textfield .icon {
+:host([quiet][disabled]) #textfield .spectrum-Textfield .icon-workflow {
     color: var(
         --highcontrast-textfield-text-color-disabled,
         var(
@@ -540,7 +540,7 @@ governing permissions and limitations under the License.
         )
     ); /* .spectrum-Textfield--quiet.is-disabled .spectrum-Textfield .spectrum-Textfield-icon */
 }
-:host([readonly]) #textfield .spectrum-Textfield .icon {
+:host([readonly]) #textfield .spectrum-Textfield .icon-workflow {
     color: var(
         --highcontrast-textfield-text-color-readonly,
         var(
@@ -549,8 +549,8 @@ governing permissions and limitations under the License.
         )
     ); /* .spectrum-Textfield.is-readOnly .spectrum-Textfield .spectrum-Textfield-icon */
 }
-:host([invalid]) #textfield .icon-workflow,
-:host([valid]) #textfield .icon-workflow {
+:host([invalid]) #textfield .icon,
+:host([valid]) #textfield .icon {
     grid-column: 2;
     grid-row: 2;
     margin-inline-start: auto;
@@ -559,7 +559,7 @@ governing permissions and limitations under the License.
    * .spectrum-Textfield.is-invalid .spectrum-Textfield-validationIcon */
     top: 0;
 }
-:host([valid]) #textfield .icon-workflow {
+:host([valid]) #textfield .icon {
     color: var(
         --highcontrast-textfield-icon-color-valid,
         var(
@@ -584,7 +584,7 @@ governing permissions and limitations under the License.
         var(--spectrum-textfield-icon-spacing-inline-start-valid)
     );
 }
-:host([invalid]) #textfield .icon-workflow {
+:host([invalid]) #textfield .icon {
     block-size: var(
         --mod-textfield-icon-size-invalid,
         var(--spectrum-textfield-icon-size-invalid)
@@ -617,21 +617,21 @@ governing permissions and limitations under the License.
         var(--spectrum-textfield-icon-spacing-inline-start-invalid)
     );
 }
-:host([disabled]) #textfield .icon-workflow,
-:host([readonly]) #textfield .icon-workflow {
+:host([disabled]) #textfield .icon,
+:host([readonly]) #textfield .icon {
     color: transparent; /* .spectrum-Textfield.is-disabled .spectrum-Textfield-validationIcon,
    * .spectrum-Textfield.is-readOnly .spectrum-Textfield-validationIcon */
 }
-:host([quiet]) .icon-workflow {
+:host([quiet]) .icon {
     padding-inline-end: 0; /* .spectrum-Textfield--quiet .spectrum-Textfield-validationIcon */
 }
-:host([quiet][valid]) #textfield .icon-workflow {
+:host([quiet][valid]) #textfield .icon {
     inset-inline-end: var(
         --mod-textfield-icon-spacing-inline-end-quiet-valid,
         var(--spectrum-textfield-icon-spacing-inline-end-quiet-valid)
     ); /* .spectrum-Textfield--quiet.is-valid .spectrum-Textfield-validationIcon */
 }
-:host([quiet][invalid]) #textfield .icon-workflow {
+:host([quiet][invalid]) #textfield .icon {
     inset-inline-end: var(
         --mod-textfield-icon-spacing-inline-end-quiet-invalid,
         var(--spectrum-textfield-icon-spacing-inline-end-quiet-invalid)
@@ -752,7 +752,7 @@ governing permissions and limitations under the License.
         var(--spectrum-global-animation-duration-100, 0.13s) ease-in-out;
     vertical-align: top;
 }
-:host([quiet]) .icon ~ .input {
+:host([quiet]) .icon-workflow ~ .input {
     padding-inline-start: calc(
         var(
                 --mod--Textfield-workflow-icon-gap,
@@ -1382,7 +1382,7 @@ governing permissions and limitations under the License.
     grid-column: 2 / span 1;
     grid-row: 2; /* .spectrum-Textfield--sideLabel .spectrum-HelpText */
 }
-.spectrum-Textfield--sideLabel .icon-workflow {
+.spectrum-Textfield--sideLabel .icon {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1; /* .spectrum-Textfield--sideLabel .spectrum-Textfield-validationIcon */
 }
