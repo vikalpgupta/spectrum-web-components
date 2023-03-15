@@ -1377,7 +1377,7 @@ governing permissions and limitations under the License.
     ); /* .spectrum-Textfield--multiline .spectrum-Textfield-input */
     resize: inherit;
 }
-:host([multiline]) #textfield.spectrum-Textfield--grows {
+:host([multiline][grows]) #textfield {
     grid-row: 1 / auto; /* .spectrum-Textfield--multiline.spectrum-Textfield--grows */
 }
 :host([multiline][quiet]) #textfield .input {

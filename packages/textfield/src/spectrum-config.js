@@ -53,7 +53,7 @@ export default {
                 },
                 {
                     type: 'boolean',
-                    selector: '.spectrum-Textfield--grow',
+                    selector: '.spectrum-Textfield--grows',
                     name: 'grows',
                 },
                 {
