@@ -607,6 +607,9 @@ export const ThreeHandlesPc = (args: StoryArgs = {}): TemplateResult => {
         </div>
     `;
 };
+ThreeHandlesPc.args = {
+    variant: 'range',
+};
 
 export const ThreeHandlesOrdered = (args: StoryArgs = {}): TemplateResult => {
     return html`
@@ -644,6 +647,7 @@ export const ThreeHandlesOrdered = (args: StoryArgs = {}): TemplateResult => {
     `;
 };
 ThreeHandlesOrdered.args = {
+    variant: 'range',
     tickStep: 10,
 };
 
@@ -799,6 +803,7 @@ export const ThreeHandlesComplex = (args: StoryArgs = {}): TemplateResult => {
     `;
 };
 ThreeHandlesOrdered.args = {
+    variant: 'range',
     tickStep: 10,
 };
 
