@@ -50,12 +50,22 @@ const config = {
                     hoist: true,
                 },
                 {
-                    find: [builder.class('focus-ring')],
-                    replace: [
-                        {
-                            replace: builder.pseudoClass('focus-visible'),
-                        },
-                    ],
+                    selector: '.spectrum-Search-textfield',
+                    name: 'textfield',
+                },
+            ],
+            classes: [
+                {
+                    selector: '.spectrum-Search-input',
+                    name: 'input',
+                },
+                {
+                    selector: '.spectrum-Icon',
+                    name: 'icon',
+                },
+                {
+                    selector: '.spectrum-Search-icon',
+                    name: 'icon-search',
                 },
             ],
         },
