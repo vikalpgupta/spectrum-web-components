@@ -802,7 +802,7 @@ export const ThreeHandlesComplex = (args: StoryArgs = {}): TemplateResult => {
         </div>
     `;
 };
-ThreeHandlesOrdered.args = {
+ThreeHandlesComplex.args = {
     variant: 'range',
     tickStep: 10,
 };
