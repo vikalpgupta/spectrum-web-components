@@ -12,9 +12,7 @@ governing permissions and limitations under the License.
 
 /* THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
 :host {
-    --spectrum-slider-handle-size: var(
-        --spectrum-slider-handle-size-medium
-    ); /* .spectrum-Slider */
+    --spectrum-slider-handle-size: var(--spectrum-slider-handle-size-medium);
     --spectrum-slider-control-height: var(
         --spectrum-slider-control-height-medium
     );
@@ -27,9 +25,8 @@ governing permissions and limitations under the License.
     );
 }
 .spectrum-Slider--sizeS {
-    --spectrum-slider-handle-size: var(
-        --spectrum-slider-handle-size-small
-    ); /* .spectrum-Slider--sizeS */
+    --spectrum-slider-font-size: var(--spectrum-font-size-75);
+    --spectrum-slider-handle-size: var(--spectrum-slider-handle-size-small);
     --spectrum-slider-control-height: var(
         --spectrum-slider-control-height-small
     );
@@ -40,14 +37,16 @@ governing permissions and limitations under the License.
     --spectrum-slider-handle-border-width-down: var(
         --spectrum-slider-handle-border-width-down-small
     );
-    --spectrum-slider-label-margin-block-end: var(
-        --spectrum-slider-label-margin-block-end-small
+    --spectrum-slider-label-bottom-to-text: var(
+        --spectrum-component-bottom-to-text-75
+    );
+    --spectrum-slider-label-top-to-text: var(
+        --spectrum-component-top-to-text-75
     );
 }
 .spectrum-Slider--sizeM {
-    --spectrum-slider-handle-size: var(
-        --spectrum-slider-handle-size-medium
-    ); /* .spectrum-Slider--sizeM */
+    --spectrum-slider-font-size: var(--spectrum-font-size-75);
+    --spectrum-slider-handle-size: var(--spectrum-slider-handle-size-medium);
     --spectrum-slider-control-height: var(
         --spectrum-slider-control-height-medium
     );
@@ -58,14 +57,16 @@ governing permissions and limitations under the License.
     --spectrum-slider-handle-border-width-down: var(
         --spectrum-slider-handle-border-width-down-medium
     );
-    --spectrum-slider-label-margin-block-end: var(
-        --spectrum-slider-label-margin-block-end-medium
+    --spectrum-slider-label-bottom-to-text: var(
+        --spectrum-component-bottom-to-text-75
+    );
+    --spectrum-slider-label-top-to-text: var(
+        --spectrum-component-top-to-text-75
     );
 }
 .spectrum-Slider--sizeL {
-    --spectrum-slider-handle-size: var(
-        --spectrum-slider-handle-size-large
-    ); /* .spectrum-Slider--sizeL */
+    --spectrum-slider-font-size: var(--spectrum-font-size-100);
+    --spectrum-slider-handle-size: var(--spectrum-slider-handle-size-large);
     --spectrum-slider-control-height: var(
         --spectrum-slider-control-height-large
     );
@@ -78,14 +79,18 @@ governing permissions and limitations under the License.
     --spectrum-slider-handle-border-width-down: var(
         --spectrum-slider-handle-border-width-down-large
     );
-    --spectrum-slider-label-margin-block-end: var(
-        --spectrum-slider-label-margin-block-end-large
+    --spectrum-slider-label-bottom-to-text: var(
+        --spectrum-component-bottom-to-text-100
+    );
+    --spectrum-slider-label-top-to-text: var(
+        --spectrum-component-top-to-text-100
     );
 }
 .spectrum-Slider--sizeXL {
+    --spectrum-slider-font-size: var(--spectrum-font-size-200);
     --spectrum-slider-handle-size: var(
         --spectrum-slider-handle-size-extra-large
-    ); /* .spectrum-Slider--sizeXL */
+    );
     --spectrum-slider-control-height: var(
         --spectrum-slider-control-height-extra-large
     );
@@ -98,14 +103,15 @@ governing permissions and limitations under the License.
     --spectrum-slider-handle-border-width-down: var(
         --spectrum-slider-handle-border-width-down-extra-large
     );
-    --spectrum-slider-label-margin-block-end: var(
-        --spectrum-slider-label-margin-block-end-extra-large
+    --spectrum-slider-label-bottom-to-text: var(
+        --spectrum-component-bottom-to-text-200
+    );
+    --spectrum-slider-label-top-to-text: var(
+        --spectrum-component-top-to-text-200
     );
 }
 :host {
-    --spectrum-slider-cjk-line-height: var(
-        --spectrum-cjk-line-height-100
-    ); /* .spectrum-Slider */
+    --spectrum-slider-cjk-line-height: var(--spectrum-cjk-line-height-100);
     --spectrum-slider-min-size: var(--spectrum-spacing-900);
     --spectrum-slider-height-size: var(--spectrum-component-height-100);
     --spectrum-slider-track-corner-radius: var(--spectrum-corner-radius-75);
@@ -168,18 +174,19 @@ governing permissions and limitations under the License.
         --mod-slider-min-size,
         var(--spectrum-slider-min-size)
     );
-    position: relative; /* .spectrum-Slider */
+    position: relative;
     -webkit-user-select: none;
     user-select: none;
     z-index: 1;
 }
 #controls {
-    block-size: calc(
-        var(--mod-slider-control-height, var(--spectrum-slider-control-height)) *
-            2
+    block-size: var(
+        --mod-slider-control-height,
+        var(--spectrum-slider-control-height)
     );
     box-sizing: border-box;
-    display: inline-block; /* .spectrum-Slider-controls */
+    cursor: pointer;
+    display: inline-block;
     inline-size: calc(
         100% -
             var(
@@ -203,21 +210,19 @@ governing permissions and limitations under the License.
     margin-block-end: var(
         --mod-slider-control-height,
         var(--spectrum-slider-control-height)
-    ); /* .spectrum-Slider--tick */
+    );
 }
 #fill,
 .track {
     block-size: var(
         --mod-slider-track-fill-thickness,
         var(--spectrum-slider-track-fill-thickness)
-    ); /* .spectrum-Slider-track,
-   * .spectrum-Slider-fill */
+    );
     box-sizing: border-box;
     inset-block-start: calc(
         var(--mod-slider-height-size, var(--spectrum-slider-height-size)) / 2
     );
-    inset-inline-end: auto;
-    inset-inline-start: 0;
+    inset-inline: 0 auto;
     margin-block-start: calc(
         var(--mod-slider-control-height, var(--spectrum-slider-control-height)) /
             -2
@@ -240,8 +245,7 @@ governing permissions and limitations under the License.
     border-end-start-radius: 0;
     border-start-end-radius: 0;
     border-start-start-radius: 0;
-    content: ''; /* .spectrum-Slider-track:before,
-   * .spectrum-Slider-fill:before */
+    content: '';
     display: block;
 }
 .track:first-of-type:before {
@@ -252,7 +256,7 @@ governing permissions and limitations under the License.
     border-start-start-radius: var(
         --mod-slider-track-corner-radius,
         var(--spectrum-slider-track-corner-radius)
-    ); /* .spectrum-Slider-track:first-of-type:before */
+    );
 }
 .track:last-of-type:before {
     border-end-end-radius: var(
@@ -262,14 +266,14 @@ governing permissions and limitations under the License.
     border-start-end-radius: var(
         --mod-slider-track-corner-radius,
         var(--spectrum-slider-track-corner-radius)
-    ); /* .spectrum-Slider-track:last-of-type:before */
+    );
 }
 .track ~ .track {
     inset-inline-end: var(
         --mod-slider-range-track-reset,
         var(--spectrum-slider-range-track-reset)
     );
-    inset-inline-start: auto; /* .spectrum-Slider-track~.spectrum-Slider-track */
+    inset-inline-start: auto;
     margin-inline-end: var(
         --mod-slider-track-margin-offset,
         var(--spectrum-slider-track-margin-offset)
@@ -286,8 +290,7 @@ governing permissions and limitations under the License.
         0;
 }
 :host([variant='range']) .track ~ .track {
-    inset-inline-end: auto;
-    inset-inline-start: auto;
+    inset-inline: auto;
     margin-inline: var(
         --mod-slider-range-track-reset,
         var(--spectrum-slider-range-track-reset)
@@ -299,10 +302,10 @@ governing permissions and limitations under the License.
         var(
             --mod-slider-track-middle-handleoffset,
             var(--spectrum-slider-track-middle-handleoffset)
-        ); /* .spectrum-Slider--range .spectrum-Slider-track~.spectrum-Slider-track */
+        );
 }
 #fill {
-    margin-inline-start: 0; /* .spectrum-Slider-fill */
+    margin-inline-start: 0;
     padding-block: 0;
     padding-inline: calc(
             var(
@@ -317,7 +320,7 @@ governing permissions and limitations under the License.
         0;
 }
 .spectrum-Slider-fill--right {
-    padding-block: 0; /* .spectrum-Slider-fill--right */
+    padding-block: 0;
     padding-inline: 0
         calc(
             var(
@@ -348,7 +351,7 @@ governing permissions and limitations under the License.
         var(
             --mod-slider-track-handleoffset,
             var(--spectrum-slider-track-handleoffset)
-        ); /* .spectrum-Slider--range .spectrum-Slider-track:first-of-type */
+        );
 }
 :host([variant='range']) .track:first-of-type:before {
     border-end-start-radius: var(
@@ -358,7 +361,7 @@ governing permissions and limitations under the License.
     border-start-start-radius: var(
         --mod-slider-track-corner-radius,
         var(--spectrum-slider-track-corner-radius)
-    ); /* .spectrum-Slider--range .spectrum-Slider-track:first-of-type:before */
+    );
 }
 :host([variant='range']) .track:last-of-type {
     inset-inline-end: var(
@@ -370,7 +373,7 @@ governing permissions and limitations under the License.
         --mod-slider-track-margin-offset,
         var(--spectrum-slider-track-margin-offset)
     );
-    padding-inline: var(--spectrum-slider-track-handleoffset) 0; /* .spectrum-Slider--range .spectrum-Slider-track:last-of-type */
+    padding-inline: var(--spectrum-slider-track-handleoffset) 0;
 }
 :host([variant='range']) .track:last-of-type:before {
     border-end-end-radius: var(
@@ -380,7 +383,7 @@ governing permissions and limitations under the License.
     border-start-end-radius: var(
         --mod-slider-track-corner-radius,
         var(--spectrum-slider-track-corner-radius)
-    ); /* .spectrum-Slider--range .spectrum-Slider-track:last-of-type:before */
+    );
 }
 #ramp {
     block-size: var(
@@ -398,7 +401,7 @@ governing permissions and limitations under the License.
     margin-block-start: var(
         --spectrum-slider-ramp-margin-top,
         var(--spectrum-slider-ramp-margin-top)
-    ); /* .spectrum-Slider-ramp */
+    );
     position: absolute;
 }
 :host([dir='rtl']) #ramp svg {
@@ -406,7 +409,7 @@ governing permissions and limitations under the License.
 }
 #ramp svg {
     block-size: 100%;
-    inline-size: 100%; /* .spectrum-Slider-ramp svg */
+    inline-size: 100%;
 }
 .handle {
     block-size: var(
@@ -437,18 +440,18 @@ governing permissions and limitations under the License.
             )
     );
     inset-inline-start: 0;
-    margin-block: 0;
     margin-block-end: var(
         --mod-slider-bottom-to-handle,
         var(--spectrum-slider-bottom-to-handle)
     );
+    margin-block-start: 0;
     margin-inline: calc(
             var(--mod-slider-handle-size, var(--spectrum-slider-handle-size)) /
                 -2
         )
         0;
     outline: none;
-    position: absolute; /* .spectrum-Slider-handle */
+    position: absolute;
     transition: border-width
         var(
             --mod-animation-duration-100,
@@ -463,9 +466,7 @@ governing permissions and limitations under the License.
     border-width: var(
         --mod-slider-handle-border-width-down,
         var(--spectrum-slider-handle-border-width-down)
-    ); /* .spectrum-Slider-handle:active,
-   * .spectrum-Slider-handle.is-focused,
-   * .spectrum-Slider-handle.is-dragged */
+    );
 }
 .handle.dragging,
 .handle.handle-highlight,
@@ -518,7 +519,7 @@ governing permissions and limitations under the License.
         var(--mod-slider-handle-size, var(--spectrum-slider-handle-size)) +
             var(--mod-focus-indicator-gap, var(--spectrum-focus-indicator-gap)) *
             2
-    ); /* .spectrum-Slider-handle.is-focused:before */
+    );
 }
 .input {
     -webkit-appearance: none;
@@ -540,7 +541,7 @@ governing permissions and limitations under the License.
         --mod-slider-input-left,
         var(--spectrum-slider-input-left)
     );
-    margin: 0; /* .spectrum-Slider-input */
+    margin: 0;
     opacity: 0.000001;
     overflow: hidden;
     padding: 0;
@@ -551,23 +552,20 @@ governing permissions and limitations under the License.
     outline: none;
 }
 #label-container {
-    --slider-label-baseline-margin: calc(
-        var(--spectrum-line-height-100) * var(--spectrum-font-size-75) -
-            var(--spectrum-font-size-75)
+    display: flex;
+    font-size: var(
+        --mod-spectrum-slider-font-size,
+        var(--spectrum-slider-font-size)
     );
-    display: flex; /* .spectrum-Slider-labelContainer */
-    font-size: var(--mod-font-size-75, var(--spectrum-font-size-75));
     inline-size: auto;
     line-height: var(--mod-line-height-100, var(--spectrum-line-height-100));
-    margin-block-end: calc(
-        var(
-                --mod-spectrum-slider-label-margin-block-end,
-                var(--spectrum-slider-label-margin-block-end)
-            ) * -1 -
-            var(
-                --mod-label-baseline-margin,
-                var(--slider-label-baseline-margin)
-            )
+    margin-block-end: var(
+        --mod-spectrum-slider-label-bottom-to-text,
+        var(--spectrum-slider-label-bottom-to-text)
+    );
+    margin-block-start: var(
+        --mod-spectrum-slider-label-top-to-text,
+        var(--spectrum-slider-label-top-to-text)
     );
     padding-block-start: var(
         --mod-component-top-to-text-75,
@@ -581,24 +579,22 @@ governing permissions and limitations under the License.
     line-height: var(
         --mod-slider-cjk-line-height,
         var(--spectrum-slider-cjk-line-height)
-    ); /* .spectrum-Slider-labelContainer:lang(ja),
-   * .spectrum-Slider-labelContainer:lang(zh),
-   * .spectrum-Slider-labelContainer:lang(ko) */
+    );
 }
 #label {
     flex-grow: 1;
-    padding-inline-start: 0; /* .spectrum-Slider-label */
+    padding-inline-start: 0;
 }
 #value {
     font-feature-settings: 'tnum';
     cursor: default;
-    flex-grow: 0; /* .spectrum-Slider-value */
+    flex-grow: 0;
     margin-inline-start: var(
         --mod-slider-label-margin-start,
         var(--spectrum-slider-label-margin-start)
     );
     padding-inline-end: 0;
-    text-align: end; /* .spectrum-Slider-value */
+    text-align: end;
 }
 :host([variant='tick']) #controls {
     margin-block-start: calc(
@@ -611,7 +607,7 @@ governing permissions and limitations under the License.
                 --mod-slider-track-thickness,
                 var(--spectrum-slider-track-thickness)
             ) / 2
-    ); /* .spectrum-Slider--tick .spectrum-Slider-controls */
+    );
 }
 :host([variant='tick']) .tickLabel {
     margin-block-start: calc(
@@ -623,7 +619,7 @@ governing permissions and limitations under the License.
                 --mod-slider-track-thickness,
                 var(--spectrum-slider-track-thickness)
             ) / 2 + var(--spectrum-text-to-visual-75)
-    ); /* .spectrum-Slider--tick .spectrum-Slider-tickLabel */
+    );
 }
 .ticks {
     display: flex;
@@ -638,14 +634,14 @@ governing permissions and limitations under the License.
     background: var(
         --mod-slider-ticks-handle-background-color,
         var(--spectrum-slider-ticks-handle-background-color)
-    ); /* .spectrum-Slider-ticks~.spectrum-Slider-handleContainer .spectrum-Slider-handle */
+    );
 }
 .tick {
     inline-size: var(
         --mod-slider-tick-mark-width,
         var(--spectrum-slider-tick-mark-width)
     );
-    position: relative; /* .spectrum-Slider-tick */
+    position: relative;
     top: calc(
         var(
                 --mod-slider-tick-mark-height,
@@ -667,7 +663,7 @@ governing permissions and limitations under the License.
         var(--spectrum-slider-tick-mark-border-radius)
     );
     content: '';
-    display: block; /* .spectrum-Slider-tick:after */
+    display: block;
     inline-size: var(
         --mod-slider-tick-mark-width,
         var(--spectrum-slider-tick-mark-width)
@@ -684,15 +680,14 @@ governing permissions and limitations under the License.
 }
 .tick .tickLabel {
     align-items: center;
-    display: flex; /* .spectrum-Slider-tick .spectrum-Slider-tickLabel */
+    display: flex;
     font-size: var(--mod-font-size-75, var(--spectrum-font-size-75));
     justify-content: center;
     line-height: var(--mod-line-height-100, var(--spectrum-line-height-100));
 }
 .tick:first-of-type .tickLabel,
 .tick:last-of-type .tickLabel {
-    display: block; /* .spectrum-Slider-tick:first-of-type .spectrum-Slider-tickLabel,
-   * .spectrum-Slider-tick:last-of-type .spectrum-Slider-tickLabel */
+    display: block;
     margin-inline: 0;
     position: absolute;
 }
@@ -702,10 +697,10 @@ governing permissions and limitations under the License.
                 --mod-slider-tick-mark-width,
                 var(--spectrum-slider-tick-mark-width)
             ) / -2
-    ); /* .spectrum-Slider-tick:first-of-type */
+    );
 }
 .tick:first-of-type .tickLabel {
-    inset-inline-start: 0; /* .spectrum-Slider-tick:first-of-type .spectrum-Slider-tickLabel */
+    inset-inline-start: 0;
 }
 .tick:last-of-type {
     inset-inline-end: calc(
@@ -713,10 +708,10 @@ governing permissions and limitations under the License.
                 --mod-slider-tick-mark-width,
                 var(--spectrum-slider-tick-mark-width)
             ) / -2
-    ); /* .spectrum-Slider-tick:last-of-type */
+    );
 }
 .tick:last-of-type .tickLabel {
-    inset-inline-end: 0; /* .spectrum-Slider-tick:last-of-type .spectrum-Slider-tickLabel */
+    inset-inline-end: 0;
 }
 :host([disabled]) {
     cursor: default;
@@ -732,14 +727,11 @@ governing permissions and limitations under the License.
             --mod-slider-label-text-color-disabled,
             var(--spectrum-slider-label-text-color-disabled)
         )
-    ); /* .spectrum-Slider.is-disabled .spectrum-Slider-tickLabel */
+    );
 }
 .spectrum-Slider-handleContainer,
 .spectrum-Slider-trackContainer {
-    inline-size: calc(
-        100% + var(--spectrum-slider-handle-size)
-    ); /* .spectrum-Slider-handleContainer,
-   * .spectrum-Slider-trackContainer */
+    inline-size: calc(100% + var(--spectrum-slider-handle-size));
     inset-block-start: 0;
     margin-inline-start: calc(var(--spectrum-slider-handle-size) / 2 * -1);
     position: absolute;
@@ -748,14 +740,14 @@ governing permissions and limitations under the License.
     block-size: var(
         --mod-slider-height-size,
         var(--spectrum-slider-height-size)
-    ); /* .spectrum-Slider-trackContainer */
+    );
     overflow: hidden;
 }
 .track:before {
     background: var(
         --highcontrast-slider-track-color,
         var(--mod-slider-track-color, var(--spectrum-slider-track-color))
-    ); /* .spectrum-Slider-track:before */
+    );
 }
 #label-container {
     color: var(
@@ -764,7 +756,7 @@ governing permissions and limitations under the License.
             --mod-slider-label-text-color,
             var(--spectrum-slider-label-text-color)
         )
-    ); /* .spectrum-Slider-labelContainer */
+    );
 }
 :host([variant='filled']) .track:first-child:before {
     background: var(
@@ -773,7 +765,7 @@ governing permissions and limitations under the License.
             --mod-slider-track-fill-color,
             var(--spectrum-slider-track-fill-color)
         )
-    ); /* .spectrum-Slider--filled .spectrum-Slider-track:first-child:before */
+    );
 }
 #fill:before {
     background: var(
@@ -782,7 +774,7 @@ governing permissions and limitations under the License.
             --mod-slider-track-fill-color,
             var(--spectrum-slider-track-fill-color)
         )
-    ); /* .spectrum-Slider-fill:before */
+    );
 }
 #ramp path {
     fill: var(
@@ -791,7 +783,7 @@ governing permissions and limitations under the License.
             --mod-slider-ramp-track-color,
             var(--spectrum-slider-ramp-track-color)
         )
-    ); /* .spectrum-Slider-ramp path */
+    );
 }
 .handle {
     background: var(
@@ -807,7 +799,7 @@ governing permissions and limitations under the License.
             --mod-slider-handle-border-color,
             var(--spectrum-slider-handle-border-color)
         )
-    ); /* .spectrum-Slider-handle */
+    );
 }
 .handle:hover {
     border-color: var(
@@ -816,7 +808,7 @@ governing permissions and limitations under the License.
             --mod-slider-handle-border-color-hover,
             var(--spectrum-slider-handle-border-color-hover)
         )
-    ); /* .spectrum-Slider-handle:hover */
+    );
 }
 .handle.handle-highlight {
     border-color: var(
@@ -825,7 +817,7 @@ governing permissions and limitations under the License.
             --mod-slider-handle-border-color-key-focus,
             var(--spectrum-slider-handle-border-color-key-focus)
         )
-    ); /* .spectrum-Slider-handle.is-focused */
+    );
 }
 .handle.handle-highlight:before {
     box-shadow: 0 0 0 var(--spectrum-focus-indicator-thickness)
@@ -835,7 +827,7 @@ governing permissions and limitations under the License.
                 --mod-slider-handle-focus-ring-color-key-focus,
                 var(--spectrum-slider-handle-focus-ring-color-key-focus)
             )
-        ); /* .spectrum-Slider-handle.is-focused:before */
+        );
 }
 .handle.dragging,
 .handle:active {
@@ -845,8 +837,7 @@ governing permissions and limitations under the License.
             --mod-slider-handle-border-color-down,
             var(--spectrum-slider-handle-border-color-down)
         )
-    ); /* .spectrum-Slider-handle:active,
-   * .spectrum-Slider-handle.is-dragged */
+    );
 }
 :host([variant='ramp']) .handle {
     background: var(
@@ -860,7 +851,7 @@ governing permissions and limitations under the License.
                 --mod-sectrum-slider-ramp-handle-border-color-active,
                 var(--spectrum-slider-ramp-handle-border-color-active)
             )
-        ); /* .spectrum-Slider--ramp .spectrum-Slider-handle */
+        );
 }
 @media (forced-colors: active) {
     :host([variant='ramp']) .handle {
@@ -880,7 +871,7 @@ governing permissions and limitations under the License.
             --mod-slider-tick-mark-color,
             var(--spectrum-slider-tick-mark-color)
         )
-    ); /* .spectrum-Slider-tick:after */
+    );
 }
 .handle.dragging {
     background: var(
@@ -896,7 +887,7 @@ governing permissions and limitations under the License.
             --mod-slider-handle-border-color-down,
             var(--spectrum-slider-handle-border-color-down)
         )
-    ); /* .spectrum-Slider-handle.is-dragged */
+    );
 }
 :host([variant='range']) .track:not(:first-of-type):not(:last-of-type):before {
     background: var(
@@ -905,7 +896,13 @@ governing permissions and limitations under the License.
             --mod-slider-track-fill-color,
             var(--spectrum-slider-track-fill-color)
         )
-    ); /* .spectrum-Slider--range .spectrum-Slider-track:not(:first-of-type):not(:last-of-type):before */
+    );
+}
+.spectrum-Stepper {
+    margin-block-start: calc(
+        var(--mod-slider-control-height, var(--spectrum-slider-control-height)) *
+            -1 / 2
+    );
 }
 :host([disabled]) #label-container {
     color: var(
@@ -914,7 +911,7 @@ governing permissions and limitations under the License.
             --mod-slider-label-text-color-disabled,
             var(--spectrum-slider-label-text-color-disabled)
         )
-    ); /* .spectrum-Slider.is-disabled .spectrum-Slider-labelContainer */
+    );
 }
 :host([disabled]) .handle {
     background: var(
@@ -930,7 +927,7 @@ governing permissions and limitations under the License.
             --mod-slider-handle-border-color-disabled,
             var(--spectrum-slider-handle-border-color-disabled)
         )
-    ); /* .spectrum-Slider.is-disabled .spectrum-Slider-handle */
+    );
 }
 :host([disabled]) .handle:active,
 :host([disabled]) .handle:hover {
@@ -944,8 +941,7 @@ governing permissions and limitations under the License.
     border-color: var(
         --highcontrast-disabled-border-color,
         var(--mod-disabled-border-color, var(--spectrum-disabled-border-color))
-    ); /* .spectrum-Slider.is-disabled .spectrum-Slider-handle:hover,
-   * .spectrum-Slider.is-disabled .spectrum-Slider-handle:active */
+    );
 }
 :host([disabled]) .track:before {
     background: var(
@@ -954,7 +950,7 @@ governing permissions and limitations under the License.
             --mod-slider-track-color-disabled,
             var(--spectrum-slider-track-color-disabled)
         )
-    ); /* .spectrum-Slider.is-disabled .spectrum-Slider-track:before */
+    );
 }
 :host([disabled][variant='filled']) .track:first-child:before {
     background: var(
@@ -963,7 +959,7 @@ governing permissions and limitations under the License.
             --mod-slider-track-fill-color-disabled,
             var(--spectrum-slider-track-fill-color-disabled)
         )
-    ); /* .spectrum-Slider.is-disabled.spectrum-Slider--filled .spectrum-Slider-track:first-child:before */
+    );
 }
 :host([disabled]) #fill:before {
     background: var(
@@ -972,7 +968,7 @@ governing permissions and limitations under the License.
             --mod-slider-track-fill-color-disabled,
             var(--spectrum-slider-track-fill-color-disabled)
         )
-    ); /* .spectrum-Slider.is-disabled .spectrum-Slider-fill:before */
+    );
 }
 @media (forced-colors: active) {
     :host([disabled]) #ramp + .handle {
@@ -987,7 +983,7 @@ governing permissions and limitations under the License.
             --mod-slider-ramp-track-color-disabled,
             var(--spectrum-slider-ramp-track-color-disabled)
         )
-    ); /* .spectrum-Slider.is-disabled .spectrum-Slider-ramp path */
+    );
 }
 :host([disabled]) .tick:after {
     background-color: var(
@@ -996,7 +992,7 @@ governing permissions and limitations under the License.
             --mod-slider-tick-mark-color-disabled,
             var(--spectrum-slider-tick-mark-color-disabled)
         )
-    ); /* .spectrum-Slider.is-disabled .spectrum-Slider-tick:after */
+    );
 }
 :host([disabled][variant='range'])
     .track:not(:first-of-type):not(:last-of-type):before {
@@ -1006,7 +1002,7 @@ governing permissions and limitations under the License.
             --mod-slider-track-color-disabled,
             var(--spectrum-slider-track-color-disabled)
         )
-    ); /* .spectrum-Slider.is-disabled.spectrum-Slider--range .spectrum-Slider-track:not(:first-of-type):not(:last-of-type):before */
+    );
 }
 @media (forced-colors: active) {
     :host {
@@ -1040,7 +1036,7 @@ governing permissions and limitations under the License.
 :host {
     --spectrum-slider-margin-top-offset: var(
         --system-spectrum-slider-margin-top-offset
-    ); /* .spectrum-Slider */
+    );
     --spectrum-slider-track-color: var(--system-spectrum-slider-track-color);
     --spectrum-slider-track-fill-color: var(
         --system-spectrum-slider-track-fill-color
