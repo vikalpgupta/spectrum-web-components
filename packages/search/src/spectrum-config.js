@@ -32,7 +32,7 @@ const config = {
                 converter.classToId('spectrum-Search', 'textfield'),
                 converter.classToClass('spectrum-Search-input', 'input'),
                 converter.classToClass('spectrum-Icon', 'icon'),
-                converter.classToClass('spectrum-Search-icon', 'icon'),
+                converter.classToClass('spectrum-Search-icon', 'icon-search'),
                 converter.classToAttribute('spectrum-Search--quiet', 'quiet'),
                 converter.classToId('spectrum-Search-clearButton', 'button'),
                 converter.classToId('spectrum-Search-textfield', 'textfield'),
@@ -50,22 +50,12 @@ const config = {
                     hoist: true,
                 },
                 {
-                    selector: '.spectrum-Search-textfield',
-                    name: 'textfield',
-                },
-            ],
-            classes: [
-                {
-                    selector: '.spectrum-Search-input',
-                    name: 'input',
-                },
-                {
-                    selector: '.spectrum-Icon',
-                    name: 'icon',
-                },
-                {
-                    selector: '.spectrum-Search-icon',
-                    name: 'icon-search',
+                    find: [builder.class('focus-ring')],
+                    replace: [
+                        {
+                            replace: builder.pseudoClass('focus-visible'),
+                        },
+                    ],
                 },
             ],
         },

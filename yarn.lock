@@ -4412,10 +4412,10 @@
   resolved "https://registry.yarnpkg.com/@spectrum-css/statuslight/-/statuslight-6.0.2.tgz#9ec39bc550891e0dbb1ad55c1e1dcb3e7ab02e54"
   integrity sha512-eP0w5rOSxF8JMO7ATiH4sXYRxIytfoKzfjJHcJ7Oj0OAFXcMsBC+l9YobMwXa9GudwVpRcL0SLShSZd5mobV1Q==
 
-"@spectrum-css/stepper@^4.0.0-beta.3":
-  version "4.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@spectrum-css/stepper/-/stepper-4.0.0-beta.3.tgz#f6a67d2bb9ee744b11b05d5927de01da8582bb5d"
-  integrity sha512-f0OzsXR/tMq6g3Xnu6NgDENKMQvAHacmr3ZqdCV4wK+6b/Hju8CwqDSIQlzwcMUgd8UIClvDQ1UXtXIEUsZXFg==
+"@spectrum-css/stepper@^4.0.0-beta.4":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@spectrum-css/stepper/-/stepper-4.0.2.tgz#c99fafde41900a483d9933e930af42a2f69c753f"
+  integrity sha512-iNnkr+CoK6r+ygnLtrWa6vacIObxlqP7rHHMYHqrGVgNFsRcnFM++2fVC47Fsb3mxJ/yjbGVly4i0OOklR2Ksg==
 
 "@spectrum-css/swatch@^3.0.9":
   version "3.0.19"
@@ -4452,10 +4452,10 @@
   resolved "https://registry.yarnpkg.com/@spectrum-css/taggroup/-/taggroup-3.3.21.tgz#ab7df13999fdb0bc9f5ac919ac3b2fb2b15d705a"
   integrity sha512-kh8HfGJEUycATBdUHZEpHUgSTGGA+TxQUysoqvboOYAGWCwoDFaPK3C2TtnUZhzWQ/g8J3glCzKb7ObH10XoXQ==
 
-"@spectrum-css/textfield@^4.0.0-beta.6":
-  version "4.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@spectrum-css/textfield/-/textfield-4.0.0-beta.6.tgz#853e0e4ce33a90b870b4692e0e6e501236681fd6"
-  integrity sha512-FtRHLyNPNI1L7Wej8GFdfNx9ypPQIcJ1LIjrB29xoolw5V0s7df2W1ujvSosbzoOaes6c3qdhRV3JyvHbhlwnA==
+"@spectrum-css/textfield@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@spectrum-css/textfield/-/textfield-4.0.3.tgz#0fe1f92a0c30e60b10264776a9e880c952f2486c"
+  integrity sha512-iig2cc5QtqGreue0o+jT4B8JWe+FOVJxbHZubZghN2r1RWkzSx/xdz6ZAW3E8dM7EpQimWzpkh0LOO5JPtrOvg==
 
 "@spectrum-css/thumbnail@^2.0.23":
   version "2.0.23"

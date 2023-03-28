@@ -75,20 +75,20 @@ const config = {
                     hoist: true,
                 },
                 {
-                    type: 'boolean',
-                    name: 'keyboard-focused',
-                    selector: '.is-keyboardFocused',
-                },
-                {
-                    type: 'boolean',
-                    name: 'hide-stepper',
-                    selector: '.hide-stepper',
-                },
-            ],
-            classes: [
-                {
-                    selector: '.spectrum-Stepper-buttons',
-                    name: 'buttons',
+                    exactSelector: true,
+                    find: [builder.class('spectrum-Stepper--quiet')],
+                    replace: [
+                        {
+                            replace: builder.attribute('quiet'),
+                            hoist: true,
+                        },
+                        {
+                            replace: builder.combinator(' '),
+                        },
+                        {
+                            replace: builder.id('textfield'),
+                        },
+                    ],
                 },
                 {
                     expandSelector: true,
