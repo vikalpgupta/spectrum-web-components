@@ -57,6 +57,10 @@ sp-field-label {
 
 :host([editable]) sp-number-field {
     grid-area: number;
+    margin-block-start: calc(
+        var(--mod-slider-control-height, var(--spectrum-slider-control-height)) *
+            -1 / 2
+    );
 
     --spectrum-stepper-width: var(
         --spectrum-slider-editable-number-field-width,
