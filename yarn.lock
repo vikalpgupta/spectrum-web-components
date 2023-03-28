@@ -4412,10 +4412,10 @@
   resolved "https://registry.yarnpkg.com/@spectrum-css/statuslight/-/statuslight-6.0.2.tgz#9ec39bc550891e0dbb1ad55c1e1dcb3e7ab02e54"
   integrity sha512-eP0w5rOSxF8JMO7ATiH4sXYRxIytfoKzfjJHcJ7Oj0OAFXcMsBC+l9YobMwXa9GudwVpRcL0SLShSZd5mobV1Q==
 
-"@spectrum-css/stepper@^4.0.0-beta.4":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@spectrum-css/stepper/-/stepper-4.0.2.tgz#c99fafde41900a483d9933e930af42a2f69c753f"
-  integrity sha512-iNnkr+CoK6r+ygnLtrWa6vacIObxlqP7rHHMYHqrGVgNFsRcnFM++2fVC47Fsb3mxJ/yjbGVly4i0OOklR2Ksg==
+"@spectrum-css/stepper@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@spectrum-css/stepper/-/stepper-4.0.3.tgz#a5af6afe447abce0c941b1f1bbaecaf1665ef5a9"
+  integrity sha512-jp4q1Kqqy25ZfduLOmDkk06XANt3Qjbwy+IiEWduqfkaLZDQt5MNOENVXQ+iUnoX67GaxZc5YponStK9pTZVBw==
 
 "@spectrum-css/swatch@^3.0.9":
   version "3.0.19"
