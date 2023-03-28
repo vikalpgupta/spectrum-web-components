@@ -51,6 +51,7 @@ export default {
                     'spectrum-Textfield-icon',
                     'icon-workflow'
                 ),
+                converter.classToClass('spectrum-Search-icon', 'icon-search'),
                 converter.classToAttribute('spectrum-Textfield--multiline'),
                 converter.classToAttribute('spectrum-Textfield--quiet'),
                 converter.classToAttribute(

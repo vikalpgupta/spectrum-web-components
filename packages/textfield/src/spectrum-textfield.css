@@ -540,7 +540,7 @@ governing permissions and limitations under the License.
     position: absolute;
     top: 0;
 }
-#textfield .icon-workflow.spectrum-Search-icon {
+#textfield .icon-workflow.icon-search {
     right: auto;
 }
 :host([disabled]) #textfield #textfield .icon-workflow {
@@ -579,8 +579,8 @@ governing permissions and limitations under the License.
         )
     );
 }
-:host([disabled]) #textfield .icon.spectrum-Search-icon,
-:host([readonly]) #textfield .icon.spectrum-Search-icon {
+:host([disabled]) #textfield .icon.icon-search,
+:host([readonly]) #textfield .icon.icon-search {
     color: var(
         --highcontrast-textfield-text-color-disabled,
         var(
