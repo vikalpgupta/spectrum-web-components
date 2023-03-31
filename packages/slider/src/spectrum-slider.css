@@ -138,6 +138,7 @@ governing permissions and limitations under the License.
     );
     --spectrum-slider-tick-mark-width: var(--spectrum-border-width-200);
     --spectrum-slider-tick-mark-border-radius: 2px;
+    --spectrum-slider-tick-handle-background-color: var(--spectrum-gray-100);
     --spectrum-slider-track-color-disabled: var(
         --spectrum-disabled-background-color
     );
@@ -596,6 +597,15 @@ governing permissions and limitations under the License.
     padding-inline-end: 0;
     text-align: end;
 }
+:host([variant='tick']) .handle {
+    background-color: var(
+        --highcontrast-slider-tick-handle-background-color,
+        var(
+            --mod-slider-tick-handle-background-color,
+            var(--spectrum-slider-tick-handle-background-color)
+        )
+    );
+}
 :host([variant='tick']) #controls {
     margin-block-start: calc(
         var(--spectrum-text-to-visual-75) -
@@ -896,12 +906,6 @@ governing permissions and limitations under the License.
             --mod-slider-track-fill-color,
             var(--spectrum-slider-track-fill-color)
         )
-    );
-}
-.spectrum-Stepper {
-    margin-block-start: calc(
-        var(--mod-slider-control-height, var(--spectrum-slider-control-height)) *
-            -1 / 2
     );
 }
 :host([disabled]) #label-container {
