@@ -655,8 +655,8 @@ governing permissions and limitations under the License.
         var(--spectrum-textfield-icon-spacing-inline-start-invalid)
     );
 }
-:host([disabled]) #textfield .icon:not(.spectrum-Search-icon),
-:host([readonly]) #textfield .icon:not(.spectrum-Search-icon) {
+:host([disabled]) #textfield .icon,
+:host([readonly]) #textfield .icon {
     color: #0000;
 }
 :host([quiet]) .icon {
