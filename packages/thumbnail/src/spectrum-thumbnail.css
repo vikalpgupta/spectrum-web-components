@@ -55,40 +55,40 @@ governing permissions and limitations under the License.
         --spectrum-opacity-checkerboard-square-light
     );
 }
-.spectrum-Thumbnail--size50 {
+:host([size='50']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-50);
 }
-.spectrum-Thumbnail--size75 {
+:host([size='75']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-75);
 }
-.spectrum-Thumbnail--size100 {
+:host([size='100']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-100);
 }
-.spectrum-Thumbnail--size200 {
+:host([size='200']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-200);
 }
-.spectrum-Thumbnail--size300 {
+:host([size='300']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-300);
 }
-.spectrum-Thumbnail--size400 {
+:host([size='400']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-400);
 }
-.spectrum-Thumbnail--size500 {
+:host([size='500']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-500);
 }
-.spectrum-Thumbnail--size600 {
+:host([size='600']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-600);
 }
-.spectrum-Thumbnail--size700 {
+:host([size='700']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-700);
 }
-.spectrum-Thumbnail--size800 {
+:host([size='800']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-800);
 }
-.spectrum-Thumbnail--size900 {
+:host([size='900']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-900);
 }
-.spectrum-Thumbnail--size1000 {
+:host([size='1000']) {
     --spectrum-thumbnail-size: var(--spectrum-thumbnail-size-1000);
 }
 :host {

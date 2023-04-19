@@ -13,7 +13,6 @@ governing permissions and limitations under the License.
 import {
     CSSResultArray,
     html,
-    SizedMixin,
     SpectrumElement,
     TemplateResult,
 } from '@spectrum-web-components/base';
@@ -21,15 +20,31 @@ import { property } from '@spectrum-web-components/base/src/decorators.js';
 
 import styles from './thumbnail.css.js';
 
+export type ThumbnailSize =
+    | 50
+    | 75
+    | 100
+    | 200
+    | 300
+    | 400
+    | 500
+    | 600
+    | 700
+    | 800
+    | 900
+    | 1000;
+const validSizes: ThumbnailSize[] = [
+    50, 75, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000,
+];
+const defaultSize = validSizes[6];
+
 /**
  * @element sp-thumbnail
  *
  * @slot - image element to present in the Thumbnail
  */
-export class Thumbnail extends SizedMixin(SpectrumElement, {
-    validSizes: ['xxs', 'xs', 's', 'm', 'l'],
-    defaultSize: 's',
-}) {
+
+export class Thumbnail extends SpectrumElement {
     public static override get styles(): CSSResultArray {
         return [styles];
     }
@@ -39,6 +54,29 @@ export class Thumbnail extends SizedMixin(SpectrumElement, {
 
     @property({ type: Boolean, reflect: true })
     public cover = false;
+
+    @property({ type: Number, reflect: true })
+    public get size(): ThumbnailSize {
+        return this._size;
+    }
+
+    public set size(value: ThumbnailSize) {
+        const size = value;
+        const validSize = (
+            validSizes.includes(size) ? size : defaultSize
+        ) as ThumbnailSize;
+        if (validSize) {
+            this.setAttribute('size', `${validSize}`);
+        }
+        if (this._size === validSize) {
+            return;
+        }
+        const oldSize = this._size;
+        this._size = validSize;
+        this.requestUpdate('size', oldSize);
+    }
+
+    private _size = defaultSize;
 
     protected override render(): TemplateResult {
         return html`

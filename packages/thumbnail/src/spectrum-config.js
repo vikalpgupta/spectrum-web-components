@@ -31,11 +31,18 @@ export default {
                 converter.classToAttribute('spectrum-Thumbnail--cover'),
                 ...converter.enumerateAttributes(
                     [
-                        ['spectrum-Thumbnail--sizeXXS', 'xxs'],
-                        ['spectrum-Thumbnail--sizeXS', 'xs'],
-                        ['spectrum-Thumbnail--sizeS', 's'],
-                        ['spectrum-Thumbnail--sizeM', 'm'],
-                        ['spectrum-Thumbnail--sizeL', 'l'],
+                        ['spectrum-Thumbnail--size50', '50'],
+                        ['spectrum-Thumbnail--size75', '75'],
+                        ['spectrum-Thumbnail--size100', '100'],
+                        ['spectrum-Thumbnail--size200', '200'],
+                        ['spectrum-Thumbnail--size300', '300'],
+                        ['spectrum-Thumbnail--size400', '400'],
+                        ['spectrum-Thumbnail--size500', '500'],
+                        ['spectrum-Thumbnail--size600', '600'],
+                        ['spectrum-Thumbnail--size700', '700'],
+                        ['spectrum-Thumbnail--size800', '800'],
+                        ['spectrum-Thumbnail--size900', '900'],
+                        ['spectrum-Thumbnail--size1000', '1000'],
                     ],
                     'size'
                 ),
