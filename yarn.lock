@@ -4479,10 +4479,10 @@
   resolved "https://registry.yarnpkg.com/@spectrum-css/textfield/-/textfield-3.2.14.tgz#1a4008667c8f1b664d805e22dcdbd8714b7e5908"
   integrity sha512-2ZzeCf8WGR+HduVpk4op+91kTCW12gliuWbiMOB+9fUIYh9EpWj6Ac6CPyizwDYajPZ7b860imLZuQkfBpPUaA==
 
-"@spectrum-css/thumbnail@^2.0.23":
-  version "2.0.23"
-  resolved "https://registry.yarnpkg.com/@spectrum-css/thumbnail/-/thumbnail-2.0.23.tgz#94eccf1b7e4f8d00753997aae480da93a144750f"
-  integrity sha512-lZJ5jrD1YtWobQwCaKnVS6al00hqxAAO05vw4vLqTNwqLZM4lFDUQG288EgI0Hj4/IB6k0CrU7xj4LK043EbqQ==
+"@spectrum-css/thumbnail@^3.0.0-beta.0":
+  version "3.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@spectrum-css/thumbnail/-/thumbnail-3.0.0-beta.0.tgz#3b95c520a1d62eddf3a0ce54f7f7c722a52e3351"
+  integrity sha512-72P3vXz0wwExdhm+ue1Qfzt8ObhMypaYQGOCDZlWS0pMj5WrQiSnkmWqYYPGk5+gR6IDWP29Zp4QxYkEVUebcg==
 
 "@spectrum-css/toast@^8.0.15":
   version "8.0.15"
