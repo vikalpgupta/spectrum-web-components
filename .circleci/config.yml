@@ -11,6 +11,9 @@ parameters:
     current_golden_images_hash:
         type: string
         default: 5ca9bd66b3f619f8124ee52b3681bafad31b864e
+    wireit_cache_name:
+        type: string
+        default: wireit
 commands:
     downstream:
         steps:
@@ -20,8 +23,8 @@ commands:
                       - v3b-dependencies-{{ arch }}-{{ checksum "yarn.lock" }}
             - restore_cache:
                   keys:
-                      - v3b-wireit-{{ arch }}-{{ checksum "package.json" }}-
-                      - v3b-wireit-{{ arch }}-
+                      - v3b-<< pipeline.parameters.wireit_cache_name >>-{{ arch }}-{{ checksum "package.json" }}-
+                      - v3b-<< pipeline.parameters.wireit_cache_name >>-{{ arch }}-
             - run:
                   name: Installing Dependencies
                   command: yarn --frozen-lockfile --cache-folder ~/.cache/yarn
