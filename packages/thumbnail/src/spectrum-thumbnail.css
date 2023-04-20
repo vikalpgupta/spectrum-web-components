@@ -156,7 +156,7 @@ governing permissions and limitations under the License.
     position: absolute;
     z-index: 2;
 }
-:host .is-disabled {
+:host([disabled]) {
     opacity: var(
         --mod-thumbnail-color-opacity-disabled,
         var(--spectrum-thumbnail-color-opacity-disabled)

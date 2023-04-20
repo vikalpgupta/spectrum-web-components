@@ -28,6 +28,7 @@ export default {
                 converter.classToHost(),
                 converter.classToAttribute('is-selected', 'selected'),
                 converter.classToAttribute('is-focused', 'focused'),
+                converter.classToAttribute('is-disabled', 'disabled'),
                 converter.classToAttribute('spectrum-Thumbnail--cover'),
                 ...converter.enumerateAttributes(
                     [
