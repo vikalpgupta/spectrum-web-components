@@ -4404,10 +4404,10 @@
   resolved "https://registry.yarnpkg.com/@spectrum-css/radio/-/radio-5.0.1.tgz#4e2b896599ec9bad61cba389e59c6dcd4f002f10"
   integrity sha512-dJ1+YOaEmBiZl2dXSufn+M3akAWrLnuvVanHZTn//Xdq1vjmAK2IPtYAEuJpA6ckwLU5GXypQ4MjCFmxbhC9rQ==
 
-"@spectrum-css/search@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@spectrum-css/search/-/search-5.0.3.tgz#c8187a4a5f3990e4d47f74cec8ae9a64f849dc97"
-  integrity sha512-aECgqu3xFQ80zq7qimYjttOHQ7kkhHm9fzt9+k5t7Z0yNFQgLzPCoPMLmZ+n7CQzNk23XAF0bFx68IUfQhMzlg==
+"@spectrum-css/search@6.0.0-beta.0":
+  version "6.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@spectrum-css/search/-/search-6.0.0-beta.0.tgz#85d05d781d12912ece464c85127dc55a03f35225"
+  integrity sha512-0Goiqb2Fm3wvSLiA7hoKeldbizLFOq/Wlyg5dOOAXenSC0mYR36Cdt6yNGmHeocUht8E+ujLq9XaflqSlgyS4g==
 
 "@spectrum-css/sidenav@^3.0.39":
   version "3.0.39"

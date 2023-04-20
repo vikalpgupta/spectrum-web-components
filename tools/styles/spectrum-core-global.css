@@ -1618,24 +1618,11 @@ governing permissions and limitations under the License.
     --spectrum-alias-clearbutton-border-radius: var(
         --spectrum-global-dimension-size-50
     );
-    --spectrum-alias-search-border-radius: var(
-        --spectrum-global-dimension-size-50
-    );
-    --spectrum-alias-search-border-radius-quiet: 0;
     --spectrum-alias-combobox-quiet-button-offset-x: var(
         --spectrum-global-dimension-size-100
     );
     --spectrum-alias-thumbnail-border-radius-small: var(
         --spectrum-global-dimension-size-25
-    );
-    --spectrum-alias-search-padding-left-s: var(
-        --spectrum-global-dimension-size-85
-    );
-    --spectrum-alias-search-padding-left-l: var(
-        --spectrum-global-dimension-size-160
-    );
-    --spectrum-alias-search-padding-left-xl: var(
-        --spectrum-global-dimension-size-185
     );
     --spectrum-alias-percent-50: 50%;
     --spectrum-alias-percent-70: 70%;
