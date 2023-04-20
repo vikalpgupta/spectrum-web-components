@@ -23,7 +23,7 @@ import {
     shiftTabEvent,
     testForLitDevWarnings,
 } from '../../../test/testing-helpers.js';
-import { spy } from 'sinon';
+import { spy, stub } from 'sinon';
 
 type TestableButtonType = {
     hasLabel: boolean;
@@ -560,6 +560,27 @@ describe('Button', () => {
 
             await elementUpdated(el);
             expect(el.variant).to.equal('accent');
+        });
+    });
+    describe.only('dev mode', () => {
+        beforeEach(function () {
+            window.__swc.verbose = true;
+            this.warn = stub(console, 'warn');
+        });
+        afterEach(function () {
+            this.warn.resetHistory();
+            window.__swc.verbose = false;
+            this.warn.restore();
+        });
+        it('warns in Dev Mode when redefined', async function () {
+            await import('../sp-button.js');
+
+            expect(this.warn.called, 'should call console.warn()').to.be.true;
+            const spyCall = this.warn.getCall(0);
+            expect(
+                (spyCall.args.at(0) as string).includes('redefine'),
+                'message should warn about redefining an element'
+            ).to.be.true;
         });
     });
 });
