@@ -48,7 +48,8 @@ export default {
                     'size'
                 ),
                 converter.classToClass('spectrum-Thumbnail-background'),
-                converter.classToSlotted('spectrum-Thumbnail-image'),
+                converter.classToClass('spectrum-Thumbnail-image-wrapper'),
+                converter.classToClass('spectrum-Thumbnail-image'),
             ],
         },
     ],

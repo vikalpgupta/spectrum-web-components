@@ -41,7 +41,7 @@ const defaultSize = validSizes[6];
 /**
  * @element sp-thumbnail
  *
- * @slot - image element to present in the Thumbnail
+ * @slot image - image element to present in the Thumbnail
  */
 
 export class Thumbnail extends SpectrumElement {
@@ -80,14 +80,6 @@ export class Thumbnail extends SpectrumElement {
 
     protected override render(): TemplateResult {
         return html`
-            ${this.background
-                ? html`
-                      <div
-                          class="background"
-                          style="background: ${this.background}"
-                      ></div>
-                  `
-                : html``}
             <slot></slot>
         `;
     }

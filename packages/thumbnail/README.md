@@ -32,9 +32,7 @@ import { Thumbnail } from '@spectrum-web-components/thumbnail';
 
 ```html
 <sp-thumbnail size="50">
-    <div class="spectrum-Thumbnail-image-wrapper">
-        <img src="https://place.dog/100/100" alt="Demo Image" />
-    </div>
+    <img src="https://place.dog/100/100" alt="Demo Image" />
 </sp-thumbnail>
 ```
 
@@ -93,8 +91,18 @@ import { Thumbnail } from '@spectrum-web-components/thumbnail';
 <sp-tab-panel value="500">
 
 ```html
-<sp-thumbnail size="500">
-    <img src="https://place.dog/100/100" alt="Demo Image" />
+<sp-thumbnail size="500" style="display: flex;">
+    <div class="image-wrapper">
+        <img
+            class="image"
+            style="max-block-size: 100%;
+                max-inline-size: 100%;
+                position: relative;
+                z-index: 1;"
+            src="https://place.dog/100/100"
+            alt="Demo Image"
+        />
+    </div>
 </sp-thumbnail>
 ```
 
@@ -156,11 +164,19 @@ import { Thumbnail } from '@spectrum-web-components/thumbnail';
 When `focused` the `sp-thumbnail` element will be displayed as follows:
 
 ```html
-<div style="display: flex; gap: var(--spectrum-spacing-100);">
-    <sp-thumbnail focused>
-        <img src="https://place.dog/100/100" alt="Demo Image" />
-    </sp-thumbnail>
-</div>
+<sp-thumbnail focused style="display: flex;">
+    <div class="image-wrapper">
+        <img
+            class="image"
+            style="max-block-size: 100%;
+                max-inline-size: 100%;
+                position: relative;
+                z-index: 1;"
+            src="https://place.dog/100/100"
+            alt="Demo Image"
+        />
+    </div>
+</sp-thumbnail>
 ```
 
 ## Disabled

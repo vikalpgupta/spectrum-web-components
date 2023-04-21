@@ -12,6 +12,6 @@ governing permissions and limitations under the License.
 
 @import './spectrum-thumbnail.css';
 
-::slotted(:not(img)) {
+/* ::slotted(:not(img)) {
     display: none;
-}
+} */
